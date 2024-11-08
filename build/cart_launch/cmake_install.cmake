@@ -1,8 +1,8 @@
-# Install script for directory: /home/zgc/learnRos2/zgc_ws/src/cart_launch
+# Install script for directory: /home/zgc/mr_ws/src/cart_launch
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/zgc/learnRos2/zgc_ws/install/cart_launch")
+  set(CMAKE_INSTALL_PREFIX "/home/zgc/mr_ws/install/cart_launch")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,19 +38,19 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/launch" TYPE DIRECTORY FILES "/home/zgc/learnRos2/zgc_ws/src/cart_launch/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/launch" TYPE DIRECTORY FILES "/home/zgc/mr_ws/src/cart_launch/launch/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/stage_worlds" TYPE DIRECTORY FILES "/home/zgc/learnRos2/zgc_ws/src/cart_launch/stage_worlds/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/stage_worlds" TYPE DIRECTORY FILES "/home/zgc/mr_ws/src/cart_launch/stage_worlds/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/cart_launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/cart_launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/cart_launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/cart_launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -58,7 +58,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/environment" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/environment" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -66,42 +66,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/environment" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/environment" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_index/share/ament_index/resource_index/packages/cart_launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/zgc/mr_ws/build/cart_launch/ament_cmake_index/share/ament_index/resource_index/packages/cart_launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch/cmake" TYPE FILE FILES
-    "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_core/cart_launchConfig.cmake"
-    "/home/zgc/learnRos2/zgc_ws/build/cart_launch/ament_cmake_core/cart_launchConfig-version.cmake"
+    "/home/zgc/mr_ws/build/cart_launch/ament_cmake_core/cart_launchConfig.cmake"
+    "/home/zgc/mr_ws/build/cart_launch/ament_cmake_core/cart_launchConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/src/cart_launch/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cart_launch" TYPE FILE FILES "/home/zgc/mr_ws/src/cart_launch/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -112,5 +112,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/zgc/learnRos2/zgc_ws/build/cart_launch/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zgc/mr_ws/build/cart_launch/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

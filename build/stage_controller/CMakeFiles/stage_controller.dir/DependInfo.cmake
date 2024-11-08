@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zgc/learnRos2/zgc_ws/src/stage_controller/src/stage_controller.cpp" "/home/zgc/learnRos2/zgc_ws/build/stage_controller/CMakeFiles/stage_controller.dir/src/stage_controller.cpp.o"
+  "/home/zgc/mr_ws/src/stage_controller/src/stage_controller.cpp" "/home/zgc/mr_ws/build/stage_controller/CMakeFiles/stage_controller.dir/src/stage_controller.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/zgc/learnRos2/zgc_ws/src/Stage/examples
+# Install script for directory: /home/zgc/mr_ws/Stage/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/zgc/learnRos2/zgc_ws/install/Stage")
+  set(CMAKE_INSTALL_PREFIX "/home/zgc/mr_ws/install/Stage")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/zgc/learnRos2/zgc_ws/build/Stage/examples/ctrl/cmake_install.cmake")
+  include("/home/zgc/mr_ws/build/Stage/examples/ctrl/cmake_install.cmake")
 
 endif()
 

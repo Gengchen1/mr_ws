@@ -6,7 +6,7 @@ CXX_FLAGS =  -O2 -DNDEBUG -Wall
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/zgc/learnRos2/zgc_ws/src/Stage/. -I/home/zgc/learnRos2/zgc_ws/src/Stage/libstage -I/home/zgc/learnRos2/zgc_ws/src/Stage/replace -I/usr/lib/fltk -I/home/zgc/learnRos2/zgc_ws/build/Stage 
+CXX_INCLUDES = -I/home/zgc/mr_ws/Stage/. -I/home/zgc/mr_ws/Stage/libstage -I/home/zgc/mr_ws/Stage/replace -I/usr/lib/fltk -I/home/zgc/mr_ws/build/Stage 
 
 # Custom flags: libstage/CMakeFiles/stagebinary.dir/main.cc.o_FLAGS = 
 

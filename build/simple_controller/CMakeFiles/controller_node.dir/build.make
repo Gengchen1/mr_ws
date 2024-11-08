@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/learnRos2/zgc_ws/src/simple_controller
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/src/simple_controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zgc/learnRos2/zgc_ws/build/simple_controller
+CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/simple_controller
 
 # Include any dependencies generated for this target.
 include CMakeFiles/controller_node.dir/depend.make
@@ -58,30 +58,30 @@ include CMakeFiles/controller_node.dir/progress.make
 include CMakeFiles/controller_node.dir/flags.make
 
 CMakeFiles/controller_node.dir/src/controller.cpp.o: CMakeFiles/controller_node.dir/flags.make
-CMakeFiles/controller_node.dir/src/controller.cpp.o: /home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/controller_node.dir/src/controller.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_node.dir/src/controller.cpp.o -c /home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp
+CMakeFiles/controller_node.dir/src/controller.cpp.o: /home/zgc/mr_ws/src/simple_controller/src/controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/mr_ws/build/simple_controller/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/controller_node.dir/src/controller.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_node.dir/src/controller.cpp.o -c /home/zgc/mr_ws/src/simple_controller/src/controller.cpp
 
 CMakeFiles/controller_node.dir/src/controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller_node.dir/src/controller.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp > CMakeFiles/controller_node.dir/src/controller.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/src/simple_controller/src/controller.cpp > CMakeFiles/controller_node.dir/src/controller.cpp.i
 
 CMakeFiles/controller_node.dir/src/controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller_node.dir/src/controller.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp -o CMakeFiles/controller_node.dir/src/controller.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/src/simple_controller/src/controller.cpp -o CMakeFiles/controller_node.dir/src/controller.cpp.s
 
 CMakeFiles/controller_node.dir/src/controller_node.cpp.o: CMakeFiles/controller_node.dir/flags.make
-CMakeFiles/controller_node.dir/src/controller_node.cpp.o: /home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_node.dir/src/controller_node.cpp.o -c /home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp
+CMakeFiles/controller_node.dir/src/controller_node.cpp.o: /home/zgc/mr_ws/src/simple_controller/src/controller_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/mr_ws/build/simple_controller/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controller_node.dir/src/controller_node.cpp.o -c /home/zgc/mr_ws/src/simple_controller/src/controller_node.cpp
 
 CMakeFiles/controller_node.dir/src/controller_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controller_node.dir/src/controller_node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp > CMakeFiles/controller_node.dir/src/controller_node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/src/simple_controller/src/controller_node.cpp > CMakeFiles/controller_node.dir/src/controller_node.cpp.i
 
 CMakeFiles/controller_node.dir/src/controller_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controller_node.dir/src/controller_node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp -o CMakeFiles/controller_node.dir/src/controller_node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/src/simple_controller/src/controller_node.cpp -o CMakeFiles/controller_node.dir/src/controller_node.cpp.s
 
 # Object files for target controller_node
 controller_node_OBJECTS = \
@@ -154,7 +154,7 @@ controller_node: /opt/ros/foxy/lib/librosidl_runtime_c.so
 controller_node: /opt/ros/foxy/lib/librcutils.so
 controller_node: /opt/ros/foxy/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0
 controller_node: CMakeFiles/controller_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable controller_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zgc/mr_ws/build/simple_controller/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable controller_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/controller_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -167,6 +167,6 @@ CMakeFiles/controller_node.dir/clean:
 .PHONY : CMakeFiles/controller_node.dir/clean
 
 CMakeFiles/controller_node.dir/depend:
-	cd /home/zgc/learnRos2/zgc_ws/build/simple_controller && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/learnRos2/zgc_ws/src/simple_controller /home/zgc/learnRos2/zgc_ws/src/simple_controller /home/zgc/learnRos2/zgc_ws/build/simple_controller /home/zgc/learnRos2/zgc_ws/build/simple_controller /home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/controller_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zgc/mr_ws/build/simple_controller && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/src/simple_controller /home/zgc/mr_ws/src/simple_controller /home/zgc/mr_ws/build/simple_controller /home/zgc/mr_ws/build/simple_controller /home/zgc/mr_ws/build/simple_controller/CMakeFiles/controller_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/controller_node.dir/depend
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/learnRos2/zgc_ws/src/Stage
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/Stage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zgc/learnRos2/zgc_ws/build/Stage
+CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/Stage
 
 # Utility rule file for uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/zgc/learnRos2/zgc_ws/build/Stage
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	/usr/bin/cmake -P /home/zgc/learnRos2/zgc_ws/build/Stage/cmake_uninstall.cmake
+	/usr/bin/cmake -P /home/zgc/mr_ws/build/Stage/cmake_uninstall.cmake
 
 uninstall: CMakeFiles/uninstall
 uninstall: CMakeFiles/uninstall.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/zgc/learnRos2/zgc_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/learnRos2/zgc_ws/src/Stage /home/zgc/learnRos2/zgc_ws/src/Stage /home/zgc/learnRos2/zgc_ws/build/Stage /home/zgc/learnRos2/zgc_ws/build/Stage /home/zgc/learnRos2/zgc_ws/build/Stage/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/Stage /home/zgc/mr_ws/Stage /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

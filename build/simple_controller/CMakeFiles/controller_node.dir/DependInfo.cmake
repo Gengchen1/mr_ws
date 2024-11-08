@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp" "/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/controller_node.dir/src/controller.cpp.o"
-  "/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp" "/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o"
+  "/home/zgc/mr_ws/src/simple_controller/src/controller.cpp" "/home/zgc/mr_ws/build/simple_controller/CMakeFiles/controller_node.dir/src/controller.cpp.o"
+  "/home/zgc/mr_ws/src/simple_controller/src/controller_node.cpp" "/home/zgc/mr_ws/build/simple_controller/CMakeFiles/controller_node.dir/src/controller_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,7 +18,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/zgc/learnRos2/zgc_ws/src/simple_controller/include/simple_controller"
+  "/home/zgc/mr_ws/src/simple_controller/include/simple_controller"
   "/opt/ros/foxy/include"
   )
 

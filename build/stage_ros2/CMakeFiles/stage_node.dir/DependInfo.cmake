@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zgc/learnRos2/zgc_ws/src/stage_ros2/src/camera.cpp" "/home/zgc/learnRos2/zgc_ws/build/stage_ros2/CMakeFiles/stage_node.dir/src/camera.cpp.o"
-  "/home/zgc/learnRos2/zgc_ws/src/stage_ros2/src/ranger.cpp" "/home/zgc/learnRos2/zgc_ws/build/stage_ros2/CMakeFiles/stage_node.dir/src/ranger.cpp.o"
-  "/home/zgc/learnRos2/zgc_ws/src/stage_ros2/src/stage_node.cpp" "/home/zgc/learnRos2/zgc_ws/build/stage_ros2/CMakeFiles/stage_node.dir/src/stage_node.cpp.o"
-  "/home/zgc/learnRos2/zgc_ws/src/stage_ros2/src/vehicle.cpp" "/home/zgc/learnRos2/zgc_ws/build/stage_ros2/CMakeFiles/stage_node.dir/src/vehicle.cpp.o"
+  "/home/zgc/mr_ws/stage_ros2/src/camera.cpp" "/home/zgc/mr_ws/build/stage_ros2/CMakeFiles/stage_node.dir/src/camera.cpp.o"
+  "/home/zgc/mr_ws/stage_ros2/src/ranger.cpp" "/home/zgc/mr_ws/build/stage_ros2/CMakeFiles/stage_node.dir/src/ranger.cpp.o"
+  "/home/zgc/mr_ws/stage_ros2/src/stage_node.cpp" "/home/zgc/mr_ws/build/stage_ros2/CMakeFiles/stage_node.dir/src/stage_node.cpp.o"
+  "/home/zgc/mr_ws/stage_ros2/src/vehicle.cpp" "/home/zgc/mr_ws/build/stage_ros2/CMakeFiles/stage_node.dir/src/vehicle.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -22,8 +22,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/zgc/learnRos2/zgc_ws/src/stage_ros2/./include"
-  "/home/zgc/learnRos2/zgc_ws/install/Stage/include/Stage-4.3"
+  "/home/zgc/mr_ws/stage_ros2/./include"
+  "/home/zgc/mr_ws/install/Stage/include/Stage-4.3"
   "/usr/lib/fltk"
   "/opt/ros/foxy/include"
   "/usr/include/eigen3"

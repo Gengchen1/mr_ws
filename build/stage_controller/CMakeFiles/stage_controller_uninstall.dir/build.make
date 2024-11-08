@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/learnRos2/zgc_ws/src/stage_controller
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/src/stage_controller
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zgc/learnRos2/zgc_ws/build/stage_controller
+CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/stage_controller
 
 # Utility rule file for stage_controller_uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/zgc/learnRos2/zgc_ws/build/stage_controller
 include CMakeFiles/stage_controller_uninstall.dir/progress.make
 
 CMakeFiles/stage_controller_uninstall:
-	/usr/bin/cmake -P /home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/zgc/mr_ws/build/stage_controller/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 stage_controller_uninstall: CMakeFiles/stage_controller_uninstall
 stage_controller_uninstall: CMakeFiles/stage_controller_uninstall.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/stage_controller_uninstall.dir/clean:
 .PHONY : CMakeFiles/stage_controller_uninstall.dir/clean
 
 CMakeFiles/stage_controller_uninstall.dir/depend:
-	cd /home/zgc/learnRos2/zgc_ws/build/stage_controller && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/learnRos2/zgc_ws/src/stage_controller /home/zgc/learnRos2/zgc_ws/src/stage_controller /home/zgc/learnRos2/zgc_ws/build/stage_controller /home/zgc/learnRos2/zgc_ws/build/stage_controller /home/zgc/learnRos2/zgc_ws/build/stage_controller/CMakeFiles/stage_controller_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zgc/mr_ws/build/stage_controller && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/src/stage_controller /home/zgc/mr_ws/src/stage_controller /home/zgc/mr_ws/build/stage_controller /home/zgc/mr_ws/build/stage_controller /home/zgc/mr_ws/build/stage_controller/CMakeFiles/stage_controller_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/stage_controller_uninstall.dir/depend
 

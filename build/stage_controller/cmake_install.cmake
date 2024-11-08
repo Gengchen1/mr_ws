@@ -1,8 +1,8 @@
-# Install script for directory: /home/zgc/learnRos2/zgc_ws/src/stage_controller
+# Install script for directory: /home/zgc/mr_ws/src/stage_controller
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/zgc/learnRos2/zgc_ws/install/stage_controller")
+  set(CMAKE_INSTALL_PREFIX "/home/zgc/mr_ws/install/stage_controller")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,7 +44,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/stage_controller/stage_controller"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/stage_controller" TYPE EXECUTABLE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/stage_controller")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/stage_controller" TYPE EXECUTABLE FILES "/home/zgc/mr_ws/build/stage_controller/stage_controller")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/stage_controller/stage_controller" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/stage_controller/stage_controller")
     file(RPATH_CHANGE
@@ -64,7 +64,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/stage_controller/stage_throttle"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/stage_controller" TYPE EXECUTABLE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/stage_throttle")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/stage_controller" TYPE EXECUTABLE FILES "/home/zgc/mr_ws/build/stage_controller/stage_throttle")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/stage_controller/stage_throttle" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/stage_controller/stage_throttle")
     file(RPATH_CHANGE
@@ -78,11 +78,11 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/stage_controller")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/stage_controller")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/stage_controller")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/stage_controller")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -90,7 +90,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller/environment" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_environment_hooks/ament_prefix_path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller/environment" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_environment_hooks/ament_prefix_path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -98,42 +98,42 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller/environment" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_environment_hooks/path.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller/environment" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_environment_hooks/path.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_environment_hooks/local_setup.bash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_environment_hooks/local_setup.bash")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_environment_hooks/local_setup.sh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_environment_hooks/local_setup.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_environment_hooks/local_setup.zsh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_environment_hooks/local_setup.zsh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_environment_hooks/local_setup.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_environment_hooks/local_setup.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_environment_hooks/package.dsv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_environment_hooks/package.dsv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_index/share/ament_index/resource_index/packages/stage_controller")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/zgc/mr_ws/build/stage_controller/ament_cmake_index/share/ament_index/resource_index/packages/stage_controller")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller/cmake" TYPE FILE FILES
-    "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_core/stage_controllerConfig.cmake"
-    "/home/zgc/learnRos2/zgc_ws/build/stage_controller/ament_cmake_core/stage_controllerConfig-version.cmake"
+    "/home/zgc/mr_ws/build/stage_controller/ament_cmake_core/stage_controllerConfig.cmake"
+    "/home/zgc/mr_ws/build/stage_controller/ament_cmake_core/stage_controllerConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/src/stage_controller/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_controller" TYPE FILE FILES "/home/zgc/mr_ws/src/stage_controller/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -144,5 +144,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/zgc/learnRos2/zgc_ws/build/stage_controller/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zgc/mr_ws/build/stage_controller/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

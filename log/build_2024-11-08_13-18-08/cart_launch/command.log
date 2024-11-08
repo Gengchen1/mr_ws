@@ -1,6 +1,0 @@
-Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/cart_launch -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/cart_launch
-Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/cart_launch -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/cart_launch
-Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/cart_launch -- -j24 -l24
-Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/cart_launch -- -j24 -l24
-Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/cart_launch
-Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/cart_launch

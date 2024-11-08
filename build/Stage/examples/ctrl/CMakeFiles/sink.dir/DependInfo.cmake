@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zgc/learnRos2/zgc_ws/src/Stage/examples/ctrl/sink.cc" "/home/zgc/learnRos2/zgc_ws/build/Stage/examples/ctrl/CMakeFiles/sink.dir/sink.cc.o"
+  "/home/zgc/mr_ws/Stage/examples/ctrl/sink.cc" "/home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/sink.dir/sink.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,15 +15,15 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/zgc/learnRos2/zgc_ws/src/Stage/."
-  "/home/zgc/learnRos2/zgc_ws/src/Stage/libstage"
-  "/home/zgc/learnRos2/zgc_ws/src/Stage/replace"
+  "/home/zgc/mr_ws/Stage/."
+  "/home/zgc/mr_ws/Stage/libstage"
+  "/home/zgc/mr_ws/Stage/replace"
   "/usr/lib/fltk"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/zgc/learnRos2/zgc_ws/build/Stage/libstage/CMakeFiles/stage.dir/DependInfo.cmake"
+  "/home/zgc/mr_ws/build/Stage/libstage/CMakeFiles/stage.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

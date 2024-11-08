@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zgc/learnRos2/zgc_ws/src/Stage/examples/ctrl/pioneer_flocking.cc
+/home/zgc/mr_ws/Stage/examples/ctrl/pioneer_flocking.cc
 stdio.h
 -
 stdlib.h
@@ -14,9 +14,9 @@ stdlib.h
 string.h
 -
 stage.hh
-/home/zgc/learnRos2/zgc_ws/src/Stage/examples/ctrl/stage.hh
+/home/zgc/mr_ws/Stage/examples/ctrl/stage.hh
 
-/home/zgc/learnRos2/zgc_ws/src/Stage/libstage/stage.hh
+/home/zgc/mr_ws/Stage/libstage/stage.hh
 assert.h
 -
 libgen.h

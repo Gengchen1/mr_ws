@@ -6,7 +6,7 @@ CXX_FLAGS =  -O2 -DNDEBUG -Wall  -fPIC
 
 CXX_DEFINES = -Dexpand_swarm_EXPORTS
 
-CXX_INCLUDES = -I/home/zgc/learnRos2/zgc_ws/src/Stage/. -I/home/zgc/learnRos2/zgc_ws/src/Stage/libstage -I/home/zgc/learnRos2/zgc_ws/src/Stage/replace -I/usr/lib/fltk 
+CXX_INCLUDES = -I/home/zgc/mr_ws/Stage/. -I/home/zgc/mr_ws/Stage/libstage -I/home/zgc/mr_ws/Stage/replace -I/usr/lib/fltk 
 
 # Custom flags: worlds/benchmark/CMakeFiles/expand_swarm.dir/expand_swarm.cc.o_FLAGS = 
 

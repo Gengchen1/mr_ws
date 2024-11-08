@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zgc/learnRos2/zgc_ws/install/Stage/include/Stage-4.3/stage.hh
+/home/zgc/mr_ws/install/Stage/include/Stage-4.3/stage.hh
 assert.h
 -
 libgen.h
@@ -62,7 +62,7 @@ OpenGL/glu.h
 GL/glu.h
 -
 
-/home/zgc/learnRos2/zgc_ws/src/stage_ros2/include/stage_ros2/stage_node.hpp
+/home/zgc/mr_ws/stage_ros2/include/stage_ros2/stage_node.hpp
 stdio.h
 -
 stdlib.h
@@ -108,17 +108,17 @@ tf2/transform_datatypes.h
 tf2_geometry_msgs/tf2_geometry_msgs.h
 -
 stage_ros2/visibility.h
-/home/zgc/learnRos2/zgc_ws/src/stage_ros2/include/stage_ros2/stage_ros2/visibility.h
+/home/zgc/mr_ws/stage_ros2/include/stage_ros2/stage_ros2/visibility.h
 
-/home/zgc/learnRos2/zgc_ws/src/stage_ros2/include/stage_ros2/visibility.h
+/home/zgc/mr_ws/stage_ros2/include/stage_ros2/visibility.h
 
-/home/zgc/learnRos2/zgc_ws/src/stage_ros2/src/main.cpp
+/home/zgc/mr_ws/stage_ros2/src/main.cpp
 memory
 -
 stage_ros2/stage_node.hpp
-/home/zgc/learnRos2/zgc_ws/src/stage_ros2/src/stage_ros2/stage_node.hpp
+/home/zgc/mr_ws/stage_ros2/src/stage_ros2/stage_node.hpp
 rclcpp/rclcpp.hpp
-/home/zgc/learnRos2/zgc_ws/src/stage_ros2/src/rclcpp/rclcpp.hpp
+/home/zgc/mr_ws/stage_ros2/src/rclcpp/rclcpp.hpp
 
 /opt/ros/foxy/include/builtin_interfaces/msg/detail/duration__builder.hpp
 builtin_interfaces/msg/detail/duration__struct.hpp

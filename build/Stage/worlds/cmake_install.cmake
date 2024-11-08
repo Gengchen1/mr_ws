@@ -1,8 +1,8 @@
-# Install script for directory: /home/zgc/learnRos2/zgc_ws/src/Stage/worlds
+# Install script for directory: /home/zgc/mr_ws/Stage/worlds
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/zgc/learnRos2/zgc_ws/install/Stage")
+  set(CMAKE_INSTALL_PREFIX "/home/zgc/mr_ws/install/Stage")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,64 +39,64 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage/worlds" TYPE FILE FILES
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/amcl-sonar.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/autolab.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/camera.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/everything.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/lsp_test.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/mbicp.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/nd.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/roomba.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/simple.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/test.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/uoa_robotics_lab.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/vfh.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/wavefront-remote.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/wavefront.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/wifi.cfg"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/SFU.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/autolab.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/camera.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/circuit.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/everything.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/fasr.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/fasr2.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/fasr_plan.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/large.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/lsp_test.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/mbicp.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/pioneer_flocking.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/pioneer_follow.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/pioneer_walle.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/roomba.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/sensor_noise_demo.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/sensor_noise_module_demo.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/simple.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/uoa_robotics_lab.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/wifi.world"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/beacons.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/chatterbox.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/hokuyo.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/irobot.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/map.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/objects.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/pantilt.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/pioneer.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/sick.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/ubot.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/uoa_robotics_lab_models.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/walle.inc"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/cfggen.sh"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/test.sh"
-    "/home/zgc/learnRos2/zgc_ws/src/Stage/worlds/worldgen.sh"
+    "/home/zgc/mr_ws/Stage/worlds/amcl-sonar.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/autolab.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/camera.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/everything.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/lsp_test.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/mbicp.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/nd.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/roomba.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/simple.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/test.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/uoa_robotics_lab.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/vfh.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/wavefront-remote.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/wavefront.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/wifi.cfg"
+    "/home/zgc/mr_ws/Stage/worlds/SFU.world"
+    "/home/zgc/mr_ws/Stage/worlds/autolab.world"
+    "/home/zgc/mr_ws/Stage/worlds/camera.world"
+    "/home/zgc/mr_ws/Stage/worlds/circuit.world"
+    "/home/zgc/mr_ws/Stage/worlds/everything.world"
+    "/home/zgc/mr_ws/Stage/worlds/fasr.world"
+    "/home/zgc/mr_ws/Stage/worlds/fasr2.world"
+    "/home/zgc/mr_ws/Stage/worlds/fasr_plan.world"
+    "/home/zgc/mr_ws/Stage/worlds/large.world"
+    "/home/zgc/mr_ws/Stage/worlds/lsp_test.world"
+    "/home/zgc/mr_ws/Stage/worlds/mbicp.world"
+    "/home/zgc/mr_ws/Stage/worlds/pioneer_flocking.world"
+    "/home/zgc/mr_ws/Stage/worlds/pioneer_follow.world"
+    "/home/zgc/mr_ws/Stage/worlds/pioneer_walle.world"
+    "/home/zgc/mr_ws/Stage/worlds/roomba.world"
+    "/home/zgc/mr_ws/Stage/worlds/sensor_noise_demo.world"
+    "/home/zgc/mr_ws/Stage/worlds/sensor_noise_module_demo.world"
+    "/home/zgc/mr_ws/Stage/worlds/simple.world"
+    "/home/zgc/mr_ws/Stage/worlds/uoa_robotics_lab.world"
+    "/home/zgc/mr_ws/Stage/worlds/wifi.world"
+    "/home/zgc/mr_ws/Stage/worlds/beacons.inc"
+    "/home/zgc/mr_ws/Stage/worlds/chatterbox.inc"
+    "/home/zgc/mr_ws/Stage/worlds/hokuyo.inc"
+    "/home/zgc/mr_ws/Stage/worlds/irobot.inc"
+    "/home/zgc/mr_ws/Stage/worlds/map.inc"
+    "/home/zgc/mr_ws/Stage/worlds/objects.inc"
+    "/home/zgc/mr_ws/Stage/worlds/pantilt.inc"
+    "/home/zgc/mr_ws/Stage/worlds/pioneer.inc"
+    "/home/zgc/mr_ws/Stage/worlds/sick.inc"
+    "/home/zgc/mr_ws/Stage/worlds/ubot.inc"
+    "/home/zgc/mr_ws/Stage/worlds/uoa_robotics_lab_models.inc"
+    "/home/zgc/mr_ws/Stage/worlds/walle.inc"
+    "/home/zgc/mr_ws/Stage/worlds/cfggen.sh"
+    "/home/zgc/mr_ws/Stage/worlds/test.sh"
+    "/home/zgc/mr_ws/Stage/worlds/worldgen.sh"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/zgc/learnRos2/zgc_ws/build/Stage/worlds/benchmark/cmake_install.cmake")
-  include("/home/zgc/learnRos2/zgc_ws/build/Stage/worlds/bitmaps/cmake_install.cmake")
-  include("/home/zgc/learnRos2/zgc_ws/build/Stage/worlds/wifi/cmake_install.cmake")
+  include("/home/zgc/mr_ws/build/Stage/worlds/benchmark/cmake_install.cmake")
+  include("/home/zgc/mr_ws/build/Stage/worlds/bitmaps/cmake_install.cmake")
+  include("/home/zgc/mr_ws/build/Stage/worlds/wifi/cmake_install.cmake")
 
 endif()
 

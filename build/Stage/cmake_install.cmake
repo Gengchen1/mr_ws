@@ -1,8 +1,8 @@
-# Install script for directory: /home/zgc/learnRos2/zgc_ws/src/Stage
+# Install script for directory: /home/zgc/mr_ws/Stage
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/zgc/learnRos2/zgc_ws/install/Stage")
+  set(CMAKE_INSTALL_PREFIX "/home/zgc/mr_ws/install/Stage")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,22 +38,22 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zgc/learnRos2/zgc_ws/build/Stage/stage.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zgc/mr_ws/build/Stage/stage.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/Stage" TYPE FILE FILES
-    "/home/zgc/learnRos2/zgc_ws/build/Stage/stage-config.cmake"
-    "/home/zgc/learnRos2/zgc_ws/build/Stage/stage-config-version.cmake"
+    "/home/zgc/mr_ws/build/Stage/stage-config.cmake"
+    "/home/zgc/mr_ws/build/Stage/stage-config-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/zgc/learnRos2/zgc_ws/build/Stage/libstage/cmake_install.cmake")
-  include("/home/zgc/learnRos2/zgc_ws/build/Stage/examples/cmake_install.cmake")
-  include("/home/zgc/learnRos2/zgc_ws/build/Stage/assets/cmake_install.cmake")
-  include("/home/zgc/learnRos2/zgc_ws/build/Stage/worlds/cmake_install.cmake")
+  include("/home/zgc/mr_ws/build/Stage/libstage/cmake_install.cmake")
+  include("/home/zgc/mr_ws/build/Stage/examples/cmake_install.cmake")
+  include("/home/zgc/mr_ws/build/Stage/assets/cmake_install.cmake")
+  include("/home/zgc/mr_ws/build/Stage/worlds/cmake_install.cmake")
 
 endif()
 
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/zgc/learnRos2/zgc_ws/build/Stage/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/zgc/mr_ws/build/Stage/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zgc/learnRos2/zgc_ws/src/simple_controller/include/simple_controller/controller.h
+/home/zgc/mr_ws/src/simple_controller/include/simple_controller/controller.h
 rclcpp/rclcpp.hpp
 -
 geometry_msgs/msg/pose_stamped.hpp
@@ -22,17 +22,17 @@ list
 memory
 -
 trajectory_segment.h
-/home/zgc/learnRos2/zgc_ws/src/simple_controller/include/simple_controller/trajectory_segment.h
+/home/zgc/mr_ws/src/simple_controller/include/simple_controller/trajectory_segment.h
 
-/home/zgc/learnRos2/zgc_ws/src/simple_controller/include/simple_controller/trajectory_segment.h
+/home/zgc/mr_ws/src/simple_controller/include/simple_controller/trajectory_segment.h
 tf2/LinearMath/Vector3.h
 -
 angles/angles.h
 -
 
-/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp
+/home/zgc/mr_ws/src/simple_controller/src/controller.cpp
 controller.h
-/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.h
+/home/zgc/mr_ws/src/simple_controller/src/controller.h
 rclcpp/rclcpp.hpp
 -
 std_msgs/msg/float64.hpp
@@ -48,13 +48,13 @@ tf2/utils.h
 tf2_geometry_msgs/tf2_geometry_msgs.h
 -
 
-/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp
+/home/zgc/mr_ws/src/simple_controller/src/controller_node.cpp
 rclcpp/rclcpp.hpp
 -
 nav_msgs/msg/odometry.hpp
 -
 controller.h
-/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.h
+/home/zgc/mr_ws/src/simple_controller/src/controller.h
 
 /opt/ros/foxy/include/angles/angles.h
 algorithm

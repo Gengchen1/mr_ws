@@ -1,8 +1,8 @@
-IF(NOT EXISTS "/home/zgc/learnRos2/zgc_ws/build/Stage/install_manifest.txt")
-  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/home/zgc/learnRos2/zgc_ws/build/Stage/install_manifest.txt\"")
-ENDIF(NOT EXISTS "/home/zgc/learnRos2/zgc_ws/build/Stage/install_manifest.txt")
+IF(NOT EXISTS "/home/zgc/mr_ws/build/Stage/install_manifest.txt")
+  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/home/zgc/mr_ws/build/Stage/install_manifest.txt\"")
+ENDIF(NOT EXISTS "/home/zgc/mr_ws/build/Stage/install_manifest.txt")
 
-FILE(READ "/home/zgc/learnRos2/zgc_ws/build/Stage/install_manifest.txt" files)
+FILE(READ "/home/zgc/mr_ws/build/Stage/install_manifest.txt" files)
 STRING(REGEX REPLACE "\n" ";" files "${files}")
 FOREACH(file ${files})
   MESSAGE(STATUS "Uninstalling \"$ENV{DESTDIR}${file}\"")

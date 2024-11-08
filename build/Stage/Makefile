@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/learnRos2/zgc_ws/src/Stage
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/Stage
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zgc/learnRos2/zgc_ws/build/Stage
+CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/Stage
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -105,7 +105,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/zgc/learnRos2/zgc_ws/build/Stage/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/zgc/mr_ws/build/Stage/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -159,9 +159,9 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zgc/learnRos2/zgc_ws/build/Stage/CMakeFiles /home/zgc/learnRos2/zgc_ws/build/Stage/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zgc/mr_ws/build/Stage/CMakeFiles /home/zgc/mr_ws/build/Stage/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zgc/learnRos2/zgc_ws/build/Stage/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zgc/mr_ws/build/Stage/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
