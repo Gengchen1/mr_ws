@@ -1,4 +1,4 @@
-# Install script for directory: /home/zgc/mr_ws/Stage/worlds/benchmark
+# Install script for directory: /home/zgc/mr_ws/src/Stage/worlds/benchmark
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

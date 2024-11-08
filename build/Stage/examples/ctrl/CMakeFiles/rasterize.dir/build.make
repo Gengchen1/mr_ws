@@ -43,7 +43,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/mr_ws/Stage
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/src/Stage
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/Stage
@@ -58,17 +58,17 @@ include examples/ctrl/CMakeFiles/rasterize.dir/progress.make
 include examples/ctrl/CMakeFiles/rasterize.dir/flags.make
 
 examples/ctrl/CMakeFiles/rasterize.dir/rasterize.cc.o: examples/ctrl/CMakeFiles/rasterize.dir/flags.make
-examples/ctrl/CMakeFiles/rasterize.dir/rasterize.cc.o: /home/zgc/mr_ws/Stage/examples/ctrl/rasterize.cc
+examples/ctrl/CMakeFiles/rasterize.dir/rasterize.cc.o: /home/zgc/mr_ws/src/Stage/examples/ctrl/rasterize.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/mr_ws/build/Stage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/ctrl/CMakeFiles/rasterize.dir/rasterize.cc.o"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rasterize.dir/rasterize.cc.o -c /home/zgc/mr_ws/Stage/examples/ctrl/rasterize.cc
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rasterize.dir/rasterize.cc.o -c /home/zgc/mr_ws/src/Stage/examples/ctrl/rasterize.cc
 
 examples/ctrl/CMakeFiles/rasterize.dir/rasterize.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rasterize.dir/rasterize.cc.i"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/Stage/examples/ctrl/rasterize.cc > CMakeFiles/rasterize.dir/rasterize.cc.i
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/src/Stage/examples/ctrl/rasterize.cc > CMakeFiles/rasterize.dir/rasterize.cc.i
 
 examples/ctrl/CMakeFiles/rasterize.dir/rasterize.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rasterize.dir/rasterize.cc.s"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/Stage/examples/ctrl/rasterize.cc -o CMakeFiles/rasterize.dir/rasterize.cc.s
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/src/Stage/examples/ctrl/rasterize.cc -o CMakeFiles/rasterize.dir/rasterize.cc.s
 
 # Object files for target rasterize
 rasterize_OBJECTS = \
@@ -80,14 +80,13 @@ rasterize_EXTERNAL_OBJECTS =
 examples/ctrl/rasterize.so: examples/ctrl/CMakeFiles/rasterize.dir/rasterize.cc.o
 examples/ctrl/rasterize.so: examples/ctrl/CMakeFiles/rasterize.dir/build.make
 examples/ctrl/rasterize.so: libstage/libstage.so.4.3.0
-examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libGL.so
+examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libGLX.so
 examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libltdl.so
 examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libjpeg.so
 examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libpng.so
 examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libz.so
-examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libGL.so
-examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libfltk_images.so
 examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libfltk_forms.so
 examples/ctrl/rasterize.so: /usr/lib/x86_64-linux-gnu/libfltk_gl.so
@@ -111,6 +110,6 @@ examples/ctrl/CMakeFiles/rasterize.dir/clean:
 .PHONY : examples/ctrl/CMakeFiles/rasterize.dir/clean
 
 examples/ctrl/CMakeFiles/rasterize.dir/depend:
-	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/Stage /home/zgc/mr_ws/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/rasterize.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/src/Stage /home/zgc/mr_ws/src/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/rasterize.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/ctrl/CMakeFiles/rasterize.dir/depend
 

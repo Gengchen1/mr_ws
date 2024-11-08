@@ -1,4 +1,4 @@
-# Install script for directory: /home/zgc/mr_ws/stage_ros2
+# Install script for directory: /home/zgc/mr_ws/src/stage_ros2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -47,9 +47,9 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_ros2/" TYPE DIRECTORY FILES
-    "/home/zgc/mr_ws/stage_ros2/launch"
-    "/home/zgc/mr_ws/stage_ros2/world"
-    "/home/zgc/mr_ws/stage_ros2/config"
+    "/home/zgc/mr_ws/src/stage_ros2/launch"
+    "/home/zgc/mr_ws/src/stage_ros2/world"
+    "/home/zgc/mr_ws/src/stage_ros2/config"
     )
 endif()
 
@@ -152,7 +152,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_ros2" TYPE FILE FILES "/home/zgc/mr_ws/stage_ros2/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage_ros2" TYPE FILE FILES "/home/zgc/mr_ws/src/stage_ros2/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

@@ -43,7 +43,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/mr_ws/stage_ros2
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/src/stage_ros2
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/stage_ros2
@@ -58,17 +58,17 @@ include CMakeFiles/stage_ros2.dir/progress.make
 include CMakeFiles/stage_ros2.dir/flags.make
 
 CMakeFiles/stage_ros2.dir/src/main.cpp.o: CMakeFiles/stage_ros2.dir/flags.make
-CMakeFiles/stage_ros2.dir/src/main.cpp.o: /home/zgc/mr_ws/stage_ros2/src/main.cpp
+CMakeFiles/stage_ros2.dir/src/main.cpp.o: /home/zgc/mr_ws/src/stage_ros2/src/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/mr_ws/build/stage_ros2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stage_ros2.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stage_ros2.dir/src/main.cpp.o -c /home/zgc/mr_ws/stage_ros2/src/main.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/stage_ros2.dir/src/main.cpp.o -c /home/zgc/mr_ws/src/stage_ros2/src/main.cpp
 
 CMakeFiles/stage_ros2.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/stage_ros2.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/stage_ros2/src/main.cpp > CMakeFiles/stage_ros2.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/src/stage_ros2/src/main.cpp > CMakeFiles/stage_ros2.dir/src/main.cpp.i
 
 CMakeFiles/stage_ros2.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/stage_ros2.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/stage_ros2/src/main.cpp -o CMakeFiles/stage_ros2.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/src/stage_ros2/src/main.cpp -o CMakeFiles/stage_ros2.dir/src/main.cpp.s
 
 # Object files for target stage_ros2
 stage_ros2_OBJECTS = \
@@ -81,7 +81,6 @@ stage_ros2: CMakeFiles/stage_ros2.dir/src/main.cpp.o
 stage_ros2: CMakeFiles/stage_ros2.dir/build.make
 stage_ros2: libstage_node.so
 stage_ros2: /home/zgc/mr_ws/install/Stage/lib/cmake/Stage/../../../lib/libstage.so.4.3.0
-stage_ros2: /usr/lib/x86_64-linux-gnu/libGL.so
 stage_ros2: /usr/lib/x86_64-linux-gnu/libSM.so
 stage_ros2: /usr/lib/x86_64-linux-gnu/libICE.so
 stage_ros2: /usr/lib/x86_64-linux-gnu/libX11.so
@@ -199,6 +198,6 @@ CMakeFiles/stage_ros2.dir/clean:
 .PHONY : CMakeFiles/stage_ros2.dir/clean
 
 CMakeFiles/stage_ros2.dir/depend:
-	cd /home/zgc/mr_ws/build/stage_ros2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/stage_ros2 /home/zgc/mr_ws/stage_ros2 /home/zgc/mr_ws/build/stage_ros2 /home/zgc/mr_ws/build/stage_ros2 /home/zgc/mr_ws/build/stage_ros2/CMakeFiles/stage_ros2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zgc/mr_ws/build/stage_ros2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/src/stage_ros2 /home/zgc/mr_ws/src/stage_ros2 /home/zgc/mr_ws/build/stage_ros2 /home/zgc/mr_ws/build/stage_ros2 /home/zgc/mr_ws/build/stage_ros2/CMakeFiles/stage_ros2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/stage_ros2.dir/depend
 

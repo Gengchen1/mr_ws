@@ -1,4 +1,4 @@
-# Install script for directory: /home/zgc/mr_ws/Stage/assets
+# Install script for directory: /home/zgc/mr_ws/src/Stage/assets
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,22 +39,22 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage/assets" TYPE FILE FILES
-    "/home/zgc/mr_ws/Stage/assets/blue.png"
-    "/home/zgc/mr_ws/Stage/assets/death.png"
-    "/home/zgc/mr_ws/Stage/assets/green.png"
-    "/home/zgc/mr_ws/Stage/assets/logo.png"
-    "/home/zgc/mr_ws/Stage/assets/mains.png"
-    "/home/zgc/mr_ws/Stage/assets/mainspower.png"
-    "/home/zgc/mr_ws/Stage/assets/question_mark.png"
-    "/home/zgc/mr_ws/Stage/assets/red.png"
-    "/home/zgc/mr_ws/Stage/assets/stagelogo.png"
-    "/home/zgc/mr_ws/Stage/assets/stall-old.png"
-    "/home/zgc/mr_ws/Stage/assets/stall.png"
-    "/home/zgc/mr_ws/Stage/assets/rgb.txt"
+    "/home/zgc/mr_ws/src/Stage/assets/blue.png"
+    "/home/zgc/mr_ws/src/Stage/assets/death.png"
+    "/home/zgc/mr_ws/src/Stage/assets/green.png"
+    "/home/zgc/mr_ws/src/Stage/assets/logo.png"
+    "/home/zgc/mr_ws/src/Stage/assets/mains.png"
+    "/home/zgc/mr_ws/src/Stage/assets/mainspower.png"
+    "/home/zgc/mr_ws/src/Stage/assets/question_mark.png"
+    "/home/zgc/mr_ws/src/Stage/assets/red.png"
+    "/home/zgc/mr_ws/src/Stage/assets/stagelogo.png"
+    "/home/zgc/mr_ws/src/Stage/assets/stall-old.png"
+    "/home/zgc/mr_ws/src/Stage/assets/stall.png"
+    "/home/zgc/mr_ws/src/Stage/assets/rgb.txt"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage" TYPE FILE FILES "/home/zgc/mr_ws/Stage/assets/rgb.txt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage" TYPE FILE FILES "/home/zgc/mr_ws/src/Stage/assets/rgb.txt")
 endif()
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/zgc/mr_ws/Stage/examples
+# Install script for directory: /home/zgc/mr_ws/src/Stage/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

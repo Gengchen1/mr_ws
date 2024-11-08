@@ -6,13 +6,13 @@ from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
-    # Объявление аргументов
+    # Declare arguments
     world = LaunchConfiguration('world')
     control_velocity = LaunchConfiguration('control_velocity')
     velocity_noise = LaunchConfiguration('velocity_noise')
 
     return LaunchDescription([
-        # Аргументы, аналогичные ROS 1
+        # Declare launch arguments
         DeclareLaunchArgument(
             'world',
             default_value=PathJoinSubstitution([FindPackageShare('cart_launch'), 'stage_worlds', 'empty.world'])
@@ -20,21 +20,23 @@ def generate_launch_description():
         DeclareLaunchArgument('control_velocity', default_value='true'),
         DeclareLaunchArgument('velocity_noise', default_value='0.0'),
 
-        # Нода модели stage_ros с remap
+        # # Set /use_sim_time parameter
+        # SetParameter(name='/use_sim_time', value=True),
+
+        # Node for stage_ros2 with remap
         Node(
             package='stage_ros2',
             executable='stage_ros2',
             name='model',
             output='screen',
-            # arguments=[world],
             parameters=[{'world_file': world}],
-            remappings=[
-                ('/odom', '/robot/odom'),
-                ('/base_pose_ground_truth', '/robot/base_pose_ground_truth')
-            ]
+            # remappings=[
+            #     ('/odom', '/robot/odom'),
+            #     ('/ground_truth', '/robot/base_pose_ground_truth')
+            # ]
         ),
 
-        # Условная нода контроллера
+        # Conditional node for stage_controller
         Node(
             package='stage_controller',
             executable='stage_controller',
@@ -47,10 +49,14 @@ def generate_launch_description():
                 {'max_steering_rate': 1.0},
                 {'max_velocity': 18.0},
                 {'max_acc': 2.0}
-            ]
+            ],
+            # remappings=[
+            #     ('steering', '/robot/steering'),
+            #     ('velocity', '/robot/veloctity')
+            # ]
         ),
 
-        # Условная нода stage_throttle с параметрами и remap
+        # Conditional node for stage_throttle with parameters and remap
         Node(
             package='stage_controller',
             executable='stage_throttle',

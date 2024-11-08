@@ -1,4 +1,4 @@
-# Install script for directory: /home/zgc/mr_ws/Stage/worlds/wifi
+# Install script for directory: /home/zgc/mr_ws/src/Stage/worlds/wifi
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,15 +39,15 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/stage/worlds/wifi" TYPE FILE FILES
-    "/home/zgc/mr_ws/Stage/worlds/wifi/commando.world"
-    "/home/zgc/mr_ws/Stage/worlds/wifi/hosp_wifi.world"
-    "/home/zgc/mr_ws/Stage/worlds/wifi/hosp_wifi_5.world"
-    "/home/zgc/mr_ws/Stage/worlds/wifi/wifi.world"
-    "/home/zgc/mr_ws/Stage/worlds/wifi/wifi_itu.world"
-    "/home/zgc/mr_ws/Stage/worlds/wifi/wifi_logdistance.world"
-    "/home/zgc/mr_ws/Stage/worlds/wifi/wifi_ray.world"
-    "/home/zgc/mr_ws/Stage/worlds/wifi/wifi_simple.world"
-    "/home/zgc/mr_ws/Stage/worlds/wifi/map.inc"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/commando.world"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/hosp_wifi.world"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/hosp_wifi_5.world"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/wifi.world"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/wifi_itu.world"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/wifi_logdistance.world"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/wifi_ray.world"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/wifi_simple.world"
+    "/home/zgc/mr_ws/src/Stage/worlds/wifi/map.inc"
     )
 endif()
 

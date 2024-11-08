@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/zgc/mr_ws/Stage/libstage/stage.hh
+/home/zgc/mr_ws/src/Stage/libstage/stage.hh
 assert.h
 -
 libgen.h
@@ -62,7 +62,7 @@ OpenGL/glu.h
 GL/glu.h
 -
 
-/home/zgc/mr_ws/Stage/worlds/benchmark/expand_swarm.cc
+/home/zgc/mr_ws/src/Stage/worlds/benchmark/expand_swarm.cc
 stdio.h
 -
 stdlib.h
@@ -70,5 +70,5 @@ stdlib.h
 string.h
 -
 stage.hh
-/home/zgc/mr_ws/Stage/worlds/benchmark/stage.hh
+/home/zgc/mr_ws/src/Stage/worlds/benchmark/stage.hh
 

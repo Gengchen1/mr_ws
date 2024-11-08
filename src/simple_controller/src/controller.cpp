@@ -8,12 +8,13 @@
 #include "controller.h"
 
 #include <rclcpp/rclcpp.hpp>
-#include <std_msgs/msg/float64.hpp>
+#include <std_msgs/msg/float32.hpp>  // 修改为 Float32
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <sensor_msgs/msg/point_cloud.hpp>
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2/utils.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include <angles/angles.h>  // 添加缺失的头文件
 
 namespace simple_controller {
 
@@ -52,7 +53,6 @@ void Controller::on_path(const std::shared_ptr<nav_msgs::msg::Path> path) {
 // 获取相对于当前点最近位置的点索引
 std::size_t Controller::get_nearest_path_pose_index(int start_index, std::size_t search_len) {
   double nearest_distance = 1e10; // 1x10的10次方
-  std::size_t index = start_index;
   std::size_t nearest_index;
   geometry_msgs::msg::Pose nearest_pose;
   // 遍历从起始点到指定长度内的所有点
@@ -104,16 +104,16 @@ std::size_t Controller::cal_target_index() {
   // 预测前方一小段距离
   double l_d = lam * current_linear_velocity + c;
   // 
-  while (l_d > m_error && (nearest_point_index + 1) < static_cast<int>(path->poses.size())) {
+  while (l_d > m_error && (nearest_point_index + 1) < path->poses.size()) {
     // 获取下一个的位姿和朝向角度
     const auto &nearest_pose_next = path->poses[nearest_point_index + 1].pose;
     const auto &nearest_pose_angle_next = tf2::getYaw(nearest_pose_next.orientation);
 
-    // 计算机器人当前位置与下一个点位置的差值
+    // 计��机器人当前位置与下一个点位置的差值
     double dx_next = robot_x - nearest_pose_next.position.x;
     double dy_next = robot_y - nearest_pose_next.position.y;
 
-    // 计算下一个点的误差
+    // 计���������下一个点的误差
     double m_error_next = abs(-dx_next * sin(nearest_pose_angle_next) + dy_next * cos(nearest_pose_angle_next));
     // 更新误差和最近索引
     m_error = m_error_next;
@@ -127,7 +127,7 @@ void Controller::on_timer() {
   if (std::abs(current_linear_velocity) < 0.01) {
     return;  // 如果速度小于0.01,接近停止，就不再更新状态
   }
-  // 更新当前机器人位姿
+  // 更新当前机器���位姿
   update_robot_pose((this->now() - robot_time).seconds());
   // 获取最近目标点
   nearest_point_index = cal_target_index();
@@ -142,14 +142,14 @@ void Controller::on_timer() {
   RCLCPP_INFO(this->get_logger(), "r_error_next %lf", error);
 
   double l_d = lam * current_linear_velocity + c;
-  // 当前角和目标角的差值
+  // 当前角��目��角��差��
   double base2Nearest_pose_angle = (nearest_pose_angle - robot_theta);
   // ??? 
   double angular_m_cmd = atan2(2 * 1.88 * sin(base2Nearest_pose_angle), l_d);
   RCLCPP_INFO(this->get_logger(), "angular %lf", angular_m_cmd);
   // 曲率
   double curvature = angular_m_cmd / current_linear_velocity;
-  std_msgs::msg::Float64 cmd;
+  std_msgs::msg::Float32 cmd;  // 修改为 Float32
   // 确保不超过最大曲率
   cmd.data = clip<double>(curvature, max_curvature);
   // 发布移动控制命令
@@ -165,9 +165,8 @@ void Controller::on_pose(const nav_msgs::msg::Odometry::SharedPtr odom)
 {
   robot_x = odom->pose.pose.position.x;
   robot_y = odom->pose.pose.position.y;
-  // 机器人的朝向角,机器人在x-y平面上，其朝向可以看作是绕z轴的旋转
-  robot_theta = 2*atan2(odom->pose.pose.orientation.z,
-                        odom->pose.pose.orientation.w);
+  // 使用 tf2::getYaw() 获取机器人的朝向角
+  robot_theta = tf2::getYaw(odom->pose.pose.orientation);
 
   // 物理环境ID
   world_frame_id = odom->header.frame_id;
@@ -184,7 +183,7 @@ void Controller::on_odo(nav_msgs::msg::Odometry::SharedPtr odom) {
 
 // 发布错误信息
 void Controller::publish_error(double error) {
-  std_msgs::msg::Float64 err_msg;
+  std_msgs::msg::Float32 err_msg;  // 修改为 Float32
   err_msg.data = error;
   err_pub->publish(err_msg);
 }
@@ -193,7 +192,7 @@ void Controller::publish_error(double error) {
 double Controller::cross_track_error() {
   double error = 0.0;
   // 计算车辆到轨迹圆边缘的横向偏差，横向偏差为0，代表恰好在轨迹上
-  // 横向偏差为负，代表在轨迹内，横向偏差为正，代表在轨迹外
+  // 横向偏差为负，代表在轨��内，横向偏差为正，代表在轨迹外
   if (robot_y < radius) {
     double rx = robot_x;
     double ry = robot_y - radius;
@@ -234,11 +233,11 @@ void Controller::reset(double p, double d, double i)
 
 // 根据机器人当前轨迹创建并发布一条路径
 nav_msgs::msg::Path::SharedPtr Controller::create_path() const {
-  nav_msgs::msg::Path::SharedPtr path; // 创建路径消息对象
+  // 初始化 path
+  nav_msgs::msg::Path::SharedPtr path = std::make_shared<nav_msgs::msg::Path>(); // 创建路径消息对象
   path->header.frame_id = "odom"; // 设置路径的坐标系
   path->header.stamp = robot_time; // 设置路径的时间戳
   auto segment_it = trajectory.begin(); // 获取轨迹段的迭代器
-  double previous_segment_left = 0.0; // 初始化前一个轨迹段的剩余长度
   std::size_t points_added = 0; // 初始化已添加的点数
   double point_length = 0.0; // 初始化点的长度
 
@@ -272,7 +271,7 @@ geometry_msgs::msg::Quaternion Controller::createQuaternionMsgFromYaw(const doub
  *\ 简介 构造函数
  * 从ns加载参数
  * 比例、微分、积分 -pid 因子
- * max_antiwindup_error - 最大抗积分饱和
+ * max_antiwindup_error - 最大抗积��饱和
  * 轨迹由两条线连接的两个圆段组成
  * 第一个圆心为 (0, radius)，第二个圆心为 (0, cy)
  * radius -圆形零件的半径
@@ -283,7 +282,7 @@ geometry_msgs::msg::Quaternion Controller::createQuaternionMsgFromYaw(const doub
  */
 Controller::Controller(const std::string& ns)
    : Node("controller_" + ns),
-  // 声明PID三个参数的名字和默认值
+  // 声明PID三个参数的名字和���认值
   p_factor(this->declare_parameter("proportional", 1.0)),
   i_factor(this->declare_parameter("intergral", 0.0)),
   d_factor(this->declare_parameter("differential", 0.0)),
@@ -297,44 +296,50 @@ Controller::Controller(const std::string& ns)
   traj_length(this->declare_parameter("traj_length", 5.0))
 {
   pose_sub = this->create_subscription<nav_msgs::msg::Odometry>(
-    "groud_truth", 1, std::bind(&Controller::on_pose, this, std::placeholders::_1));
+    "ground_truth", 1, std::bind(&Controller::on_pose, this, std::placeholders::_1));
   odo_sub = this->create_subscription<nav_msgs::msg::Odometry>(
     "odom", 1, std::bind(&Controller::on_odo, this, std::placeholders::_1));
    path_sub = this->create_subscription<nav_msgs::msg::Path>(
     "path", 1, std::bind(&Controller::on_path, this, std::placeholders::_1));
-  // 创建一个墙上定时器(以实际时间为准),时间间隔设置为0.1秒，每0.1秒调用一次回调函数
+  // 创建一个墙上定时器(以实际时间为准),时间间隔设置为0.1秒，每0.1秒调用���次回调函数
   timer = this->create_wall_timer(
     std::chrono::duration<double>(this->declare_parameter("timer_period", 0.1)),
     std::bind(&Controller::on_timer, this));
-  err_pub = this->create_publisher<std_msgs::msg::Float64>("error", 10);
-  steer_pub = this->create_publisher<std_msgs::msg::Float64>("steering", 10);
+  err_pub = this->create_publisher<std_msgs::msg::Float32>("error", 10);  // 修改为 Float32
+  steer_pub = this->create_publisher<std_msgs::msg::Float32>("steering", 10);  // 修改为 Float32
   path_pub = this->create_publisher<nav_msgs::msg::Path>("controller_path", 1);
 
-  // 顺时针轨迹, 但原注释写的是逆时针? cy 是第二个圆心的y轴坐标
-  // 曲率，起始点坐标 x, y,  起始点切向量 vx, vy, 轨迹段长度
+  // 顺时针轨迹, 但��注释写的是逆时针? cy 是第二个圆心的y轴坐标
+  // 曲率，起始点坐标 x, y,  起始点切向��� vx, vy, 轨迹段长度
   // 前1/4个圆
   trajectory.emplace_back(std::make_shared<trajectory::CircularSegment>(1.0 / radius, 0, 0, 1.0, 0, M_PI / 2 * radius));
-  // 起始点 x, y 切向量 vx, vy, 轨迹段
-  // 直线，起始点是逆时针1/4圆末端，长度是cy - radius
-  trajectory.emplace_back(std::make_shared<trajectory::LinearSegment>(radius, radius, 0.0, 1.0, cy - radius));
-  // 第二个1/4圆
-  trajectory.emplace_back(std::make_shared<trajectory::CircularSegment>(1.0 / radius, radius, cy, 0.0, 1.0, M_PI / 2 * radius));
-  // 第三个1/4圆
-  trajectory.emplace_back(std::make_shared<trajectory::CircularSegment>(1.0 / radius, 0, radius + cy, -1.0, 0.0, M_PI / 2 * radius));
+  // 起始点 x, y 切向量 vx, vy, 轨迹段长度
   // 第二条直线
-  trajectory.emplace_back(std::make_shared<trajectory::LinearSegment>(-radius, cy, 0.0, -1.0, cy - radius));
-  // 第四个1/4圆
-  trajectory.emplace_back(std::make_shared<trajectory::CircularSegment>(1.0 / radius, -radius, radius, 0.0, -1.0, M_PI / 2 * radius));
+  trajectory.emplace_back(std::make_shared<trajectory::LinearSegment>(
+    radius, radius, 0.0, 1.0, cy - radius));
+  // 第二个1/4圆
+  trajectory.emplace_back(std::make_shared<trajectory::CircularSegment>(
+    1.0 / radius, radius, cy, 0.0, 1.0, M_PI / 2 * radius));
+  // 第三个1/4圆
+  trajectory.emplace_back(std::make_shared<trajectory::CircularSegment>(
+    1.0 / radius, 0, radius + cy, -1.0, 0.0, M_PI / 2 * radius));
+  // 第二条直线
+  trajectory.emplace_back(std::make_shared<trajectory::LinearSegment>(
+    -radius, cy, 0.0, -1.0, cy - radius));
+  // 第��个1/4圆
+  trajectory.emplace_back(std::make_shared<trajectory::CircularSegment>(
+    1.0 / radius, -radius, radius, 0.0, -1.0, M_PI / 2 * radius));
 
   // 一共六个segment
   current_segment = trajectory.begin();
   const auto trajectory_path = create_path();
   on_path(trajectory_path);
-}
+} // 补上缺失的构造函数结束大括号
 
+// 添加析构函数的定义
 Controller::~Controller()
 {
-  // TODO Auto-generated destructor stub
+  // 析构函数内容，如果无需特殊处理，可以留空
 }
 
-} /* namespace simple_controller */
+} // 补上缺失的命名空间结束大括号

@@ -3,7 +3,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
-#include <std_msgs/msg/float64.hpp>
+#include <std_msgs/msg/float32.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include <nav_msgs/msg/path.hpp>
 #include <list>
@@ -41,7 +41,7 @@ protected:
   double cy;
   double max_curvature; // 最大曲率
 
-  double current_linear_velocity = 0.0; // 当前线速度
+  double current_linear_velocity = 0.0; // 当前��速度
   double current_angular_velocity = 0.0; // 当前角速度
   double traj_dl; // 点采样间隔
 
@@ -55,7 +55,7 @@ protected:
   using Trajectory  = std::list<TrajPtr>; // ?
   std::list<TrajPtr> trajectory;
   
-  nav_msgs::msg::Path::SharedPtr path;
+  nav_msgs::msg::Path::SharedPtr path = std::make_shared<nav_msgs::msg::Path>(); // 初始化 path 变量
   std::size_t nearest_point_index;
 
   std::list<TrajPtr>::iterator current_segment;
@@ -71,10 +71,10 @@ protected:
   rclcpp::Subscription<nav_msgs::msg::Path>::SharedPtr path_sub;
   rclcpp::TimerBase::SharedPtr timer;
   
-  rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr err_pub;
+  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr err_pub;
   // 发布几何信息中的线速度和角速度
   // rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr steer_pub;
-  rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr steer_pub;
+  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr steer_pub;
   rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub;
   std::string world_frame_id;
   geometry_msgs::msg::Quaternion createQuaternionMsgFromYaw(const double yaw) const;

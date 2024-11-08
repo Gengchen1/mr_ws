@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zgc/mr_ws/Stage/libstage/main.cc" "/home/zgc/mr_ws/build/Stage/libstage/CMakeFiles/stagebinary.dir/main.cc.o"
+  "/home/zgc/mr_ws/src/Stage/libstage/main.cc" "/home/zgc/mr_ws/build/Stage/libstage/CMakeFiles/stagebinary.dir/main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/zgc/mr_ws/Stage/."
-  "/home/zgc/mr_ws/Stage/libstage"
-  "/home/zgc/mr_ws/Stage/replace"
+  "/home/zgc/mr_ws/src/Stage/."
+  "/home/zgc/mr_ws/src/Stage/libstage"
+  "/home/zgc/mr_ws/src/Stage/replace"
   "/usr/lib/fltk"
   "."
   )

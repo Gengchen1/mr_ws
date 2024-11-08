@@ -43,7 +43,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/mr_ws/Stage
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/src/Stage
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/Stage
@@ -58,30 +58,30 @@ include examples/ctrl/CMakeFiles/fasr2.dir/progress.make
 include examples/ctrl/CMakeFiles/fasr2.dir/flags.make
 
 examples/ctrl/CMakeFiles/fasr2.dir/fasr2.cc.o: examples/ctrl/CMakeFiles/fasr2.dir/flags.make
-examples/ctrl/CMakeFiles/fasr2.dir/fasr2.cc.o: /home/zgc/mr_ws/Stage/examples/ctrl/fasr2.cc
+examples/ctrl/CMakeFiles/fasr2.dir/fasr2.cc.o: /home/zgc/mr_ws/src/Stage/examples/ctrl/fasr2.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/mr_ws/build/Stage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/ctrl/CMakeFiles/fasr2.dir/fasr2.cc.o"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fasr2.dir/fasr2.cc.o -c /home/zgc/mr_ws/Stage/examples/ctrl/fasr2.cc
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fasr2.dir/fasr2.cc.o -c /home/zgc/mr_ws/src/Stage/examples/ctrl/fasr2.cc
 
 examples/ctrl/CMakeFiles/fasr2.dir/fasr2.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fasr2.dir/fasr2.cc.i"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/Stage/examples/ctrl/fasr2.cc > CMakeFiles/fasr2.dir/fasr2.cc.i
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/src/Stage/examples/ctrl/fasr2.cc > CMakeFiles/fasr2.dir/fasr2.cc.i
 
 examples/ctrl/CMakeFiles/fasr2.dir/fasr2.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fasr2.dir/fasr2.cc.s"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/Stage/examples/ctrl/fasr2.cc -o CMakeFiles/fasr2.dir/fasr2.cc.s
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/src/Stage/examples/ctrl/fasr2.cc -o CMakeFiles/fasr2.dir/fasr2.cc.s
 
 examples/ctrl/CMakeFiles/fasr2.dir/astar/findpath.cpp.o: examples/ctrl/CMakeFiles/fasr2.dir/flags.make
-examples/ctrl/CMakeFiles/fasr2.dir/astar/findpath.cpp.o: /home/zgc/mr_ws/Stage/examples/ctrl/astar/findpath.cpp
+examples/ctrl/CMakeFiles/fasr2.dir/astar/findpath.cpp.o: /home/zgc/mr_ws/src/Stage/examples/ctrl/astar/findpath.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/mr_ws/build/Stage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object examples/ctrl/CMakeFiles/fasr2.dir/astar/findpath.cpp.o"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fasr2.dir/astar/findpath.cpp.o -c /home/zgc/mr_ws/Stage/examples/ctrl/astar/findpath.cpp
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fasr2.dir/astar/findpath.cpp.o -c /home/zgc/mr_ws/src/Stage/examples/ctrl/astar/findpath.cpp
 
 examples/ctrl/CMakeFiles/fasr2.dir/astar/findpath.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fasr2.dir/astar/findpath.cpp.i"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/Stage/examples/ctrl/astar/findpath.cpp > CMakeFiles/fasr2.dir/astar/findpath.cpp.i
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/src/Stage/examples/ctrl/astar/findpath.cpp > CMakeFiles/fasr2.dir/astar/findpath.cpp.i
 
 examples/ctrl/CMakeFiles/fasr2.dir/astar/findpath.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fasr2.dir/astar/findpath.cpp.s"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/Stage/examples/ctrl/astar/findpath.cpp -o CMakeFiles/fasr2.dir/astar/findpath.cpp.s
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/src/Stage/examples/ctrl/astar/findpath.cpp -o CMakeFiles/fasr2.dir/astar/findpath.cpp.s
 
 # Object files for target fasr2
 fasr2_OBJECTS = \
@@ -95,14 +95,13 @@ examples/ctrl/fasr2.so: examples/ctrl/CMakeFiles/fasr2.dir/fasr2.cc.o
 examples/ctrl/fasr2.so: examples/ctrl/CMakeFiles/fasr2.dir/astar/findpath.cpp.o
 examples/ctrl/fasr2.so: examples/ctrl/CMakeFiles/fasr2.dir/build.make
 examples/ctrl/fasr2.so: libstage/libstage.so.4.3.0
-examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libGL.so
+examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libGLX.so
 examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libltdl.so
 examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libjpeg.so
 examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libpng.so
 examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libz.so
-examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libGL.so
-examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libfltk_images.so
 examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libfltk_forms.so
 examples/ctrl/fasr2.so: /usr/lib/x86_64-linux-gnu/libfltk_gl.so
@@ -126,6 +125,6 @@ examples/ctrl/CMakeFiles/fasr2.dir/clean:
 .PHONY : examples/ctrl/CMakeFiles/fasr2.dir/clean
 
 examples/ctrl/CMakeFiles/fasr2.dir/depend:
-	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/Stage /home/zgc/mr_ws/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/fasr2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/src/Stage /home/zgc/mr_ws/src/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/fasr2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/ctrl/CMakeFiles/fasr2.dir/depend
 

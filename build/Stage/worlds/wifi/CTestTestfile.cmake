@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: /home/zgc/mr_ws/Stage/worlds/wifi
+# Source directory: /home/zgc/mr_ws/src/Stage/worlds/wifi
 # Build directory: /home/zgc/mr_ws/build/Stage/worlds/wifi
 # 
 # This file includes the relevant testing commands required for 

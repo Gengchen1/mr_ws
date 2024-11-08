@@ -43,7 +43,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/mr_ws/Stage
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/src/Stage
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/Stage
@@ -58,17 +58,17 @@ include examples/ctrl/CMakeFiles/pioneer_flocking.dir/progress.make
 include examples/ctrl/CMakeFiles/pioneer_flocking.dir/flags.make
 
 examples/ctrl/CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.o: examples/ctrl/CMakeFiles/pioneer_flocking.dir/flags.make
-examples/ctrl/CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.o: /home/zgc/mr_ws/Stage/examples/ctrl/pioneer_flocking.cc
+examples/ctrl/CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.o: /home/zgc/mr_ws/src/Stage/examples/ctrl/pioneer_flocking.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/mr_ws/build/Stage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/ctrl/CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.o"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.o -c /home/zgc/mr_ws/Stage/examples/ctrl/pioneer_flocking.cc
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.o -c /home/zgc/mr_ws/src/Stage/examples/ctrl/pioneer_flocking.cc
 
 examples/ctrl/CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.i"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/Stage/examples/ctrl/pioneer_flocking.cc > CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.i
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/src/Stage/examples/ctrl/pioneer_flocking.cc > CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.i
 
 examples/ctrl/CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.s"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/Stage/examples/ctrl/pioneer_flocking.cc -o CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.s
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/src/Stage/examples/ctrl/pioneer_flocking.cc -o CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.s
 
 # Object files for target pioneer_flocking
 pioneer_flocking_OBJECTS = \
@@ -80,14 +80,13 @@ pioneer_flocking_EXTERNAL_OBJECTS =
 examples/ctrl/pioneer_flocking.so: examples/ctrl/CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.o
 examples/ctrl/pioneer_flocking.so: examples/ctrl/CMakeFiles/pioneer_flocking.dir/build.make
 examples/ctrl/pioneer_flocking.so: libstage/libstage.so.4.3.0
-examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libGL.so
+examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libGLX.so
 examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libltdl.so
 examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libjpeg.so
 examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libpng.so
 examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libz.so
-examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libGL.so
-examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libfltk_images.so
 examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libfltk_forms.so
 examples/ctrl/pioneer_flocking.so: /usr/lib/x86_64-linux-gnu/libfltk_gl.so
@@ -111,6 +110,6 @@ examples/ctrl/CMakeFiles/pioneer_flocking.dir/clean:
 .PHONY : examples/ctrl/CMakeFiles/pioneer_flocking.dir/clean
 
 examples/ctrl/CMakeFiles/pioneer_flocking.dir/depend:
-	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/Stage /home/zgc/mr_ws/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/pioneer_flocking.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/src/Stage /home/zgc/mr_ws/src/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/pioneer_flocking.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/ctrl/CMakeFiles/pioneer_flocking.dir/depend
 

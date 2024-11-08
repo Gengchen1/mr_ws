@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: /home/zgc/mr_ws/Stage/worlds/bitmaps
+# Source directory: /home/zgc/mr_ws/src/Stage/worlds/bitmaps
 # Build directory: /home/zgc/mr_ws/build/Stage/worlds/bitmaps
 # 
 # This file includes the relevant testing commands required for 

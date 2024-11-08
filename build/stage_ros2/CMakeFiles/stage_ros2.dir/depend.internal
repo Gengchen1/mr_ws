@@ -3,9 +3,9 @@
 
 CMakeFiles/stage_ros2.dir/src/main.cpp.o
  /home/zgc/mr_ws/install/Stage/include/Stage-4.3/stage.hh
- /home/zgc/mr_ws/stage_ros2/include/stage_ros2/stage_node.hpp
- /home/zgc/mr_ws/stage_ros2/include/stage_ros2/visibility.h
- /home/zgc/mr_ws/stage_ros2/src/main.cpp
+ /home/zgc/mr_ws/src/stage_ros2/include/stage_ros2/stage_node.hpp
+ /home/zgc/mr_ws/src/stage_ros2/include/stage_ros2/visibility.h
+ /home/zgc/mr_ws/src/stage_ros2/src/main.cpp
  /opt/ros/foxy/include/builtin_interfaces/msg/detail/duration__builder.hpp
  /opt/ros/foxy/include/builtin_interfaces/msg/detail/duration__struct.hpp
  /opt/ros/foxy/include/builtin_interfaces/msg/detail/duration__traits.hpp

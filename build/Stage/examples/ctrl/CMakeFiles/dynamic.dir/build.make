@@ -43,7 +43,7 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zgc/mr_ws/Stage
+CMAKE_SOURCE_DIR = /home/zgc/mr_ws/src/Stage
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zgc/mr_ws/build/Stage
@@ -58,17 +58,17 @@ include examples/ctrl/CMakeFiles/dynamic.dir/progress.make
 include examples/ctrl/CMakeFiles/dynamic.dir/flags.make
 
 examples/ctrl/CMakeFiles/dynamic.dir/dynamic.cc.o: examples/ctrl/CMakeFiles/dynamic.dir/flags.make
-examples/ctrl/CMakeFiles/dynamic.dir/dynamic.cc.o: /home/zgc/mr_ws/Stage/examples/ctrl/dynamic.cc
+examples/ctrl/CMakeFiles/dynamic.dir/dynamic.cc.o: /home/zgc/mr_ws/src/Stage/examples/ctrl/dynamic.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zgc/mr_ws/build/Stage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object examples/ctrl/CMakeFiles/dynamic.dir/dynamic.cc.o"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamic.dir/dynamic.cc.o -c /home/zgc/mr_ws/Stage/examples/ctrl/dynamic.cc
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/dynamic.dir/dynamic.cc.o -c /home/zgc/mr_ws/src/Stage/examples/ctrl/dynamic.cc
 
 examples/ctrl/CMakeFiles/dynamic.dir/dynamic.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dynamic.dir/dynamic.cc.i"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/Stage/examples/ctrl/dynamic.cc > CMakeFiles/dynamic.dir/dynamic.cc.i
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zgc/mr_ws/src/Stage/examples/ctrl/dynamic.cc > CMakeFiles/dynamic.dir/dynamic.cc.i
 
 examples/ctrl/CMakeFiles/dynamic.dir/dynamic.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dynamic.dir/dynamic.cc.s"
-	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/Stage/examples/ctrl/dynamic.cc -o CMakeFiles/dynamic.dir/dynamic.cc.s
+	cd /home/zgc/mr_ws/build/Stage/examples/ctrl && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zgc/mr_ws/src/Stage/examples/ctrl/dynamic.cc -o CMakeFiles/dynamic.dir/dynamic.cc.s
 
 # Object files for target dynamic
 dynamic_OBJECTS = \
@@ -80,14 +80,13 @@ dynamic_EXTERNAL_OBJECTS =
 examples/ctrl/dynamic.so: examples/ctrl/CMakeFiles/dynamic.dir/dynamic.cc.o
 examples/ctrl/dynamic.so: examples/ctrl/CMakeFiles/dynamic.dir/build.make
 examples/ctrl/dynamic.so: libstage/libstage.so.4.3.0
-examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libGL.so
+examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libGLX.so
 examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libltdl.so
 examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libjpeg.so
 examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libpng.so
 examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libz.so
-examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libGL.so
-examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libGLU.so
 examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libfltk_images.so
 examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libfltk_forms.so
 examples/ctrl/dynamic.so: /usr/lib/x86_64-linux-gnu/libfltk_gl.so
@@ -111,6 +110,6 @@ examples/ctrl/CMakeFiles/dynamic.dir/clean:
 .PHONY : examples/ctrl/CMakeFiles/dynamic.dir/clean
 
 examples/ctrl/CMakeFiles/dynamic.dir/depend:
-	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/Stage /home/zgc/mr_ws/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/dynamic.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zgc/mr_ws/build/Stage && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zgc/mr_ws/src/Stage /home/zgc/mr_ws/src/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage /home/zgc/mr_ws/build/Stage/examples/ctrl /home/zgc/mr_ws/build/Stage/examples/ctrl/CMakeFiles/dynamic.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/ctrl/CMakeFiles/dynamic.dir/depend
 

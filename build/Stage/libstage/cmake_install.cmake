@@ -1,4 +1,4 @@
-# Install script for directory: /home/zgc/mr_ws/Stage/libstage
+# Install script for directory: /home/zgc/mr_ws/src/Stage/libstage
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -90,6 +90,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/Stage-4.3" TYPE FILE FILES "/home/zgc/mr_ws/Stage/libstage/stage.hh")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/Stage-4.3" TYPE FILE FILES "/home/zgc/mr_ws/src/Stage/libstage/stage.hh")
 endif()
 

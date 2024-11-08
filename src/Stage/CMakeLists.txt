@@ -78,7 +78,7 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
 message( STATUS "Checking for libtool" )
 find_path( LTDL_INCLUDE_DIR ltdl.h DOC "Libtool include dir" )
 find_library( LTDL_LIB ltdl DOC "Libtool lib" )
-
+cmake_policy(SET CMP0072 NEW)
 include_directories( 
 	${OPENGL_INCLUDE_DIR}
 	${LTDL_INCLUDE_DIR}

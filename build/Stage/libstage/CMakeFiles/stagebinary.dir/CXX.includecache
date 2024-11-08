@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/zgc/mr_ws/Stage/config.h
+/home/zgc/mr_ws/src/Stage/config.h
 
-/home/zgc/mr_ws/Stage/libstage/main.cc
+/home/zgc/mr_ws/src/Stage/libstage/main.cc
 getopt.h
 -
 config.h
-/home/zgc/mr_ws/Stage/libstage/config.h
+/home/zgc/mr_ws/src/Stage/libstage/config.h
 stage.hh
-/home/zgc/mr_ws/Stage/libstage/stage.hh
+/home/zgc/mr_ws/src/Stage/libstage/stage.hh
 
-/home/zgc/mr_ws/Stage/libstage/stage.hh
+/home/zgc/mr_ws/src/Stage/libstage/stage.hh
 assert.h
 -
 libgen.h

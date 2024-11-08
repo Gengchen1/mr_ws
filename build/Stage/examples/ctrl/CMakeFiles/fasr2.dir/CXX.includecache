@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/zgc/mr_ws/Stage/examples/ctrl/astar/astar.h
+/home/zgc/mr_ws/src/Stage/examples/ctrl/astar/astar.h
 
-/home/zgc/mr_ws/Stage/examples/ctrl/astar/findpath.cpp
+/home/zgc/mr_ws/src/Stage/examples/ctrl/astar/findpath.cpp
 stlastar.h
-/home/zgc/mr_ws/Stage/examples/ctrl/astar/stlastar.h
+/home/zgc/mr_ws/src/Stage/examples/ctrl/astar/stlastar.h
 iostream
 -
 math.h
 -
 astar.h
-/home/zgc/mr_ws/Stage/examples/ctrl/astar/astar.h
+/home/zgc/mr_ws/src/Stage/examples/ctrl/astar/astar.h
 
-/home/zgc/mr_ws/Stage/examples/ctrl/astar/fsa.h
+/home/zgc/mr_ws/src/Stage/examples/ctrl/astar/fsa.h
 string.h
 -
 stdio.h
 -
 
-/home/zgc/mr_ws/Stage/examples/ctrl/astar/stlastar.h
+/home/zgc/mr_ws/src/Stage/examples/ctrl/astar/stlastar.h
 iostream
 -
 stdio.h
@@ -40,17 +40,17 @@ set
 vector
 -
 fsa.h
-/home/zgc/mr_ws/Stage/examples/ctrl/astar/fsa.h
+/home/zgc/mr_ws/src/Stage/examples/ctrl/astar/fsa.h
 
-/home/zgc/mr_ws/Stage/examples/ctrl/fasr2.cc
+/home/zgc/mr_ws/src/Stage/examples/ctrl/fasr2.cc
 pthread.h
 -
 stage.hh
-/home/zgc/mr_ws/Stage/examples/ctrl/stage.hh
+/home/zgc/mr_ws/src/Stage/examples/ctrl/stage.hh
 astar/astar.h
-/home/zgc/mr_ws/Stage/examples/ctrl/astar/astar.h
+/home/zgc/mr_ws/src/Stage/examples/ctrl/astar/astar.h
 
-/home/zgc/mr_ws/Stage/libstage/stage.hh
+/home/zgc/mr_ws/src/Stage/libstage/stage.hh
 assert.h
 -
 libgen.h

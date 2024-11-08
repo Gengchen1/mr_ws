@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: /home/zgc/mr_ws/Stage
+# Source directory: /home/zgc/mr_ws/src/Stage
 # Build directory: /home/zgc/mr_ws/build/Stage
 # 
 # This file includes the relevant testing commands required for 

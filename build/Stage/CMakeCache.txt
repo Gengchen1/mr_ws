@@ -313,9 +313,6 @@ OPENGL_INCLUDE_DIR:PATH=/usr/include
 OPENGL_egl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libEGL.so
 
 //Path to a library.
-OPENGL_gl_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGL.so
-
-//Path to a library.
 OPENGL_glu_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libGLU.so
 
 //Path to a library.
@@ -340,13 +337,13 @@ PNG_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libpng.so
 PNG_PNG_INCLUDE_DIR:PATH=/usr/include
 
 //Location of CMake scripts
-PROJECT_CMAKE_DIR:PATH=/home/zgc/mr_ws/Stage/cmake
+PROJECT_CMAKE_DIR:PATH=/home/zgc/mr_ws/src/Stage/cmake
 
 //Value Computed by CMake
 Stage_BINARY_DIR:STATIC=/home/zgc/mr_ws/build/Stage
 
 //Value Computed by CMake
-Stage_SOURCE_DIR:STATIC=/home/zgc/mr_ws/Stage
+Stage_SOURCE_DIR:STATIC=/home/zgc/mr_ws/src/Stage
 
 //Path to a file.
 X11_ICE_INCLUDE_PATH:PATH=/usr/include
@@ -538,7 +535,7 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 
 //Dependencies for the target
-dynamic_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+dynamic_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 //Dependencies for the target
 expand_pioneer_LIB_DEPENDS:STATIC=general;stage;
@@ -547,16 +544,16 @@ expand_pioneer_LIB_DEPENDS:STATIC=general;stage;
 expand_swarm_LIB_DEPENDS:STATIC=general;stage;
 
 //Dependencies for the target
-fasr2_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+fasr2_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 //Dependencies for the target
-fasr_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+fasr_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 //Dependencies for the target
-lasernoise_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+lasernoise_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 //Dependencies for the target
-pioneer_flocking_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+pioneer_flocking_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 //Path to a library.
 pkgcfg_lib_PKG_FONTCONFIG_fontconfig:FILEPATH=/usr/lib/x86_64-linux-gnu/libfontconfig.so
@@ -565,19 +562,19 @@ pkgcfg_lib_PKG_FONTCONFIG_fontconfig:FILEPATH=/usr/lib/x86_64-linux-gnu/libfontc
 pkgcfg_lib_PKG_FONTCONFIG_freetype:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreetype.so
 
 //Dependencies for the target
-rasterize_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+rasterize_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 //Dependencies for the target
-sink_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+sink_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 //Dependencies for the target
-source_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+source_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 //Dependencies for the target
-stage_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;general;/usr/lib/x86_64-linux-gnu/libltdl.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;fltk_images;general;fltk_forms;general;fltk_gl;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;fltk;general;/usr/lib/x86_64-linux-gnu/libSM.so;general;/usr/lib/x86_64-linux-gnu/libICE.so;general;/usr/lib/x86_64-linux-gnu/libX11.so;general;/usr/lib/x86_64-linux-gnu/libXext.so;general;/usr/lib/x86_64-linux-gnu/libm.so;
+stage_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;general;/usr/lib/x86_64-linux-gnu/libltdl.so;general;/usr/lib/x86_64-linux-gnu/libjpeg.so;general;/usr/lib/x86_64-linux-gnu/libpng.so;general;/usr/lib/x86_64-linux-gnu/libz.so;general;fltk_images;general;fltk_forms;general;fltk_gl;general;fltk;general;/usr/lib/x86_64-linux-gnu/libSM.so;general;/usr/lib/x86_64-linux-gnu/libICE.so;general;/usr/lib/x86_64-linux-gnu/libX11.so;general;/usr/lib/x86_64-linux-gnu/libXext.so;general;/usr/lib/x86_64-linux-gnu/libm.so;
 
 //Dependencies for the target
-wander_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libGL.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
+wander_LIB_DEPENDS:STATIC=general;stage;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;
 
 
 ########################
@@ -678,7 +675,7 @@ CMAKE_HAVE_REMOVE:INTERNAL=1
 CMAKE_HAVE_SHMAT:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/zgc/mr_ws/Stage
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/zgc/mr_ws/src/Stage
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //Have library ICE
@@ -776,7 +773,7 @@ CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CPACK_SOURCE_ZIP
 CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 //Details about finding FLTK
-FIND_PACKAGE_MESSAGE_DETAILS_FLTK:INTERNAL=[fltk_images;fltk_forms;fltk_gl;/usr/lib/x86_64-linux-gnu/libGL.so;fltk][/usr/lib/fltk;/usr/include][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_FLTK:INTERNAL=[fltk_images;fltk_forms;fltk_gl;fltk][/usr/lib/fltk;/usr/include][v()]
 //Details about finding JPEG
 FIND_PACKAGE_MESSAGE_DETAILS_JPEG:INTERNAL=[/usr/lib/x86_64-linux-gnu/libjpeg.so][/usr/include][v80()]
 //Details about finding OpenGL
@@ -817,8 +814,6 @@ OPENGL_GLX_INCLUDE_DIR-ADVANCED:INTERNAL=1
 OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_egl_LIBRARY
 OPENGL_egl_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: OPENGL_gl_LIBRARY
-OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glu_LIBRARY
 OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glx_LIBRARY
