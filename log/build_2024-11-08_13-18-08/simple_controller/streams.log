@@ -1,0 +1,121 @@
+[0.021s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/simple_controller -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/simple_controller
+[0.124s] -- The C compiler identification is GNU 9.4.0
+[0.206s] -- The CXX compiler identification is GNU 9.4.0
+[0.210s] -- Check for working C compiler: /usr/bin/cc
+[0.252s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.252s] -- Detecting C compiler ABI info
+[0.298s] -- Detecting C compiler ABI info - done
+[0.305s] -- Detecting C compile features
+[0.306s] -- Detecting C compile features - done
+[0.307s] -- Check for working CXX compiler: /usr/bin/c++
+[0.363s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.364s] -- Detecting CXX compiler ABI info
+[0.421s] -- Detecting CXX compiler ABI info - done
+[0.428s] -- Detecting CXX compile features
+[0.429s] -- Detecting CXX compile features - done
+[0.431s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.448s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.448s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.582s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.613s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.616s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.668s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.701s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.766s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.804s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.805s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.805s] -- Looking for pthread.h
+[0.854s] -- Looking for pthread.h - found
+[0.854s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.901s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[0.901s] -- Looking for pthread_create in pthreads
+[0.938s] -- Looking for pthread_create in pthreads - not found
+[0.938s] -- Looking for pthread_create in pthread
+[0.981s] -- Looking for pthread_create in pthread - found
+[0.981s] -- Found Threads: TRUE  
+[1.165s] -- Found nav_msgs: 2.0.5 (/opt/ros/foxy/share/nav_msgs/cmake)
+[1.335s] -- Found tf2: 0.13.14 (/opt/ros/foxy/share/tf2/cmake)
+[1.373s] -- Found angles: 1.12.6 (/opt/ros/foxy/share/angles/cmake)
+[1.381s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[1.620s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.622s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.622s] -- Configured cppcheck include dirs: 
+[1.622s] -- Configured cppcheck exclude dirs and/or files: 
+[1.624s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.624s] -- Configured cpplint exclude dirs and/or files: 
+[1.625s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.626s] -- Added test 'lint_cmake' to check CMake code style
+[1.627s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[1.628s] -- Added test 'uncrustify' to check C / C++ code style
+[1.628s] -- Configured uncrustify additional arguments: 
+[1.629s] -- Added test 'xmllint' to check XML markup files
+[1.635s] -- Configuring done
+[1.692s] -- Generating done
+[1.694s] -- Build files have been written to: /home/zgc/learnRos2/zgc_ws/build/simple_controller
+[1.726s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/simple_controller -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/simple_controller
+[1.731s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/simple_controller -- -j24 -l24
+[1.938s] [35m[1mScanning dependencies of target controller_node[0m
+[2.169s] [ 33%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller.cpp.o[0m
+[2.177s] [ 66%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o[0m
+[3.706s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:[m[K In lambda function:
+[3.706s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:60:79:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kparameters[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[3.706s]    60 |   auto param_callback = [node, &Cntrl]([01;35m[Kconst std::vector<rclcpp::Parameter> & parameters[m[K) -> rcl_interfaces::msg::SetParametersResult {
+[3.706s]       |                                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[3.707s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[3.707s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:66:55:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Krclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr rclcpp::Node::add_on_set_parameters_callback(rclcpp::Node::OnParametersSetCallbackType)[m[K’, declared with attribute warn_unused_result [[01;35m[K-Wunused-result[m[K]
+[3.707s]    66 |   node->add_on_set_parameters_callback(param_callback)[01;35m[K;[m[K
+[3.707s]       |                                                       [01;35m[K^[m[K
+[3.707s] In file included from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[3.707s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+[3.707s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[3.707s]                  from [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:1[m[K:
+[3.707s] [01m[K/opt/ros/foxy/include/rclcpp/node.hpp:819:3:[m[K [01;36m[Knote: [m[Kdeclared here
+[3.707s]   819 |   [01;36m[Kadd_on_set_parameters_callback[m[K(OnParametersSetCallbackType callback);
+[3.707s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.814s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:[m[K In member function ‘[01m[Kstd::size_t simple_controller::Controller::get_nearest_path_pose_index(int, std::size_t)[m[K’:
+[3.814s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:55:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kindex[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[3.814s]    55 |   std::size_t [01;35m[Kindex[m[K = start_index;
+[3.814s]       |               [01;35m[K^~~~~[m[K
+[3.814s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:[m[K In member function ‘[01m[Kstd::size_t simple_controller::Controller::cal_target_index()[m[K’:
+[3.814s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:107:53:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::size_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+[3.814s]   107 |   while (l_d > m_error && [01;35m[K(nearest_point_index + 1) < static_cast<int>(path->poses.size())[m[K) {
+[3.815s]       |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.829s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:[m[K In member function ‘[01m[Knav_msgs::msg::Path_<std::allocator<void> >::SharedPtr simple_controller::Controller::create_path() const[m[K’:
+[3.829s] [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:241:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kprevious_segment_left[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[3.829s]   241 |   double [01;35m[Kprevious_segment_left[m[K = 0.0; // 初始化前一个轨迹段的剩余长度
+[3.830s]       |          [01;35m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[8.493s] [100%] [32m[1mLinking CXX executable controller_node[0m
+[8.770s] [100%] Built target controller_node
+[8.780s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/simple_controller -- -j24 -l24
+[8.801s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/simple_controller
+[8.807s] -- Install configuration: ""
+[8.807s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/ament_index/resource_index/package_run_dependencies/simple_controller
+[8.807s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/ament_index/resource_index/parent_prefix_path/simple_controller
+[8.807s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/environment/ament_prefix_path.sh
+[8.807s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/environment/ament_prefix_path.dsv
+[8.808s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/environment/path.sh
+[8.808s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/environment/path.dsv
+[8.808s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/local_setup.bash
+[8.808s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/local_setup.sh
+[8.808s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/local_setup.zsh
+[8.809s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/local_setup.dsv
+[8.809s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.dsv
+[8.809s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/ament_index/resource_index/packages/simple_controller
+[8.809s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/cmake/simple_controllerConfig.cmake
+[8.809s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/cmake/simple_controllerConfig-version.cmake
+[8.809s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.xml
+[8.810s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/simple_controller/controller_node
+[8.811s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/simple_controller/controller_node" to ""
+[8.811s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch
+[8.811s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/start_gzclient
+[8.812s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller1s.yaml
+[8.812s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller_stage.launch.py
+[8.813s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/start_rqt
+[8.813s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/slam.launch
+[8.813s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller.launch.py
+[8.814s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller.yaml
+[8.814s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller_curv.yaml
+[8.814s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/simple_controller/start_rqt
+[8.814s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/rqt_cfg
+[8.815s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/rqt_cfg/steer_error.perspective
+[8.817s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/simple_controller

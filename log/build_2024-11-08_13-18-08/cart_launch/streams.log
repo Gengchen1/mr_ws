@@ -1,0 +1,73 @@
+[0.019s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/cart_launch -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/cart_launch
+[0.128s] -- The C compiler identification is GNU 9.4.0
+[0.209s] -- The CXX compiler identification is GNU 9.4.0
+[0.212s] -- Check for working C compiler: /usr/bin/cc
+[0.256s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.257s] -- Detecting C compiler ABI info
+[0.302s] -- Detecting C compiler ABI info - done
+[0.309s] -- Detecting C compile features
+[0.309s] -- Detecting C compile features - done
+[0.311s] -- Check for working CXX compiler: /usr/bin/c++
+[0.368s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.368s] -- Detecting CXX compiler ABI info
+[0.425s] -- Detecting CXX compiler ABI info - done
+[0.433s] -- Detecting CXX compile features
+[0.434s] -- Detecting CXX compile features - done
+[0.435s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.452s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.452s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.584s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.630s] -- Configuring done
+[0.631s] -- Generating done
+[0.632s] -- Build files have been written to: /home/zgc/learnRos2/zgc_ws/build/cart_launch
+[0.635s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/cart_launch -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/cart_launch
+[0.638s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/cart_launch -- -j24 -l24
+[0.664s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/cart_launch -- -j24 -l24
+[0.689s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/cart_launch
+[0.694s] -- Install configuration: ""
+[0.694s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/launch
+[0.695s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/launch/cart_stage.launch.py
+[0.695s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/launch/cart.launch.py
+[0.695s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/launch/cart_stage.xml
+[0.695s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds
+[0.696s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/mr.inc
+[0.696s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/map.inc
+[0.696s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/sick.inc
+[0.696s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/cave.yaml
+[0.696s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/empty.world
+[0.696s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps
+[0.696s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/feature_map.png
+[0.697s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/kalman_map.pngZone.Identifier
+[0.697s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/empty.png
+[0.697s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/feature_map_simple.pngZone.Identifier
+[0.697s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/cave.png
+[0.697s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/feature_map_simple.png
+[0.697s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/feature_map.pngZone.Identifier
+[0.697s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/mapping_map.png
+[0.697s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/empty.pngZone.Identifier
+[0.698s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/cave.pngZone.Identifier
+[0.698s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/mapping_map.pngZone.Identifier
+[0.698s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/kalman_map.png
+[0.698s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/sick20.inc
+[0.698s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/simple.world
+[0.698s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/feature_map.world
+[0.698s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/pioneer.inc
+[0.699s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/feature_map_simple.world
+[0.699s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/mapping.world
+[0.699s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/kalman_map.world
+[0.699s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/ament_index/resource_index/package_run_dependencies/cart_launch
+[0.699s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/ament_index/resource_index/parent_prefix_path/cart_launch
+[0.700s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/environment/ament_prefix_path.sh
+[0.700s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/environment/ament_prefix_path.dsv
+[0.700s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/environment/path.sh
+[0.700s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/environment/path.dsv
+[0.700s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/local_setup.bash
+[0.700s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/local_setup.sh
+[0.701s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/local_setup.zsh
+[0.701s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/local_setup.dsv
+[0.701s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.dsv
+[0.701s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/ament_index/resource_index/packages/cart_launch
+[0.701s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/cmake/cart_launchConfig.cmake
+[0.701s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/cmake/cart_launchConfig-version.cmake
+[0.701s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.xml
+[0.704s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/cart_launch

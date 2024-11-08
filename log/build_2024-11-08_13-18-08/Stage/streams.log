@@ -1,0 +1,284 @@
+[0.021s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/Stage': /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/Stage -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/Stage
+[0.133s] -- The C compiler identification is GNU 9.4.0
+[0.216s] -- The CXX compiler identification is GNU 9.4.0
+[0.220s] -- Check for working C compiler: /usr/bin/cc
+[0.260s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.261s] -- Detecting C compiler ABI info
+[0.307s] -- Detecting C compiler ABI info - done
+[0.315s] -- Detecting C compile features
+[0.315s] -- Detecting C compile features - done
+[0.318s] -- Check for working CXX compiler: /usr/bin/c++
+[0.372s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.373s] -- Detecting CXX compiler ABI info
+[0.430s] -- Detecting CXX compiler ABI info - done
+[0.439s] -- Detecting CXX compile features
+[0.439s] -- Detecting CXX compile features - done
+[0.440s] -- Stage version 4.3.0
+[0.440s] -- Operating system is Linux
+[0.440s] -- Installing Libraries to /home/zgc/learnRos2/zgc_ws/install/Stage/lib
+[0.440s] -- Installing Plugins to /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3
+[0.441s] -- Build type RELEASE
+[0.441s] -- Checking for libtool
+[0.451s] -- Checking for required libraries...
+[0.500s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") 
+[0.508s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+[0.523s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+[0.531s] CMake Warning (dev) at /usr/share/cmake-3.16/Modules/FindOpenGL.cmake:275 (message):
+[0.531s]   Policy CMP0072 is not set: FindOpenGL prefers GLVND by default when
+[0.531s]   available.  Run "cmake --help-policy CMP0072" for policy details.  Use the
+[0.531s]   cmake_policy command to set the policy and suppress this warning.
+[0.531s] 
+[0.531s]   FindOpenGL found both a legacy GL library:
+[0.531s] 
+[0.531s]     OPENGL_gl_LIBRARY: /usr/lib/x86_64-linux-gnu/libGL.so
+[0.531s] 
+[0.531s]   and GLVND libraries for OpenGL and GLX:
+[0.531s] 
+[0.531s]     OPENGL_opengl_LIBRARY: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+[0.531s]     OPENGL_glx_LIBRARY: /usr/lib/x86_64-linux-gnu/libGLX.so
+[0.531s] 
+[0.531s]   OpenGL_GL_PREFERENCE has not been set to "GLVND" or "LEGACY", so for
+[0.531s]   compatibility with CMake 3.10 and below the legacy GL library will be used.
+[0.532s] Call Stack (most recent call first):
+[0.532s]   /usr/share/cmake-3.16/Modules/FindFLTK.cmake:83 (find_package)
+[0.532s]   CMakeLists.txt:100 (find_package)
+[0.532s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.532s] 
+[0.532s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so   
+[0.609s] -- Found X11: /usr/include   
+[0.609s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[0.667s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[0.668s] -- Looking for gethostbyname
+[0.715s] -- Looking for gethostbyname - found
+[0.715s] -- Looking for connect
+[0.760s] -- Looking for connect - found
+[0.761s] -- Looking for remove
+[0.806s] -- Looking for remove - found
+[0.806s] -- Looking for shmat
+[0.850s] -- Looking for shmat - found
+[0.851s] -- Looking for IceConnectionNumber in ICE
+[0.894s] -- Looking for IceConnectionNumber in ICE - found
+[0.898s] -- Found FLTK: fltk_images;fltk_forms;fltk_gl;/usr/lib/x86_64-linux-gnu/libGL.so;fltk  
+[0.899s] -- Checking for optional libraries...
+[0.900s] -- Installation path CMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/Stage
+[0.900s] -- Configuring libstage
+[0.907s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+[0.907s] -- Checking for one of the modules 'playercore>=2.1.0'
+[0.910s] --   * Player not detected. If Player is installed but not detected, check your PKG_CONFIG_PATH.
+[0.924s] -- Configuring done
+[0.948s] -- Generating done
+[0.949s] -- Build files have been written to: /home/zgc/learnRos2/zgc_ws/build/Stage
+[0.957s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/Stage' returned '0': /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/Stage -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/Stage
+[0.959s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/Stage': /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/Stage -- -j24 -l24
+[0.983s] [35m[1mScanning dependencies of target stage[0m
+[1.008s] [  5%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/file_manager.cc.o[0m
+[1.008s] [  5%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/color.cc.o[0m
+[1.008s] [  5%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/blockgroup.cc.o[0m
+[1.008s] [  8%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model.cc.o[0m
+[1.008s] [  8%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/block.cc.o[0m
+[1.009s] [ 10%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/camera.cc.o[0m
+[1.009s] [ 11%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/logentry.cc.o[0m
+[1.009s] [ 13%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_blobfinder.cc.o[0m
+[1.010s] [ 15%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_actuator.cc.o[0m
+[1.011s] [ 16%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_bumper.cc.o[0m
+[1.012s] [ 18%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_draw.cc.o[0m
+[1.012s] [ 20%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_blinkenlight.cc.o[0m
+[1.012s] [ 22%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_gripper.cc.o[0m
+[1.013s] [ 27%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_camera.cc.o[0m
+[1.013s] [ 27%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_fiducial.cc.o[0m
+[1.013s] [ 27%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/gl.cc.o[0m
+[1.014s] [ 28%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_callbacks.cc.o[0m
+[1.014s] [ 30%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_lightindicator.cc.o[0m
+[1.014s] [ 32%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_ranger.cc.o[0m
+[1.015s] [ 35%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/model_position.cc.o[0m
+[1.015s] [ 35%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/option.cc.o[0m
+[1.017s] [ 37%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/powerpack.cc.o[0m
+[1.028s] [ 38%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/region.cc.o[0m
+[1.034s] [ 40%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/stage.cc.o[0m
+[2.314s] [ 42%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/texture_manager.cc.o[0m
+[2.324s] [ 44%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/typetable.cc.o[0m
+[2.374s] [ 45%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/worldfile.cc.o[0m
+[2.386s] [ 47%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/world.cc.o[0m
+[2.423s] [ 49%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/canvas.cc.o[0m
+[2.440s] [ 50%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/vis_strip.cc.o[0m
+[2.448s] [ 52%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/options_dlg.cc.o[0m
+[2.476s] [ 54%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/worldgui.cc.o[0m
+[2.534s] [ 55%] [32mBuilding CXX object libstage/CMakeFiles/stage.dir/ancestor.cc.o[0m
+[4.364s] [ 57%] [32m[1mLinking CXX shared library libstage.so[0m
+[4.469s] [ 57%] Built target stage
+[4.478s] [35m[1mScanning dependencies of target fasr2[0m
+[4.478s] [35m[1mScanning dependencies of target expand_pioneer[0m
+[4.478s] [35m[1mScanning dependencies of target fasr[0m
+[4.478s] [35m[1mScanning dependencies of target source[0m
+[4.479s] [35m[1mScanning dependencies of target rasterize[0m
+[4.479s] [35m[1mScanning dependencies of target stagebinary[0m
+[4.479s] [35m[1mScanning dependencies of target wander[0m
+[4.479s] [35m[1mScanning dependencies of target dynamic[0m
+[4.479s] [35m[1mScanning dependencies of target lasernoise[0m
+[4.479s] [35m[1mScanning dependencies of target pioneer_flocking[0m
+[4.480s] [35m[1mScanning dependencies of target expand_swarm[0m
+[4.480s] [35m[1mScanning dependencies of target sink[0m
+[4.489s] [ 59%] [32mBuilding CXX object worlds/benchmark/CMakeFiles/expand_pioneer.dir/expand_pioneer.cc.o[0m
+[4.489s] [ 61%] [32mBuilding CXX object examples/ctrl/CMakeFiles/fasr2.dir/astar/findpath.cpp.o[0m
+[4.489s] [ 62%] [32mBuilding CXX object examples/ctrl/CMakeFiles/rasterize.dir/rasterize.cc.o[0m
+[4.490s] [ 64%] [32mBuilding CXX object examples/ctrl/CMakeFiles/fasr2.dir/fasr2.cc.o[0m
+[4.490s] [ 66%] [32mBuilding CXX object examples/ctrl/CMakeFiles/dynamic.dir/dynamic.cc.o[0m
+[4.491s] [ 67%] [32mBuilding CXX object libstage/CMakeFiles/stagebinary.dir/main.cc.o[0m
+[4.491s] [ 69%] [32mBuilding CXX object examples/ctrl/CMakeFiles/fasr.dir/fasr.cc.o[0m
+[4.492s] [ 71%] [32mBuilding CXX object worlds/benchmark/CMakeFiles/expand_swarm.dir/expand_swarm.cc.o[0m
+[4.493s] [ 72%] [32mBuilding CXX object examples/ctrl/CMakeFiles/sink.dir/sink.cc.o[0m
+[4.494s] [ 74%] [32mBuilding CXX object examples/ctrl/CMakeFiles/pioneer_flocking.dir/pioneer_flocking.cc.o[0m
+[4.494s] [ 76%] [32mBuilding CXX object examples/ctrl/CMakeFiles/source.dir/source.cc.o[0m
+[4.494s] [ 77%] [32mBuilding CXX object examples/ctrl/CMakeFiles/wander.dir/wander.cc.o[0m
+[4.494s] [ 79%] [32mBuilding CXX object examples/ctrl/CMakeFiles/lasernoise.dir/lasernoise.cc.o[0m
+[5.273s] [ 81%] [32m[1mLinking CXX shared module lasernoise.so[0m
+[5.277s] [ 83%] [32m[1mLinking CXX shared module sink.so[0m
+[5.280s] [ 84%] [32m[1mLinking CXX shared module rasterize.so[0m
+[5.303s] [ 86%] [32m[1mLinking CXX shared module dynamic.so[0m
+[5.308s] [ 88%] [32m[1mLinking CXX shared module expand_swarm.so[0m
+[5.323s] [ 91%] [32m[1mLinking CXX shared module pioneer_flocking.so[0m
+[5.323s] [ 91%] [32m[1mLinking CXX shared module wander.so[0m
+[5.323s] [ 93%] [32m[1mLinking CXX shared module expand_pioneer.so[0m
+[5.329s] [ 94%] [32m[1mLinking CXX executable stage[0m
+[5.360s] [ 96%] [32m[1mLinking CXX shared module fasr.so[0m
+[5.378s] [ 98%] [32m[1mLinking CXX shared module source.so[0m
+[5.381s] [ 98%] Built target lasernoise
+[5.381s] [ 98%] Built target sink
+[5.386s] [ 98%] Built target rasterize
+[5.408s] [ 98%] Built target dynamic
+[5.416s] [ 98%] Built target expand_swarm
+[5.424s] [ 98%] Built target wander
+[5.435s] [ 98%] Built target expand_pioneer
+[5.443s] [ 98%] Built target pioneer_flocking
+[5.450s] [ 98%] Built target fasr
+[5.460s] [ 98%] Built target source
+[5.461s] [ 98%] Built target stagebinary
+[5.728s] [100%] [32m[1mLinking CXX shared module fasr2.so[0m
+[5.793s] [100%] Built target fasr2
+[5.805s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/Stage' returned '0': /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/Stage -- -j24 -l24
+[5.824s] Invoking command in '/home/zgc/learnRos2/zgc_ws/build/Stage': /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/Stage
+[5.829s] -- Install configuration: "RELEASE"
+[5.830s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/pkgconfig/stage.pc
+[5.830s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/cmake/Stage/stage-config.cmake
+[5.830s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/cmake/Stage/stage-config-version.cmake
+[5.830s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/bin/stage
+[5.831s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/bin/stage" to ""
+[5.831s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/libstage.so.4.3.0
+[5.831s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/libstage.so
+[5.831s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/include/Stage-4.3/stage.hh
+[5.832s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/fasr.so
+[5.832s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/fasr.so" to ""
+[5.832s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/sink.so
+[5.832s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/sink.so" to ""
+[5.832s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/source.so
+[5.832s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/source.so" to ""
+[5.833s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/wander.so
+[5.833s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/wander.so" to ""
+[5.833s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/pioneer_flocking.so
+[5.833s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/pioneer_flocking.so" to ""
+[5.833s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/rasterize.so
+[5.833s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/rasterize.so" to ""
+[5.833s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/lasernoise.so
+[5.833s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/lasernoise.so" to ""
+[5.834s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/dynamic.so
+[5.834s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/dynamic.so" to ""
+[5.834s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/fasr2.so
+[5.834s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/fasr2.so" to ""
+[5.834s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/blue.png
+[5.834s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/death.png
+[5.834s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/green.png
+[5.834s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/logo.png
+[5.835s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/mains.png
+[5.835s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/mainspower.png
+[5.835s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/question_mark.png
+[5.835s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/red.png
+[5.835s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/stagelogo.png
+[5.835s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/stall-old.png
+[5.835s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/stall.png
+[5.836s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/assets/rgb.txt
+[5.836s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/rgb.txt
+[5.836s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/amcl-sonar.cfg
+[5.836s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/autolab.cfg
+[5.836s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/camera.cfg
+[5.837s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/everything.cfg
+[5.837s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/lsp_test.cfg
+[5.837s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/mbicp.cfg
+[5.837s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/nd.cfg
+[5.837s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/roomba.cfg
+[5.838s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/simple.cfg
+[5.838s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/test.cfg
+[5.838s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/uoa_robotics_lab.cfg
+[5.838s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/vfh.cfg
+[5.838s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wavefront-remote.cfg
+[5.838s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wavefront.cfg
+[5.838s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi.cfg
+[5.838s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/SFU.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/autolab.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/camera.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/circuit.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/everything.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/fasr.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/fasr2.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/fasr_plan.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/large.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/lsp_test.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/mbicp.world
+[5.839s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/pioneer_flocking.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/pioneer_follow.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/pioneer_walle.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/roomba.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/sensor_noise_demo.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/sensor_noise_module_demo.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/simple.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/uoa_robotics_lab.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi.world
+[5.840s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/beacons.inc
+[5.841s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/chatterbox.inc
+[5.841s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/hokuyo.inc
+[5.841s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/irobot.inc
+[5.841s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/map.inc
+[5.841s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/objects.inc
+[5.841s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/pantilt.inc
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/pioneer.inc
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/sick.inc
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/ubot.inc
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/uoa_robotics_lab_models.inc
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/walle.inc
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/cfggen.sh
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/test.sh
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/worldgen.sh
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/expand_swarm.so
+[5.842s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/expand_swarm.so" to ""
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/expand_pioneer.so
+[5.842s] -- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/Stage/lib/Stage-4.3/expand_pioneer.so" to ""
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/889_05.png
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/SFU_1200x615.png
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/SRI-AIC-kwing.png
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/autolab.png
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/cave.png
+[5.842s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/cave_compact.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/cave_filled.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/frieburg.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/ghost.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/hospital.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/hospital_section.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/human_outline.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/mbicp.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/rink.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/sal2.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/simple_rooms.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/space_invader.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/submarine.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/submarine_small.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/table.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/bitmaps/uoa_robotics_lab.png
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/commando.world
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/hosp_wifi.world
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/hosp_wifi_5.world
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/wifi.world
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/wifi_itu.world
+[5.843s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/wifi_logdistance.world
+[5.844s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/wifi_ray.world
+[5.844s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/wifi_simple.world
+[5.844s] -- Installing: /home/zgc/learnRos2/zgc_ws/install/Stage/share/stage/worlds/wifi/map.inc
+[5.845s] Invoked command in '/home/zgc/learnRos2/zgc_ws/build/Stage' returned '0': /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/Stage

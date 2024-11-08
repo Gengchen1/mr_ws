@@ -1,0 +1,115 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+-- Found FastRTPS: /opt/ros/foxy/include  
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found nav_msgs: 2.0.5 (/opt/ros/foxy/share/nav_msgs/cmake)
+-- Found tf2: 0.13.14 (/opt/ros/foxy/share/tf2/cmake)
+-- Found angles: 1.12.6 (/opt/ros/foxy/share/angles/cmake)
+-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/zgc/learnRos2/zgc_ws/build/simple_controller
+[35m[1mScanning dependencies of target controller_node[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/controller_node.dir/src/controller_node.cpp.o[0m
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:[m[K In lambda function:
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:60:79:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kparameters[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   60 |   auto param_callback = [node, &Cntrl]([01;35m[Kconst std::vector<rclcpp::Parameter> & parameters[m[K) -> rcl_interfaces::msg::SetParametersResult {
+      |                                        [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~[m[K
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:66:55:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Krclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr rclcpp::Node::add_on_set_parameters_callback(rclcpp::Node::OnParametersSetCallbackType)[m[K’, declared with attribute warn_unused_result [[01;35m[K-Wunused-result[m[K]
+   66 |   node->add_on_set_parameters_callback(param_callback)[01;35m[K;[m[K
+      |                                                       [01;35m[K^[m[K
+In file included from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller_node.cpp:1[m[K:
+[01m[K/opt/ros/foxy/include/rclcpp/node.hpp:819:3:[m[K [01;36m[Knote: [m[Kdeclared here
+  819 |   [01;36m[Kadd_on_set_parameters_callback[m[K(OnParametersSetCallbackType callback);
+      |   [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:[m[K In member function ‘[01m[Kstd::size_t simple_controller::Controller::get_nearest_path_pose_index(int, std::size_t)[m[K’:
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:55:15:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kindex[m[K’ [[01;35m[K-Wunused-variable[m[K]
+   55 |   std::size_t [01;35m[Kindex[m[K = start_index;
+      |               [01;35m[K^~~~~[m[K
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:[m[K In member function ‘[01m[Kstd::size_t simple_controller::Controller::cal_target_index()[m[K’:
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:107:53:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kstd::size_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K-Wsign-compare[m[K]
+  107 |   while (l_d > m_error && [01;35m[K(nearest_point_index + 1) < static_cast<int>(path->poses.size())[m[K) {
+      |                           [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:[m[K In member function ‘[01m[Knav_msgs::msg::Path_<std::allocator<void> >::SharedPtr simple_controller::Controller::create_path() const[m[K’:
+[01m[K/home/zgc/learnRos2/zgc_ws/src/simple_controller/src/controller.cpp:241:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kprevious_segment_left[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  241 |   double [01;35m[Kprevious_segment_left[m[K = 0.0; // 初始化前一个轨迹段的剩余长度
+      |          [01;35m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable controller_node[0m
+[100%] Built target controller_node
+-- Install configuration: ""
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/ament_index/resource_index/package_run_dependencies/simple_controller
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/ament_index/resource_index/parent_prefix_path/simple_controller
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/environment/ament_prefix_path.sh
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/environment/ament_prefix_path.dsv
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/environment/path.sh
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/environment/path.dsv
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/local_setup.bash
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/local_setup.sh
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/local_setup.zsh
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/local_setup.dsv
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.dsv
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/ament_index/resource_index/packages/simple_controller
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/cmake/simple_controllerConfig.cmake
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/cmake/simple_controllerConfig-version.cmake
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.xml
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/simple_controller/controller_node
+-- Set runtime path of "/home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/simple_controller/controller_node" to ""
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/start_gzclient
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller1s.yaml
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller_stage.launch.py
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/start_rqt
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/slam.launch
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller.launch.py
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller.yaml
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/launch/controller_curv.yaml
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/simple_controller/start_rqt
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/rqt_cfg
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/rqt_cfg/steer_error.perspective

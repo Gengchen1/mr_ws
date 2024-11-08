@@ -1,0 +1,67 @@
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/zgc/learnRos2/zgc_ws/build/cart_launch
+-- Install configuration: ""
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/launch
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/launch/cart_stage.launch.py
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/launch/cart.launch.py
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/launch/cart_stage.xml
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/mr.inc
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/map.inc
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/sick.inc
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/cave.yaml
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/empty.world
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/feature_map.png
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/kalman_map.pngZone.Identifier
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/empty.png
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/feature_map_simple.pngZone.Identifier
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/cave.png
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/feature_map_simple.png
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/feature_map.pngZone.Identifier
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/mapping_map.png
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/empty.pngZone.Identifier
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/cave.pngZone.Identifier
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/mapping_map.pngZone.Identifier
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/bitmaps/kalman_map.png
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/sick20.inc
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/simple.world
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/feature_map.world
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/pioneer.inc
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/feature_map_simple.world
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/mapping.world
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/stage_worlds/kalman_map.world
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/ament_index/resource_index/package_run_dependencies/cart_launch
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/ament_index/resource_index/parent_prefix_path/cart_launch
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/environment/ament_prefix_path.sh
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/environment/ament_prefix_path.dsv
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/environment/path.sh
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/environment/path.dsv
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/local_setup.bash
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/local_setup.sh
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/local_setup.zsh
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/local_setup.dsv
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.dsv
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/ament_index/resource_index/packages/cart_launch
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/cmake/cart_launchConfig.cmake
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/cmake/cart_launchConfig-version.cmake
+-- Installing: /home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.xml

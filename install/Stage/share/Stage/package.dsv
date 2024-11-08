@@ -1,0 +1,12 @@
+source;share/Stage/hook/cmake_prefix_path.ps1
+source;share/Stage/hook/cmake_prefix_path.dsv
+source;share/Stage/hook/cmake_prefix_path.sh
+source;share/Stage/hook/ld_library_path_lib.ps1
+source;share/Stage/hook/ld_library_path_lib.dsv
+source;share/Stage/hook/ld_library_path_lib.sh
+source;share/Stage/hook/path.ps1
+source;share/Stage/hook/path.dsv
+source;share/Stage/hook/path.sh
+source;share/Stage/hook/pythonscriptspath.ps1
+source;share/Stage/hook/pythonscriptspath.dsv
+source;share/Stage/hook/pythonscriptspath.sh

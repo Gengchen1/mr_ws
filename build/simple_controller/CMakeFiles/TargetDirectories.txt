@@ -1,0 +1,10 @@
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/install/strip.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/install/local.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/edit_cache.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/test.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/controller_node.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/install.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/list_install_components.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/rebuild_cache.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/simple_controller_uninstall.dir
+/home/zgc/learnRos2/zgc_ws/build/simple_controller/CMakeFiles/uninstall.dir

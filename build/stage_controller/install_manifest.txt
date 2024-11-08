@@ -1,0 +1,17 @@
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/lib/stage_controller/stage_controller
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/lib/stage_controller/stage_throttle
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/ament_index/resource_index/package_run_dependencies/stage_controller
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/ament_index/resource_index/parent_prefix_path/stage_controller
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/environment/ament_prefix_path.sh
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/environment/ament_prefix_path.dsv
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/environment/path.sh
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/environment/path.dsv
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/local_setup.bash
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/local_setup.sh
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/local_setup.zsh
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/local_setup.dsv
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.dsv
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/ament_index/resource_index/packages/stage_controller
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/cmake/stage_controllerConfig.cmake
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/cmake/stage_controllerConfig-version.cmake
+/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.xml

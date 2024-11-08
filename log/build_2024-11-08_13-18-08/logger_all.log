@@ -1,0 +1,420 @@
+[0.126s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.126s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fa5e8799790>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=24, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fa5e8799790>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fa5e86653d0>)
+[0.223s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.223s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.223s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.223s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.224s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.224s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/zgc/learnRos2/zgc_ws'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.224s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.232s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extensions ['ignore', 'ignore_ament_install']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extension 'ignore'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extension 'ignore_ament_install'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extensions ['colcon_pkg']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extension 'colcon_pkg'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extensions ['colcon_meta']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extension 'colcon_meta'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extensions ['ros']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extension 'ros'
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extensions ['cmake', 'python']
+[0.233s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extension 'cmake'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/Stage) by extension 'python'
+[0.236s] DEBUG:colcon.colcon_core.package_identification:Package 'src/Stage' with type 'cmake' and name 'Stage'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extensions ['ignore', 'ignore_ament_install']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extension 'ignore'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extension 'ignore_ament_install'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extensions ['colcon_pkg']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extension 'colcon_pkg'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extensions ['colcon_meta']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extension 'colcon_meta'
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extensions ['ros']
+[0.236s] Level 1:colcon.colcon_core.package_identification:_identify(src/cart_launch) by extension 'ros'
+[0.238s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cart_launch' with type 'ros.ament_cmake' and name 'cart_launch'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extension 'ignore'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extension 'ignore_ament_install'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extensions ['colcon_pkg']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extension 'colcon_pkg'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extensions ['colcon_meta']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extension 'colcon_meta'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extensions ['ros']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(src/simple_controller) by extension 'ros'
+[0.239s] DEBUG:colcon.colcon_core.package_identification:Package 'src/simple_controller' with type 'ros.ament_cmake' and name 'simple_controller'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extension 'ignore'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extension 'ignore_ament_install'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extensions ['colcon_pkg']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extension 'colcon_pkg'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extensions ['colcon_meta']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extension 'colcon_meta'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extensions ['ros']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_controller) by extension 'ros'
+[0.240s] DEBUG:colcon.colcon_core.package_identification:Package 'src/stage_controller' with type 'ros.ament_cmake' and name 'stage_controller'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extension 'ignore'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extension 'ignore_ament_install'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extensions ['colcon_pkg']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extension 'colcon_pkg'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extensions ['colcon_meta']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extension 'colcon_meta'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extensions ['ros']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(src/stage_ros2) by extension 'ros'
+[0.241s] DEBUG:colcon.colcon_core.package_identification:Package 'src/stage_ros2' with type 'ros.ament_cmake' and name 'stage_ros2'
+[0.241s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.241s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.241s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.241s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.241s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.252s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.252s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/zgc/learnRos2/zgc_ws/install/stage_ros2' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/zgc/learnRos2/zgc_ws/install/stage_controller' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/zgc/learnRos2/zgc_ws/install/simple_controller' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/zgc/learnRos2/zgc_ws/install/cart_launch' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/zgc/learnRos2/zgc_ws/install/stage_ros2' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/zgc/learnRos2/zgc_ws/install/stage_controller' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/zgc/learnRos2/zgc_ws/install/simple_controller' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/zgc/learnRos2/zgc_ws/install/cart_launch' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.253s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/zgc/learnRos2/zgc_ws/install/Stage' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.254s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/zgc/learnRos2/zgc_ws/install
+[0.254s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 256 installed packages in /opt/ros/foxy
+[0.255s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'cmake_target' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'cmake_clean_cache' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'cmake_clean_first' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'cmake_force_configure' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'ament_cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'catkin_cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'Stage' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.302s] DEBUG:colcon.colcon_core.verb:Building package 'Stage' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zgc/learnRos2/zgc_ws/build/Stage', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zgc/learnRos2/zgc_ws/install/Stage', 'merge_install': False, 'path': '/home/zgc/learnRos2/zgc_ws/src/Stage', 'symlink_install': False, 'test_result_base': None}
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'cmake_target' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'cmake_clean_cache' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'cmake_clean_first' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'cmake_force_configure' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'ament_cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'catkin_cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'cart_launch' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.302s] DEBUG:colcon.colcon_core.verb:Building package 'cart_launch' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zgc/learnRos2/zgc_ws/build/cart_launch', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zgc/learnRos2/zgc_ws/install/cart_launch', 'merge_install': False, 'path': '/home/zgc/learnRos2/zgc_ws/src/cart_launch', 'symlink_install': False, 'test_result_base': None}
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'cmake_target' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.302s] Level 5:colcon.colcon_core.verb:set package 'simple_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.303s] DEBUG:colcon.colcon_core.verb:Building package 'simple_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zgc/learnRos2/zgc_ws/build/simple_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zgc/learnRos2/zgc_ws/install/simple_controller', 'merge_install': False, 'path': '/home/zgc/learnRos2/zgc_ws/src/simple_controller', 'symlink_install': False, 'test_result_base': None}
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'cmake_args' from command line to 'None'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'cmake_target' from command line to 'None'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.303s] DEBUG:colcon.colcon_core.verb:Building package 'stage_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zgc/learnRos2/zgc_ws/build/stage_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zgc/learnRos2/zgc_ws/install/stage_controller', 'merge_install': False, 'path': '/home/zgc/learnRos2/zgc_ws/src/stage_controller', 'symlink_install': False, 'test_result_base': None}
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'cmake_args' from command line to 'None'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'cmake_target' from command line to 'None'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.303s] Level 5:colcon.colcon_core.verb:set package 'stage_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.303s] DEBUG:colcon.colcon_core.verb:Building package 'stage_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/zgc/learnRos2/zgc_ws/build/stage_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/zgc/learnRos2/zgc_ws/install/stage_ros2', 'merge_install': False, 'path': '/home/zgc/learnRos2/zgc_ws/src/stage_ros2', 'symlink_install': False, 'test_result_base': None}
+[0.303s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.304s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.304s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/zgc/learnRos2/zgc_ws/src/Stage'
+[0.306s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.306s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.306s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.309s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/zgc/learnRos2/zgc_ws/src/cart_launch' with build type 'ament_cmake'
+[0.310s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/zgc/learnRos2/zgc_ws/src/cart_launch'
+[0.310s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.310s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.313s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/zgc/learnRos2/zgc_ws/src/simple_controller' with build type 'ament_cmake'
+[0.314s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/zgc/learnRos2/zgc_ws/src/simple_controller'
+[0.314s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.314s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.317s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/zgc/learnRos2/zgc_ws/src/stage_controller' with build type 'ament_cmake'
+[0.317s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/zgc/learnRos2/zgc_ws/src/stage_controller'
+[0.318s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.318s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.326s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/Stage': /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/Stage -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/Stage
+[0.329s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/cart_launch -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/cart_launch
+[0.335s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/simple_controller -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/simple_controller
+[0.339s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/stage_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/stage_controller -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/stage_controller
+[0.945s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/cart_launch -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/cart_launch
+[0.947s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/cart_launch -- -j24 -l24
+[0.973s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/cart_launch -- -j24 -l24
+[0.999s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/cart_launch
+[1.013s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cart_launch)
+[1.014s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/cart_launch' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/cart_launch
+[1.016s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch' for CMake module files
+[1.016s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch' for CMake config files
+[1.017s] Level 1:colcon.colcon_core.shell:create_environment_hook('cart_launch', 'cmake_prefix_path')
+[1.017s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/hook/cmake_prefix_path.ps1'
+[1.017s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/hook/cmake_prefix_path.dsv'
+[1.018s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/hook/cmake_prefix_path.sh'
+[1.018s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch/bin'
+[1.018s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch/lib/pkgconfig/cart_launch.pc'
+[1.019s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch/lib/python3.8/site-packages'
+[1.019s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch/bin'
+[1.019s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.ps1'
+[1.020s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.dsv'
+[1.021s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.sh'
+[1.021s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.bash'
+[1.022s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.zsh'
+[1.022s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/colcon-core/packages/cart_launch)
+[1.037s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cart_launch)
+[1.038s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch' for CMake module files
+[1.038s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch' for CMake config files
+[1.038s] Level 1:colcon.colcon_core.shell:create_environment_hook('cart_launch', 'cmake_prefix_path')
+[1.038s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/hook/cmake_prefix_path.ps1'
+[1.039s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/hook/cmake_prefix_path.dsv'
+[1.039s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/hook/cmake_prefix_path.sh'
+[1.039s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch/bin'
+[1.039s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch/lib/pkgconfig/cart_launch.pc'
+[1.039s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch/lib/python3.8/site-packages'
+[1.040s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/cart_launch/bin'
+[1.040s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.ps1'
+[1.040s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.dsv'
+[1.040s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.sh'
+[1.041s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.bash'
+[1.041s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/cart_launch/package.zsh'
+[1.041s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/cart_launch/share/colcon-core/packages/cart_launch)
+[1.262s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/Stage' returned '0': /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/Stage -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/Stage
+[1.264s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/Stage': /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/Stage -- -j24 -l24
+[1.694s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/stage_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/stage_controller -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/stage_controller
+[1.695s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/stage_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/stage_controller -- -j24 -l24
+[2.044s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/simple_controller -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/simple_controller
+[2.045s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/simple_controller -- -j24 -l24
+[6.110s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/Stage' returned '0': /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/Stage -- -j24 -l24
+[6.129s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/Stage': /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/Stage
+[6.150s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(Stage)
+[6.150s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/Stage' returned '0': /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/Stage
+[6.150s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/Stage' for CMake module files
+[6.151s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/Stage' for CMake config files
+[6.151s] Level 1:colcon.colcon_core.shell:create_environment_hook('Stage', 'cmake_prefix_path')
+[6.151s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/cmake_prefix_path.ps1'
+[6.152s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/cmake_prefix_path.dsv'
+[6.152s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/cmake_prefix_path.sh'
+[6.152s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/Stage/lib'
+[6.153s] Level 1:colcon.colcon_core.shell:create_environment_hook('Stage', 'ld_library_path_lib')
+[6.153s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/ld_library_path_lib.ps1'
+[6.153s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/ld_library_path_lib.dsv'
+[6.153s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/ld_library_path_lib.sh'
+[6.153s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/Stage/bin'
+[6.153s] Level 1:colcon.colcon_core.shell:create_environment_hook('Stage', 'path')
+[6.154s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/path.ps1'
+[6.154s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/path.dsv'
+[6.154s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/path.sh'
+[6.154s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/Stage/lib/pkgconfig/Stage.pc'
+[6.154s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/Stage/lib/python3.8/site-packages'
+[6.154s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/Stage/bin'
+[6.154s] Level 1:colcon.colcon_core.shell:create_environment_hook('Stage', 'pythonscriptspath')
+[6.155s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/pythonscriptspath.ps1'
+[6.155s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/pythonscriptspath.dsv'
+[6.155s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/hook/pythonscriptspath.sh'
+[6.155s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/package.ps1'
+[6.156s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/package.dsv'
+[6.156s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/package.sh'
+[6.156s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/package.bash'
+[6.157s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/Stage/share/Stage/package.zsh'
+[6.157s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/Stage/share/colcon-core/packages/Stage)
+[6.157s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/zgc/learnRos2/zgc_ws/src/stage_ros2' with build type 'ament_cmake'
+[6.157s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/zgc/learnRos2/zgc_ws/src/stage_ros2'
+[6.158s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.158s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.168s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/stage_ros2': CMAKE_PREFIX_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage:/home/zgc/learnRos2/zgc_ws/install/stage_ros2:/home/zgc/learnRos2/zgc_ws/install/stage_controller:/home/zgc/learnRos2/zgc_ws/install/simple_controller:/home/zgc/learnRos2/zgc_ws/install/cart_launch:/opt/ros/foxy LD_LIBRARY_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage/lib:/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/stage_ros2 -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/stage_ros2
+[7.513s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/stage_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/stage_controller -- -j24 -l24
+[7.529s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/stage_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/stage_controller
+[7.540s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(stage_controller)
+[7.540s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller' for CMake module files
+[7.541s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/stage_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/stage_controller
+[7.541s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller' for CMake config files
+[7.541s] Level 1:colcon.colcon_core.shell:create_environment_hook('stage_controller', 'cmake_prefix_path')
+[7.541s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/hook/cmake_prefix_path.ps1'
+[7.542s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/hook/cmake_prefix_path.dsv'
+[7.542s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/hook/cmake_prefix_path.sh'
+[7.543s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/lib'
+[7.543s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/bin'
+[7.543s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/lib/pkgconfig/stage_controller.pc'
+[7.543s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/lib/python3.8/site-packages'
+[7.543s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/bin'
+[7.543s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.ps1'
+[7.544s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.dsv'
+[7.544s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.sh'
+[7.544s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.bash'
+[7.544s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.zsh'
+[7.544s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/colcon-core/packages/stage_controller)
+[7.562s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(stage_controller)
+[7.562s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller' for CMake module files
+[7.563s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller' for CMake config files
+[7.563s] Level 1:colcon.colcon_core.shell:create_environment_hook('stage_controller', 'cmake_prefix_path')
+[7.563s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/hook/cmake_prefix_path.ps1'
+[7.563s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/hook/cmake_prefix_path.dsv'
+[7.564s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/hook/cmake_prefix_path.sh'
+[7.564s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/lib'
+[7.564s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/bin'
+[7.564s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/lib/pkgconfig/stage_controller.pc'
+[7.564s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/lib/python3.8/site-packages'
+[7.564s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_controller/bin'
+[7.565s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.ps1'
+[7.565s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.dsv'
+[7.565s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.sh'
+[7.565s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.bash'
+[7.566s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/stage_controller/package.zsh'
+[7.566s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/stage_controller/share/colcon-core/packages/stage_controller)
+[7.716s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/stage_ros2' returned '0': CMAKE_PREFIX_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage:/home/zgc/learnRos2/zgc_ws/install/stage_ros2:/home/zgc/learnRos2/zgc_ws/install/stage_controller:/home/zgc/learnRos2/zgc_ws/install/simple_controller:/home/zgc/learnRos2/zgc_ws/install/cart_launch:/opt/ros/foxy LD_LIBRARY_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage/lib:/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib /usr/bin/cmake /home/zgc/learnRos2/zgc_ws/src/stage_ros2 -DCMAKE_INSTALL_PREFIX=/home/zgc/learnRos2/zgc_ws/install/stage_ros2
+[7.718s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/stage_ros2': CMAKE_PREFIX_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage:/home/zgc/learnRos2/zgc_ws/install/stage_ros2:/home/zgc/learnRos2/zgc_ws/install/stage_controller:/home/zgc/learnRos2/zgc_ws/install/simple_controller:/home/zgc/learnRos2/zgc_ws/install/cart_launch:/opt/ros/foxy LD_LIBRARY_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage/lib:/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/stage_ros2 -- -j24 -l24
+[9.094s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/simple_controller -- -j24 -l24
+[9.115s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/simple_controller
+[9.130s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(simple_controller)
+[9.130s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller' for CMake module files
+[9.131s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/simple_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/simple_controller
+[9.131s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller' for CMake config files
+[9.132s] Level 1:colcon.colcon_core.shell:create_environment_hook('simple_controller', 'cmake_prefix_path')
+[9.132s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/hook/cmake_prefix_path.ps1'
+[9.133s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/hook/cmake_prefix_path.dsv'
+[9.133s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/hook/cmake_prefix_path.sh'
+[9.133s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/lib'
+[9.133s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/bin'
+[9.134s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/pkgconfig/simple_controller.pc'
+[9.134s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/python3.8/site-packages'
+[9.134s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/bin'
+[9.134s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.ps1'
+[9.135s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.dsv'
+[9.135s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.sh'
+[9.135s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.bash'
+[9.135s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.zsh'
+[9.136s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/colcon-core/packages/simple_controller)
+[9.156s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(simple_controller)
+[9.156s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller' for CMake module files
+[9.156s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller' for CMake config files
+[9.157s] Level 1:colcon.colcon_core.shell:create_environment_hook('simple_controller', 'cmake_prefix_path')
+[9.157s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/hook/cmake_prefix_path.ps1'
+[9.157s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/hook/cmake_prefix_path.dsv'
+[9.157s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/hook/cmake_prefix_path.sh'
+[9.158s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/lib'
+[9.158s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/bin'
+[9.158s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/pkgconfig/simple_controller.pc'
+[9.158s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/lib/python3.8/site-packages'
+[9.158s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/simple_controller/bin'
+[9.158s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.ps1'
+[9.159s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.dsv'
+[9.159s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.sh'
+[9.159s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.bash'
+[9.160s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/simple_controller/package.zsh'
+[9.160s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/simple_controller/share/colcon-core/packages/simple_controller)
+[14.454s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/stage_ros2' returned '0': CMAKE_PREFIX_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage:/home/zgc/learnRos2/zgc_ws/install/stage_ros2:/home/zgc/learnRos2/zgc_ws/install/stage_controller:/home/zgc/learnRos2/zgc_ws/install/simple_controller:/home/zgc/learnRos2/zgc_ws/install/cart_launch:/opt/ros/foxy LD_LIBRARY_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage/lib:/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib /usr/bin/cmake --build /home/zgc/learnRos2/zgc_ws/build/stage_ros2 -- -j24 -l24
+[14.477s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/zgc/learnRos2/zgc_ws/build/stage_ros2': CMAKE_PREFIX_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage:/home/zgc/learnRos2/zgc_ws/install/stage_ros2:/home/zgc/learnRos2/zgc_ws/install/stage_controller:/home/zgc/learnRos2/zgc_ws/install/simple_controller:/home/zgc/learnRos2/zgc_ws/install/cart_launch:/opt/ros/foxy LD_LIBRARY_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage/lib:/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/stage_ros2
+[14.494s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(stage_ros2)
+[14.494s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/zgc/learnRos2/zgc_ws/build/stage_ros2' returned '0': CMAKE_PREFIX_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage:/home/zgc/learnRos2/zgc_ws/install/stage_ros2:/home/zgc/learnRos2/zgc_ws/install/stage_controller:/home/zgc/learnRos2/zgc_ws/install/simple_controller:/home/zgc/learnRos2/zgc_ws/install/cart_launch:/opt/ros/foxy LD_LIBRARY_PATH=/home/zgc/learnRos2/zgc_ws/install/Stage/lib:/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib /usr/bin/cmake --install /home/zgc/learnRos2/zgc_ws/build/stage_ros2
+[14.494s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2' for CMake module files
+[14.495s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2' for CMake config files
+[14.495s] Level 1:colcon.colcon_core.shell:create_environment_hook('stage_ros2', 'cmake_prefix_path')
+[14.495s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/cmake_prefix_path.ps1'
+[14.496s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/cmake_prefix_path.dsv'
+[14.496s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/cmake_prefix_path.sh'
+[14.496s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib'
+[14.496s] Level 1:colcon.colcon_core.shell:create_environment_hook('stage_ros2', 'ld_library_path_lib')
+[14.496s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/ld_library_path_lib.ps1'
+[14.496s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/ld_library_path_lib.dsv'
+[14.497s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/ld_library_path_lib.sh'
+[14.497s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/bin'
+[14.497s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib/pkgconfig/stage_ros2.pc'
+[14.497s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib/python3.8/site-packages'
+[14.497s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/bin'
+[14.497s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.ps1'
+[14.498s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.dsv'
+[14.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.sh'
+[14.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.bash'
+[14.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.zsh'
+[14.498s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/colcon-core/packages/stage_ros2)
+[14.518s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(stage_ros2)
+[14.519s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2' for CMake module files
+[14.519s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2' for CMake config files
+[14.519s] Level 1:colcon.colcon_core.shell:create_environment_hook('stage_ros2', 'cmake_prefix_path')
+[14.519s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/cmake_prefix_path.ps1'
+[14.520s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/cmake_prefix_path.dsv'
+[14.520s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/cmake_prefix_path.sh'
+[14.520s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib'
+[14.520s] Level 1:colcon.colcon_core.shell:create_environment_hook('stage_ros2', 'ld_library_path_lib')
+[14.521s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/ld_library_path_lib.ps1'
+[14.521s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/ld_library_path_lib.dsv'
+[14.521s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/hook/ld_library_path_lib.sh'
+[14.521s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/bin'
+[14.521s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib/pkgconfig/stage_ros2.pc'
+[14.521s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/lib/python3.8/site-packages'
+[14.521s] Level 1:colcon.colcon_core.environment:checking '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/bin'
+[14.522s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.ps1'
+[14.522s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.dsv'
+[14.522s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.sh'
+[14.522s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.bash'
+[14.523s] INFO:colcon.colcon_core.shell:Creating package script '/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/stage_ros2/package.zsh'
+[14.523s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/zgc/learnRos2/zgc_ws/install/stage_ros2/share/colcon-core/packages/stage_ros2)
+[14.523s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[14.523s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[14.523s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[14.523s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[14.528s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[14.528s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[14.528s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[14.528s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[14.529s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[14.529s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[14.529s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zgc/learnRos2/zgc_ws/install/local_setup.ps1'
+[14.530s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/zgc/learnRos2/zgc_ws/install/_local_setup_util_ps1.py'
+[14.531s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zgc/learnRos2/zgc_ws/install/setup.ps1'
+[14.532s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zgc/learnRos2/zgc_ws/install/local_setup.sh'
+[14.533s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/zgc/learnRos2/zgc_ws/install/_local_setup_util_sh.py'
+[14.533s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zgc/learnRos2/zgc_ws/install/setup.sh'
+[14.534s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zgc/learnRos2/zgc_ws/install/local_setup.bash'
+[14.534s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zgc/learnRos2/zgc_ws/install/setup.bash'
+[14.535s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/zgc/learnRos2/zgc_ws/install/local_setup.zsh'
+[14.535s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/zgc/learnRos2/zgc_ws/install/setup.zsh'

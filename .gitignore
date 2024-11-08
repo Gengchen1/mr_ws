@@ -1,0 +1,8 @@
+# 忽略 build 目录
+build/
+
+# 忽略 install 目录
+install/
+
+# 忽略 log 目录
+log/

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -O2 -DNDEBUG -Wall   -shared  -o fasr.so CMakeFiles/fasr.dir/fasr.cc.o  -Wl,-rpath,/home/zgc/learnRos2/zgc_ws/build/Stage/libstage: ../../libstage/libstage.so.4.3.0 -lGL -lGLU -lltdl -ljpeg -lpng -lz -lfltk_images -lfltk_forms -lfltk_gl -lGL -lGLU -lfltk -lSM -lICE -lX11 -lXext -lm 
