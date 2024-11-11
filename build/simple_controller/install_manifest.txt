@@ -14,10 +14,8 @@
 /home/zgc/mr_ws/install/simple_controller/share/simple_controller/cmake/simple_controllerConfig-version.cmake
 /home/zgc/mr_ws/install/simple_controller/share/simple_controller/package.xml
 /home/zgc/mr_ws/install/simple_controller/lib/simple_controller/controller_node
-/home/zgc/mr_ws/install/simple_controller/share/simple_controller/launch/start_gzclient
 /home/zgc/mr_ws/install/simple_controller/share/simple_controller/launch/controller1s.yaml
 /home/zgc/mr_ws/install/simple_controller/share/simple_controller/launch/controller_stage.launch.py
-/home/zgc/mr_ws/install/simple_controller/share/simple_controller/launch/start_rqt
 /home/zgc/mr_ws/install/simple_controller/share/simple_controller/launch/slam.launch
 /home/zgc/mr_ws/install/simple_controller/share/simple_controller/launch/controller.launch.py
 /home/zgc/mr_ws/install/simple_controller/share/simple_controller/launch/controller.yaml

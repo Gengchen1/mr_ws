@@ -26,27 +26,35 @@ namespace simple_controller {
 */
 class Controller : public rclcpp::Node {
 protected:
+  // 首先声明在构造函数初始化列表中最先初始化的变量
+  double p_factor;
+  double i_factor;
+  double d_factor;
+  double max_antiwindup_error;
+  double error_integral;
+  double last_error;
+  double radius;
+  double cy;
+  double max_curvature;
+  double traj_dl;
+  double traj_length;
+
+  // 订阅者和发布者
+  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr pose_sub;
+  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odo_sub;
+  rclcpp::Subscription<nav_msgs::msg::Path>::SharedPtr path_sub;
+  rclcpp::TimerBase::SharedPtr timer;
+  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr err_pub;
+  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr steer_pub;
+  rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub;
+
+  // 其他成员变量
   double robot_x;
   double robot_y;
   double robot_theta = 0.0;
   rclcpp::Time robot_time;
-  double p_factor;
-  double i_factor;
-  double d_factor;
-  double max_antiwindup_error; // 最大误差
-  double error_integral; // 累积误差
-  double last_error; // 过去误差
-
-  double radius; // 半径
-  double cy;
-  double max_curvature; // 最大曲率
-
-  double current_linear_velocity = 0.0; // 当前��速度
+  double current_linear_velocity = 0.0; // 当前线速度
   double current_angular_velocity = 0.0; // 当前角速度
-  double traj_dl; // 点采样间隔
-
-  double traj_length;
-
   double lam = 0.1; // 预测系数
   double c = 1; // 预测起点
   std::size_t cal_target_index(); // 获取目标点索引
@@ -55,41 +63,28 @@ protected:
   using Trajectory  = std::list<TrajPtr>; // ?
   std::list<TrajPtr> trajectory;
   
-  nav_msgs::msg::Path::SharedPtr path = std::make_shared<nav_msgs::msg::Path>(); // 初始化 path 变量
+  nav_msgs::msg::Path path; // 初始化 path 变量
   std::size_t nearest_point_index;
 
   std::list<TrajPtr>::iterator current_segment;
   double current_segment_length = 0.0;
   
-  // 声明订阅者
-  // 声明订阅里程计信息来计算当前车俩坐标的订阅者
-  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr pose_sub;
-  // 声明订阅里程计信息来更新当前车俩速度和角速度的订阅者
-  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odo_sub;
-  // 发布当前路径信息
-  // rclcpp::Subscription<nav_msgs::msg::Path>::SharedPtr path_sub;
-  rclcpp::Subscription<nav_msgs::msg::Path>::SharedPtr path_sub;
-  rclcpp::TimerBase::SharedPtr timer;
-  
-  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr err_pub;
-  // 发布几何信息中的线速度和角速度
-  // rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr steer_pub;
-  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr steer_pub;
-  rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub;
-  std::string world_frame_id;
+  std::string world_frame_id;  // 添加 world_frame_id 成员变量
+
   geometry_msgs::msg::Quaternion createQuaternionMsgFromYaw(const double yaw) const;
   void on_timer(); //
   // 接受车辆坐标消息
   void on_pose(const nav_msgs::msg::Odometry::SharedPtr odom);
   // 接受路径消息
-  void on_path(const std::shared_ptr<nav_msgs::msg::Path> path);
+  // void on_path(const nav_msgs::msg::Path &path);
+  void on_path(const nav_msgs::msg::Path::SharedPtr path);
   // 计算轨迹反馈误差
   double cross_track_error();
   void update_robot_pose(double dt);
   void publish_trajectory();
   void on_odo(const nav_msgs::msg::Odometry::SharedPtr odom);
   void publish_error(double error);
-  nav_msgs::msg::Path::SharedPtr create_path() const;
+  nav_msgs::msg::Path create_path() const;
   std::size_t get_nearest_path_pose_index(int start_index, std::size_t search_len);
 
 public:
