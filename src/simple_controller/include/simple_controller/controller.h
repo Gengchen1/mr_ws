@@ -63,7 +63,7 @@ protected:
   using Trajectory  = std::list<TrajPtr>; // ?
   std::list<TrajPtr> trajectory;
   
-  nav_msgs::msg::Path path; // 初始化 path 变量
+  nav_msgs::msg::Path::SharedPtr path = std::make_shared<nav_msgs::msg::Path>(); // 初始化 path 变量
   std::size_t nearest_point_index;
 
   std::list<TrajPtr>::iterator current_segment;
@@ -84,7 +84,7 @@ protected:
   void publish_trajectory();
   void on_odo(const nav_msgs::msg::Odometry::SharedPtr odom);
   void publish_error(double error);
-  nav_msgs::msg::Path create_path() const;
+  nav_msgs::msg::Path::SharedPtr create_path() const;
   std::size_t get_nearest_path_pose_index(int start_index, std::size_t search_len);
 
 public:
@@ -97,6 +97,7 @@ public:
   Controller(const std::string &ns = "simple_controller");
   // 虚机构函数,用于在派生类中实现
   virtual ~Controller();
+
 };
 
 }

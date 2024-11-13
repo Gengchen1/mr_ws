@@ -7,10 +7,12 @@ int main(int argc, char **argv) {
   // 创建 Controller 节点
   auto node = std::make_shared<simple_controller::Controller>("simple_controller");
 
-  // 移除参数声明
-  // node->declare_parameter<double>("proportional", 1.0);
-  // node->declare_parameter<double>("differential", 0.0);
-  // node->declare_parameter<double>("integral", 0.0);
+  // 移除以下重复的参数声明
+  /*
+  node->declare_parameter<double>("proportional", 1.0);
+  node->declare_parameter<double>("differential", 0.0);
+  node->declare_parameter<double>("integral", 0.0);
+  */
 
   // 获取参数并设置控制器
   double proportional = node->get_parameter("proportional").as_double();
@@ -19,7 +21,7 @@ int main(int argc, char **argv) {
   node->reset(proportional, differential, integral);
 
   // 设置参数回调
-  auto callback_handle = node->add_on_set_parameters_callback(
+  node->add_on_set_parameters_callback(
     [node](const std::vector<rclcpp::Parameter> &parameters) {
       for (const auto &param : parameters) {
         if (param.get_name() == "proportional" || param.get_name() == "differential" || param.get_name() == "integral") {
@@ -46,10 +48,10 @@ int main(int argc, char **argv) {
       odo_sub.reset();
     });
 
-  while (rclcpp::ok() && !odo_received) {
-    rclcpp::spin_some(node);
-  }
-  RCLCPP_DEBUG(node->get_logger(), "odo received");
+  // while (rclcpp::ok() && !odo_received) {
+  //   rclcpp::spin_some(node);
+  // }
+  // RCLCPP_DEBUG(node->get_logger(), "odo received");
 
   // 运行节点
   rclcpp::spin(node);
