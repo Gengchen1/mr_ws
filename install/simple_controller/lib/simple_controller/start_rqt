@@ -1,3 +1,0 @@
-#!/bin/zsh
-sleep 1
-rqt $*
