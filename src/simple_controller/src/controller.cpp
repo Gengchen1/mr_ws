@@ -89,6 +89,7 @@ std::size_t Controller::get_nearest_path_pose_index(int start_index, std::size_t
 std::size_t Controller::cal_target_index() {
   // 使用固定的小时间间隔而不是计算时间差
   update_robot_pose(0.01);  // 使用10ms作为固定更新间隔
+  // update_robot_pose((this->now() - robot_time).seconds());
   nearest_point_index = get_nearest_path_pose_index(nearest_point_index - 10, 20);
   // 获取当前最近点的位姿和角度
   const auto& nearest_pose = path->poses[nearest_point_index].pose;
@@ -168,12 +169,14 @@ void Controller::on_pose(const nav_msgs::msg::Odometry::SharedPtr odom)
   robot_x = odom->pose.pose.position.x;
   robot_y = odom->pose.pose.position.y;
   // 使用 tf2::getYaw() 获取机器人的朝向角
-  robot_theta = tf2::getYaw(odom->pose.pose.orientation);
+  robot_theta = 2*atan2(odom->pose.pose.orientation.z,
+                      odom->pose.pose.orientation.w);  
 
   // 物理环境ID
   world_frame_id = odom->header.frame_id;  // 确保 world_frame_id 已声明
   // 使用节点的时钟
   robot_time = this->now();
+  // robot_time = odom->header.stamp;
 }
 
 // 根据里程测量数据更新线速度和角速度
@@ -241,6 +244,7 @@ nav_msgs::msg::Path::SharedPtr Controller::create_path() const {
   path->header.frame_id = "odom"; // 设置路径的坐标系
   // 使用节点的当前时间
   path->header.stamp = this->now();
+  // path->header.stamp = robot_time;
   auto segment_it = trajectory.begin(); // 获取轨迹段的迭代器
   std::size_t points_added = 0; // 初始化已添加的点数
   double point_length = 0.0; // 初始化点的长度
@@ -254,6 +258,7 @@ nav_msgs::msg::Path::SharedPtr Controller::create_path() const {
       geometry_msgs::msg::PoseStamped pose; // 创建位姿消息对象
       pose.header.frame_id = "odom"; // 设位姿的坐标系
       pose.pose.position.x = point.x(); // 设置位姿的x坐标
+      pose.pose.position.y = point.y(); // 设置位姿的y坐标
       pose.pose.orientation = createQuaternionMsgFromYaw(angle); // 设置位姿的朝向
       path->poses.push_back(pose); // 将位姿添加到路径中
       point_length += traj_dl; // 增加点的长度,获取下一个长度出的点
@@ -309,7 +314,7 @@ Controller::Controller(const std::string& ns)
     std::chrono::duration<double>(this->declare_parameter("timer_period", 0.1)),
     std::bind(&Controller::on_timer, this))),
   err_pub(this->create_publisher<std_msgs::msg::Float32>("error", 10)),  // 修改为 Float32
-  steer_pub(this->create_publisher<std_msgs::msg::Float32>("steering", 10)),  // 修改为 Float32
+  steer_pub(this->create_publisher<std_msgs::msg::Float32>("/steering", 10)),  // 修改为 Float32
   path_pub(this->create_publisher<nav_msgs::msg::Path>("controller_path", 1)),
   robot_time(this->now()) // 使用节点的当前时间初始化
 {
@@ -339,6 +344,7 @@ Controller::Controller(const std::string& ns)
   current_segment = trajectory.begin();
   const auto trajectory_path = create_path();
   on_path(trajectory_path);
+
 } // 补上缺失的构造函数结束大括号
 
 // 添加析构函数的定义

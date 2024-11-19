@@ -48,10 +48,10 @@ int main(int argc, char **argv) {
       odo_sub.reset();
     });
 
-  // while (rclcpp::ok() && !odo_received) {
-  //   rclcpp::spin_some(node);
-  // }
-  // RCLCPP_DEBUG(node->get_logger(), "odo received");
+  while (rclcpp::ok() && !odo_received) {
+    rclcpp::spin_some(node);
+  }
+  RCLCPP_DEBUG(node->get_logger(), "odo received");
 
   // 运行节点
   rclcpp::spin(node);

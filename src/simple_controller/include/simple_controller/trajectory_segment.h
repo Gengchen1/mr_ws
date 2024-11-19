@@ -100,7 +100,7 @@ public:
      : curvature(c), x0(x, y, 0), v(vx, vy, 0), length(l),
     // start_angle( (curvature > 0) ? atan2(-v.x(), v.y()) : atan2(v.x(), -v.y()) ),
     // 从圆心到起始点的向量角度
-    start_angle( (curvature > 0) ? atan2(v.y(), -v.x()) : atan2(-v.y(), v.x()) ),
+    start_angle( (curvature > 0) ? atan2(-v.x(), v.y()) : atan2(v.x(), -v.y()) ),
     finish_angle(start_angle + length * curvature),
     center(x0 + tf2::Vector3(-v.y(), v.x(), 0) / curvature)
     { v.normalize(); }

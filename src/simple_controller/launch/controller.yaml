@@ -4,7 +4,7 @@ controller:
     differential: 4.2
     integral: 0.04
     max_antiwindup_error: 0.3
-    radius: 70.0
-    cy: 25.0
+    radius: 25.0
+    cy: 70.0
     traj_length: 50.0
-    timer_period: 0.1
+    timer_period: 0.1 
