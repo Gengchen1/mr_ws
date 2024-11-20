@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(simple_controller)
+project(velocity_controller)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -15,17 +15,24 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE RelWithDebInfo)
-endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(nav_msgs REQUIRED)
-find_package(tf2 REQUIRED)
-find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(angles REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
+add_executable(velocity_controller src/velocity_controller.cpp)
+add_executable(velocity_test src/velocity_test.cpp)
+
+include_directories(
+  include/velocity_controller
+  ${rclcpp_INCLUDE_DIRS}
+)
+
+ament_target_dependencies(velocity_controller rclcpp std_msgs nav_msgs geometry_msgs)
+ament_target_dependencies(velocity_test rclcpp std_msgs nav_msgs geometry_msgs)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -38,43 +45,14 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-ament_package()
-
-add_executable(controller_node src/controller.cpp
-                                src/controller_node.cpp)
-add_executable(test_node src/test1.cpp)
-include_directories(
-  include/simple_controller
-  ${rclcpp_INCLUDE_DIRS}
-)
-ament_target_dependencies(controller_node 
-rclcpp
-nav_msgs
-tf2 geometry_msgs
-std_msgs
-angles)
-
-ament_target_dependencies(test_node rclcpp)
-
 install(TARGETS
-  controller_node
-  test_node
-  DESTINATION lib/${PROJECT_NAME})
-
-# 安装 launch 文件
-install(DIRECTORY launch/
-  DESTINATION share/${PROJECT_NAME}/launch
-)
-
-# install(TARGETS start_rqt
-#   RUNTIME DESTINATION lib/${PROJECT_NAME}
-# )
-# 安装 start_rqt 脚本
-install(PROGRAMS scripts/start_rqt
+  velocity_controller
+  velocity_test
   DESTINATION lib/${PROJECT_NAME}
 )
-# 安装 rqt 配置文件
-install(DIRECTORY rqt_cfg/
-  DESTINATION share/${PROJECT_NAME}/rqt_cfg
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
+ament_package()

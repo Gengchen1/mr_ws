@@ -31,7 +31,7 @@ T clip(T val, T max)
 // 根据当前速度和上次小车的位置还有时间间隔更新小车位置
 void Controller::update_robot_pose(double dt)
 {
-  RCLCPP_DEBUG(this->get_logger(), "update_robot_pose %f v = %f", dt, current_linear_velocity);
+  RCLCPP_INFO(this->get_logger(), "update_robot_pose %f v = %f", dt, current_linear_velocity);
   // 更新 x, y 坐标
   robot_x += current_linear_velocity * dt * sin(robot_theta);
   robot_y += current_linear_velocity * dt * cos(robot_theta);
@@ -54,7 +54,7 @@ void Controller::on_path(const nav_msgs::msg::Path::SharedPtr path) {
 // 获取相对于当前点最近位置的点索引
 std::size_t Controller::get_nearest_path_pose_index(int start_index, std::size_t search_len) {
   double nearest_distance = 1e10; // 1x10的10次方
-  std::size_t nearest_index;
+  std::size_t nearest_index = 0;
   geometry_msgs::msg::Pose nearest_pose;
   // 遍历从起始点到指定长度内的所有点
   for (int index = start_index; index < start_index + static_cast<int>(search_len); ++index) {
@@ -119,8 +119,8 @@ std::size_t Controller::cal_target_index() {
     // 计算下一个点的误差
     double m_error_next = abs(-dx_next * sin(nearest_pose_angle_next) + dy_next * cos(nearest_pose_angle_next));
     // 更新误差和最近索引
-    m_error = m_error_next;
     nearest_point_index += 1;
+    m_error = m_error_next;
   }
   return nearest_point_index;
 }
@@ -161,7 +161,7 @@ void Controller::on_timer() {
   publish_trajectory(); 
   // 发布误差信息
   publish_error(error);
-  RCLCPP_DEBUG(this->get_logger(), "steering cmd = %lf", curvature);
+  RCLCPP_INFO(this->get_logger(), "steering cmd = %lf", curvature);
 }
 
 void Controller::on_pose(const nav_msgs::msg::Odometry::SharedPtr odom)
@@ -169,8 +169,9 @@ void Controller::on_pose(const nav_msgs::msg::Odometry::SharedPtr odom)
   robot_x = odom->pose.pose.position.x;
   robot_y = odom->pose.pose.position.y;
   // 使用 tf2::getYaw() 获取机器人的朝向角
-  robot_theta = 2*atan2(odom->pose.pose.orientation.z,
-                      odom->pose.pose.orientation.w);  
+  // robot_theta = 2*atan2(odom->pose.pose.orientation.z,
+  //                     odom->pose.pose.orientation.w);  
+  robot_theta = tf2::getYaw(odom->pose.pose.orientation);
 
   // 物理环境ID
   world_frame_id = odom->header.frame_id;  // 确保 world_frame_id 已声明
@@ -284,7 +285,7 @@ geometry_msgs::msg::Quaternion Controller::createQuaternionMsgFromYaw(const doub
  * 轨迹由两条线连接的两个圆段组成
  * 第一个圆心为 (0, radius)，第二个圆心为 (0, cy)
  * radius -圆形零件的半径
- * cy -第二个圆��中心
+ * cy -第二个圆中心
  * traj_dl -已发布轨迹的离散长度
  * traj_length -已发布轨迹的长度
  * timer_period -离散定时器
@@ -307,14 +308,14 @@ Controller::Controller(const std::string& ns)
     "ground_truth", 1, std::bind(&Controller::on_pose, this, std::placeholders::_1))),
   odo_sub(this->create_subscription<nav_msgs::msg::Odometry>(
     "odom", 1, std::bind(&Controller::on_odo, this, std::placeholders::_1))),
-   path_sub(this->create_subscription<nav_msgs::msg::Path>(
+  path_sub(this->create_subscription<nav_msgs::msg::Path>(
     "path", 1, std::bind(&Controller::on_path, this, std::placeholders::_1))),
   // 创建一个墙上定时器(以实际时间为准),时间间隔设置为0.1秒，每0.1秒调用一次回调函数
   timer(this->create_wall_timer(
     std::chrono::duration<double>(this->declare_parameter("timer_period", 0.1)),
     std::bind(&Controller::on_timer, this))),
   err_pub(this->create_publisher<std_msgs::msg::Float32>("error", 10)),  // 修改为 Float32
-  steer_pub(this->create_publisher<std_msgs::msg::Float32>("/steering", 10)),  // 修改为 Float32
+  steer_pub(this->create_publisher<std_msgs::msg::Float32>("steering", 10)),  // 修改为 Float32
   path_pub(this->create_publisher<nav_msgs::msg::Path>("controller_path", 1)),
   robot_time(this->now()) // 使用节点的当前时间初始化
 {

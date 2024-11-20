@@ -62,11 +62,14 @@ def generate_launch_description():
                 {'max_velocity': 18.0},
                 {'max_throttle': 400},
                 {'max_throttle_rate': 800},
-                {'max_acc': 2.0}
-            ],
-            # remappings=[
-            #     ('/steering', '/robot/steering'),
-            #     ('/velocity', '/robot/velocity')
-            # ]
+                {'max_acc': 2.0},
+                {'velocity_noise': LaunchConfiguration('velocity_noise')},
+                {'mass': 500.0},
+                {'friction': 20.0},
+                {'wind_friction': 0.1},
+                {'brake': 15.0},
+                {'throttle': 50.0},
+                {'exp': 0.4}
+            ]
         ),
     ])

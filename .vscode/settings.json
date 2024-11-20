@@ -68,5 +68,5 @@
     "codecvt": "cpp",
     "filesystem": "cpp",
     "regex": "cpp"
-  }
+  },
 }
