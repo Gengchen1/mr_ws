@@ -11,7 +11,7 @@ def generate_launch_description():
     cart_launch_dir = get_package_share_directory('cart_launch')
 
     control_velocity = LaunchConfiguration('control_velocity')
-    velocity_noise = LaunchConfiguration('velocity_noise')
+    velocity_noise = LaunchConfiguration('velocity_noise', default=0.0)
 
     return LaunchDescription([
         DeclareLaunchArgument(

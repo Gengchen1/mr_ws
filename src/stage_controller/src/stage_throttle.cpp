@@ -31,6 +31,14 @@ std::normal_distribution<double> noise_distr;
 class StageThrottleController : public rclcpp::Node {
 public:
     StageThrottleController() : Node("stage_throttle_controller") {
+        // 获取参数
+        this->declare_parameter<bool>("node_started", false);
+        bool node_started;
+        this->get_parameter("node_started", node_started);
+        // 打印确认信息
+        if (node_started) {
+            RCLCPP_INFO(this->get_logger(), "StageThrottle node has been started.");
+        }
         // Загрузка параметров
         car_length = this->declare_parameter("length", 1.5);
         max_steering = this->declare_parameter("max_steering", 0.5);
@@ -56,9 +64,9 @@ public:
         real_steer_pub_ = this->create_publisher<std_msgs::msg::Float32>("realized_steering", 1);
 
         steer_sub_ = this->create_subscription<std_msgs::msg::Float32>(
-            "steering", 1, std::bind(&StageThrottleController::on_steering, this, std::placeholders::_1));
+            "robot/steering", 1, std::bind(&StageThrottleController::on_steering, this, std::placeholders::_1));
         throttle_sub_ = this->create_subscription<std_msgs::msg::Float32>(
-            "throttle", 1, std::bind(&StageThrottleController::on_throttle, this, std::placeholders::_1));
+            "robot/velocity", 1, std::bind(&StageThrottleController::on_throttle, this, std::placeholders::_1));
 
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(100), std::bind(&StageThrottleController::on_timer, this));

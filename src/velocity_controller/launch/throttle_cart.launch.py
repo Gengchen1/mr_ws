@@ -7,7 +7,7 @@ from launch.actions import DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
-  launch_noise = DeclareLaunchArgument('launch_noise', default_value="0.0")
+  launch_noise = DeclareLaunchArgument('noise', default_value="0.0")
   
   # 其他launch文件路径
   controller_stage_launch_path = get_package_share_directory('simple_controller') + '/launch/controller_stage.launch.py'
@@ -16,9 +16,9 @@ def generate_launch_description():
   action_include_path = launch.actions.IncludeLaunchDescription(
     PythonLaunchDescriptionSource(controller_stage_launch_path),
     launch_arguments={
-      'controller_velocity': 'false',
+      'control_velocity': 'false',
       'rqt_persp': '',
-      'velocity_noise': LaunchConfiguration('launch_noise')
+      'velocity_noise': LaunchConfiguration('noise')
       }.items()
       )
 

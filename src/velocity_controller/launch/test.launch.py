@@ -10,7 +10,6 @@ def generate_launch_description():
   launch_test_time = DeclareLaunchArgument('launch_test_time', default_value="15.0")
   launch_acc = DeclareLaunchArgument('launch_acc', default_value="1.5")
   launch_max_velocity = DeclareLaunchArgument('launch_max_velocity', default_value="5.0")
-  launch_noise = DeclareLaunchArgument('launch_noise', default_value="0.0")
   
 
   action_node_velocity_test = launch_ros.actions.Node(
@@ -34,6 +33,5 @@ def generate_launch_description():
     launch_test_time,
     launch_acc,
     launch_max_velocity,
-    launch_noise,
     action_node_velocity_test,
   ])

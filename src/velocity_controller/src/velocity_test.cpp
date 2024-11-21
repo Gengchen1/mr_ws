@@ -14,6 +14,7 @@ class Test : public rclcpp::Node {
   double acc_time = max_test_time / 2;  // 加速时间
   double dcc_time = acc_time;           // 减速时间
   bool started = false;
+  double current_velocity;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr test_pub;
   rclcpp::TimerBase::SharedPtr timer;
   rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odo_sub;
@@ -22,7 +23,7 @@ class Test : public rclcpp::Node {
   rclcpp::Time start_test_time;
 
   void on_odo(const nav_msgs::msg::Odometry::SharedPtr odom) {
-    double current_velocity = odom->twist.twist.linear.x;
+    current_velocity = odom->twist.twist.linear.x;
   }
 
   void on_timer() {
