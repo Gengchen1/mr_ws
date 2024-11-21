@@ -20,7 +20,11 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             'rqt_persp',
-            default_value=PathJoinSubstitution([simple_controller_dir, 'rqt_cfg', 'steer_error.perspective'])
+            default_value=PathJoinSubstitution([
+                simple_controller_dir,
+                'rqt_cfg',
+                'steer_error.perspective'
+            ]),
         ),
         DeclareLaunchArgument('velocity_noise', default_value='0.0'),
 
@@ -54,8 +58,8 @@ def generate_launch_description():
             name='rqt',
             arguments=["--perspective-file", LaunchConfiguration("rqt_persp")],
             output='log',
-            condition=launch.conditions.IfCondition(
-                PythonExpression(["'", LaunchConfiguration('rqt_persp'), "' != ''"])
+            condition=launch.conditions.UnlessCondition(
+                PythonExpression(["'", LaunchConfiguration('rqt_persp'), "' == ''"])
             )
         ),
     ])
