@@ -66,7 +66,7 @@ public:
         steer_sub_ = this->create_subscription<std_msgs::msg::Float32>(
             "robot/steering", 1, std::bind(&StageThrottleController::on_steering, this, std::placeholders::_1));
         throttle_sub_ = this->create_subscription<std_msgs::msg::Float32>(
-            "robot/velocity", 1, std::bind(&StageThrottleController::on_throttle, this, std::placeholders::_1));
+            "robot/throttle", 1, std::bind(&StageThrottleController::on_throttle, this, std::placeholders::_1));
 
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(100), std::bind(&StageThrottleController::on_timer, this));

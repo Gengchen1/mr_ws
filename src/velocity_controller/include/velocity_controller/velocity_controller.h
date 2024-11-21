@@ -36,7 +36,7 @@ class PIDController {
   double ki_;
   double kd_;
   double prev_error_;
-  double integral_; // 修正拼写错误
+  double integral_; 
 
  public:
   PIDController(double kp, double ki, double kd);
