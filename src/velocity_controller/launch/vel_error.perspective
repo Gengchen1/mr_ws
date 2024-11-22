@@ -227,7 +227,7 @@
                 },
                 "topics": {
                   "type": "repr",
-                  "repr": "u'/velocity_err/data'"
+                  "repr": "u'/throttle_controller/velocity_err/data'"
                 },
                 "y_limits": {
                   "type": "repr",

@@ -4,15 +4,8 @@
 
 int main(int argc, char **argv) {
   rclcpp::init(argc, argv);
-  // 创建 Controller 节点
-  auto node = std::make_shared<simple_controller::Controller>("simple_controller");
-
-  // 移除以下重复的参数声明
-  /*
-  node->declare_parameter<double>("proportional", 1.0);
-  node->declare_parameter<double>("differential", 0.0);
-  node->declare_parameter<double>("integral", 0.0);
-  */
+  // 创建 Controller 节点, 命名空间改为~/simple_controller
+  auto node = std::make_shared<simple_controller::Controller>("simple_controller", "simple_controller");
 
   // 获取参数并设置控制器
   double proportional = node->get_parameter("proportional").as_double();
@@ -21,7 +14,7 @@ int main(int argc, char **argv) {
   node->reset(proportional, differential, integral);
 
   // 设置参数回调
-  node->add_on_set_parameters_callback(
+  auto param_callback_handle = node->add_on_set_parameters_callback(
     [node](const std::vector<rclcpp::Parameter> &parameters) {
       for (const auto &param : parameters) {
         if (param.get_name() == "proportional" || param.get_name() == "differential" || param.get_name() == "integral") {
@@ -42,7 +35,7 @@ int main(int argc, char **argv) {
   volatile bool odo_received = false;
   rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odo_sub;
   odo_sub = node->create_subscription<nav_msgs::msg::Odometry>(
-    "odom", 1,
+    "~/odom", 1,
     [&odo_received, &odo_sub](const nav_msgs::msg::Odometry::SharedPtr /* odom */) {
       odo_received = true;
       odo_sub.reset();

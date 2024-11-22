@@ -18,10 +18,11 @@ def generate_launch_description():
     package='velocity_controller',
     executable='velocity_controller',
     name='throttle_controller',
+    output='screen',
     remappings=[
-      ('/odom', '/robot/odom'),
-      ('/velocity', '/robot/velocity'),
-      ('/throttle', '/robot/throttle'),
+      ('/throttle_controller/odom', '/robot/odom'),
+      ('/throttle_controller/velocity', '/robot/velocity'),
+      ('/throttle_controller/throttle', '/robot/throttle'),
       ],
   )
 
@@ -60,8 +61,8 @@ def generate_launch_description():
     executable='velocity_test',
     name='vtest',
     remappings=[
-      ('/odom', '/robot/odom'),
-      ('/velocity', '/robot/velocity')
+      ('/vtest/odom', '/robot/odom'),
+      ('/vtest/velocity', '/robot/velocity')
     ],
     parameters=[
       {
@@ -75,13 +76,13 @@ def generate_launch_description():
 
   return launch.LaunchDescription([
     # 从上往下启动
+
     rqt_persp,
     action_node_velocity_controller,
     action_node_start_rqt,
 
     launch_noise,
     action_include_path,
-
 
     launch_test_time,
     launch_acc,

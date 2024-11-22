@@ -11,10 +11,10 @@
 namespace velocity_controller {
 class Controller : public rclcpp::Node {
  public:
-  rclcpp::Time last_timer_time;
   void on_command_velocity(const std_msgs::msg::Float32::SharedPtr msg);
   void on_odo(const nav_msgs::msg::Odometry::SharedPtr odom);
   void on_timer();
+  rclcpp::Time last_timer_time;
 
   Controller(const std::string &name);
   ~Controller(); // 声明析构函数
@@ -78,7 +78,7 @@ void Controller::on_timer() {
   double error = desired_velocity - current_velocity;
   double control_signal = pid_linear.calculate(error, dt);
 
-  double stauration_limit = 1.0;
+  double stauration_limit = 10.0;
   control_signal =
       std::min(std::max(control_signal, -stauration_limit), stauration_limit);
 
@@ -97,16 +97,16 @@ Controller::Controller(const std::string &name)
       desired_velocity(0.0),
       current_velocity(0.0),
       throttle_pub(
-          this->create_publisher<std_msgs::msg::Float32>("throttle", 1)),
+          this->create_publisher<std_msgs::msg::Float32>("~/throttle", 1)),
       err_pub(
-          this->create_publisher<std_msgs::msg::Float32>("velocity_err", 1)),
+          this->create_publisher<std_msgs::msg::Float32>("~/velocity_err", 1)),
       timer(this->create_wall_timer(std::chrono::duration<double>(0.1),
                                     std::bind(&Controller::on_timer, this))),
       odo_sub(this->create_subscription<nav_msgs::msg::Odometry>(
-          "odom", 1,
+          "~/odom", 1,
           std::bind(&Controller::on_odo, this, std::placeholders::_1))),
       cmd_sub(this->create_subscription<std_msgs::msg::Float32>(
-          "velocity", 1,
+          "~/velocity", 1,
           std::bind(&Controller::on_command_velocity, this,
                     std::placeholders::_1))) {}
 Controller::~Controller() {}

@@ -101,7 +101,7 @@ std::size_t Controller::cal_target_index() {
   double error = -(-dx * sin(nearest_pose_angle) + dy * cos(nearest_pose_angle));
   RCLCPP_INFO(this->get_logger(), "error %lf", error);
 
-  double m_error = abs(error); // 取误差绝对值
+  double m_error = abs(error); // 取误差绝对�����
   // 打印当前速度
   RCLCPP_INFO(this->get_logger(), "current_linear_velovity %lf", current_linear_velocity);
   // 预测前方一小段距离
@@ -130,7 +130,7 @@ void Controller::on_timer() {
   if (std::abs(current_linear_velocity) < 0.01) {
     return;  // 如果速度小于0.01,接近停止，就不再更新状态
   }
-  // 更新当前机器人位姿
+  // 更新当前机器��位��
   update_robot_pose((this->now() - robot_time).seconds());
   // 获取最近目标点
   nearest_point_index = cal_target_index();
@@ -197,7 +197,7 @@ void Controller::publish_error(double error) {
 // 横向跟踪误差，小车中心点到最近路径点的距离
 double Controller::cross_track_error() {
   double error = 0.0;
-  // 计算车辆到轨迹圆边缘的横向偏差，横向偏差为0，代表恰好在轨迹上
+  // 计算车辆到轨迹圆��缘的横向偏差，横向偏差为0，代表恰好在轨迹上
   // 横向偏差为负，代表在轨迹内，横向偏差为正，代表在轨迹外
   if (robot_y < radius) {
     double rx = robot_x;
@@ -265,7 +265,7 @@ nav_msgs::msg::Path::SharedPtr Controller::create_path() const {
       point_length += traj_dl; // 增加点的长度,获取下一个长度出的点
       points_added++; // 增加已添加的点数
     }
-    point_length -= segment_length; // 减去当前轨迹段的长度? 相当于至0吧，���为退出while时point_length == segment_length
+    point_length -= segment_length; // 减去当前轨迹段的长度? 相当于至0吧，因为退出while时point_length == segment_length
     ++segment_it; // 移动到下一个轨迹段
   }
   return path; // 返回生成的路径
@@ -283,15 +283,15 @@ geometry_msgs::msg::Quaternion Controller::createQuaternionMsgFromYaw(const doub
  * 比例、微分、积分 -pid 因子
  * max_antiwindup_error - 最大抗积分饱和，pid中的i
  * 轨迹由两条线连接的两个圆段组成
- * 第一个圆心为 (0, radius)，第二个圆心为 (0, cy)
+ * 第一个圆心��� (0, radius)，第二个��心为 (0, cy)
  * radius -圆形零件的半径
  * cy -第二个圆中心
  * traj_dl -已发布轨迹的离散长度
  * traj_length -已发布轨迹的长度
  * timer_period -离散定时器
  */
-Controller::Controller(const std::string& ns)
-   : Node("controller_" + ns),
+Controller::Controller(const std::string& ns, const std::string &namespace_)
+   : Node(ns,namespace_),
   // 声明PID三个参数的名字和默认值
   p_factor(this->declare_parameter("proportional", 1.0)),
   i_factor(this->declare_parameter("integral", 0.0)),
@@ -305,18 +305,18 @@ Controller::Controller(const std::string& ns)
   traj_dl(this->declare_parameter("traj_dl", 0.2)),
   traj_length(this->declare_parameter("traj_length", 5.0)),
   pose_sub(this->create_subscription<nav_msgs::msg::Odometry>(
-    "ground_truth", 1, std::bind(&Controller::on_pose, this, std::placeholders::_1))),
+    "~/ground_truth", 1, std::bind(&Controller::on_pose, this, std::placeholders::_1))),
   odo_sub(this->create_subscription<nav_msgs::msg::Odometry>(
-    "odom", 1, std::bind(&Controller::on_odo, this, std::placeholders::_1))),
+    "~/odom", 1, std::bind(&Controller::on_odo, this, std::placeholders::_1))),
   path_sub(this->create_subscription<nav_msgs::msg::Path>(
-    "path", 1, std::bind(&Controller::on_path, this, std::placeholders::_1))),
+    "~/path", 1, std::bind(&Controller::on_path, this, std::placeholders::_1))),
   // 创建一个墙上定时器(以实际时间为准),时间间隔设置为0.1秒，每0.1秒调用一次回调函数
   timer(this->create_wall_timer(
     std::chrono::duration<double>(this->declare_parameter("timer_period", 0.1)),
     std::bind(&Controller::on_timer, this))),
-  err_pub(this->create_publisher<std_msgs::msg::Float32>("error", 10)),  // 修改为 Float32
-  steer_pub(this->create_publisher<std_msgs::msg::Float32>("steering", 10)),  // 修改为 Float32
-  path_pub(this->create_publisher<nav_msgs::msg::Path>("controller_path", 1)),
+  err_pub(this->create_publisher<std_msgs::msg::Float32>("~/error", 10)),  // 修改为 Float32
+  steer_pub(this->create_publisher<std_msgs::msg::Float32>("/steering", 10)),  // 修改为 Float32
+  path_pub(this->create_publisher<nav_msgs::msg::Path>("~/controller_path", 1)),
   robot_time(this->now()) // 使用节点的当前时间初始化
 {
   // 顺时针轨迹,  cy 是第二个圆心的y轴坐标

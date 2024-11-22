@@ -14,7 +14,7 @@ class Test : public rclcpp::Node {
   double acc_time = max_test_time / 2;  // 加速时间
   double dcc_time = acc_time;           // 减速时间
   bool started = false;
-  double current_velocity;
+  // double current_velocity;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr test_pub;
   rclcpp::TimerBase::SharedPtr timer;
   rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odo_sub;
@@ -23,7 +23,7 @@ class Test : public rclcpp::Node {
   rclcpp::Time start_test_time;
 
   void on_odo(const nav_msgs::msg::Odometry::SharedPtr odom) {
-    current_velocity = odom->twist.twist.linear.x;
+    double current_velocity = odom->twist.twist.linear.x;
   }
 
   void on_timer() {
@@ -63,14 +63,12 @@ class Test : public rclcpp::Node {
         max_velocity(this->declare_parameter<double>("max_velocity", 7.0)),
         acc(this->declare_parameter<double>("acc", 1.0)),
         max_test_time(this->declare_parameter<double>("test_time", 10.0)),
-        acc_time(max_test_time / 2),
-        dcc_time(acc_time),
-        started(false),
-        test_pub(this->create_publisher<std_msgs::msg::Float32>("velocity", 1)),
+        test_pub(this->create_publisher<std_msgs::msg::Float32>("~/velocity", 1)),
         timer(this->create_wall_timer(std::chrono::duration<double>(0.1),
                                       std::bind(&Test::on_timer, this))),
         odo_sub(this->create_subscription<nav_msgs::msg::Odometry>(
-            "odom", 1, std::bind(&Test::on_odo, this, std::placeholders::_1))) {
+            "~/odom", 1, std::bind(&Test::on_odo, this, std::placeholders::_1))), 
+        start_test_time(this->now()) {
     if (max_velocity / acc > max_test_time / 2.0) {
       acc_time = max_test_time / 2.0;
       dcc_time = max_test_time / 2.0;

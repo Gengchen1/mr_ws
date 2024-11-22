@@ -94,8 +94,8 @@ public:
   void reset();
   void reset(double p, double d, double i);
   // 构造函数
-  Controller(const std::string &ns = "simple_controller");
-  // 虚机构函数,用于在派生类中实现
+  Controller(const std::string &ns, const std::string &namespace_);
+  // 虚析构函数,用于在派生类中实现
   virtual ~Controller();
 
 };

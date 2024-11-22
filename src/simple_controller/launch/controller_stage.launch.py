@@ -45,9 +45,9 @@ def generate_launch_description():
             output='screen',
             parameters=[PathJoinSubstitution([simple_controller_dir, 'launch', 'controller.yaml'])],
             remappings=[
-                ('/ground_truth', '/robot/base_pose_ground_truth'),
-                ('/odom', '/robot/odom'),
-                ('steering', '/robot/steering'),
+                ('/simple_controller/controller/ground_truth', '/robot/base_pose_ground_truth'),
+                ('/simple_controller/controller/odom', '/robot/odom'),
+                ('/steering', '/robot/steering'),
             ]
         ),
 

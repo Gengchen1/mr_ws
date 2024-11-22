@@ -42,10 +42,6 @@ def generate_launch_description():
                 {'max_velocity': 18.0},
                 {'max_acc': 2.0}
             ],
-            # remappings=[
-            #     ('/steering', '/robot/steering'),
-            #     ('/velocity', '/robot/velocity')
-            # ]
         ),
 
         # Conditional node for stage_throttle with parameters and remap

@@ -63,9 +63,9 @@ int main(int argc, char* argv[]) {
 
   twist_pub = node->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 1);
   auto steer_sub = node->create_subscription<std_msgs::msg::Float32>(
-      "robot/steering", 1, on_steering);
+      "~/steering", 1, on_steering);
   auto vel_sub = node->create_subscription<std_msgs::msg::Float32>(
-      "robot/velocity", 1, on_command_velocity);
+      "~/velocity", 1, on_command_velocity);
 
   last_timer_time = node->now();
   auto timer_callback = [node]() { on_timer(nullptr, node); };

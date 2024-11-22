@@ -30,7 +30,7 @@ std::normal_distribution<double> noise_distr;
 
 class StageThrottleController : public rclcpp::Node {
 public:
-    StageThrottleController() : Node("stage_throttle_controller") {
+    StageThrottleController(const std::string &node_name) : Node(node_name) {
         // 获取参数
         this->declare_parameter<bool>("node_started", false);
         bool node_started;
@@ -64,9 +64,9 @@ public:
         real_steer_pub_ = this->create_publisher<std_msgs::msg::Float32>("realized_steering", 1);
 
         steer_sub_ = this->create_subscription<std_msgs::msg::Float32>(
-            "robot/steering", 1, std::bind(&StageThrottleController::on_steering, this, std::placeholders::_1));
+            "~/steering", 1, std::bind(&StageThrottleController::on_steering, this, std::placeholders::_1));
         throttle_sub_ = this->create_subscription<std_msgs::msg::Float32>(
-            "robot/throttle", 1, std::bind(&StageThrottleController::on_throttle, this, std::placeholders::_1));
+            "~/throttle", 1, std::bind(&StageThrottleController::on_throttle, this, std::placeholders::_1));
 
         timer_ = this->create_wall_timer(
             std::chrono::milliseconds(100), std::bind(&StageThrottleController::on_timer, this));
@@ -141,7 +141,8 @@ private:
 
 int main(int argc, char* argv[]) {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<StageThrottleController>());
+    auto node = std::make_shared<StageThrottleController>("stage_throttle_controller");
+    rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
 }

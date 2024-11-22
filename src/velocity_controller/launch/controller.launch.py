@@ -24,9 +24,9 @@ def generate_launch_description():
     name='throttle_controller',
     output='screen',
     remappings=[
-      ('/odom', '/robot/odom'),
-      ('/velocity', '/robot/velocity'),
-      ('/throttle', '/robot/throttle'),
+      ('/throttle_controller/odom', '/robot/odom'),
+      ('/throttle_controller/velocity', '/robot/velocity'),
+      ('/throttle_controller/throttle', '/robot/throttle'),
       ],
   )
 

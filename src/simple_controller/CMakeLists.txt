@@ -42,7 +42,6 @@ ament_package()
 
 add_executable(controller_node src/controller.cpp
                                 src/controller_node.cpp)
-add_executable(test_node src/test1.cpp)
 include_directories(
   include/simple_controller
   ${rclcpp_INCLUDE_DIRS}
@@ -54,11 +53,8 @@ tf2 geometry_msgs
 std_msgs
 angles)
 
-ament_target_dependencies(test_node rclcpp)
-
 install(TARGETS
   controller_node
-  test_node
   DESTINATION lib/${PROJECT_NAME})
 
 # 安装 launch 文件
