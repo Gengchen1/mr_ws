@@ -8,3 +8,4 @@
     cy: 70.0
     traj_length: 50.0
     timer_period: 0.1 
+    log_level: debug

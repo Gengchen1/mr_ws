@@ -4,7 +4,9 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/opt/ros/foxy/**"
+                "/opt/ros/foxy/**",
+                "/usr/local/include/**",
+                "${workspaceFolder}/src/mpc_controller/include/mpc_controller"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

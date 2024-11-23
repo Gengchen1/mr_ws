@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.5)
-project(simple_controller)
+cmake_minimum_required(VERSION 3.8)
+project(mpc_controller)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -15,17 +15,42 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE RelWithDebInfo)
-endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(simple_controller REQUIRED)
 find_package(tf2 REQUIRED)
-find_package(geometry_msgs REQUIRED)
-find_package(std_msgs REQUIRED)
 find_package(angles REQUIRED)
+find_package(ACADO REQUIRED)
+
+
+include_directories(
+  include/mpc_controller
+  ${ACADO_INCLUDE_DIR}
+  /usr/local/include/acado  # 添加这行，路径根据实际情况调整
+)
+
+add_executable(mpc_controller
+  src/mpc_controller.cpp
+  src/mpc_controller_node.cpp
+  src/mpc.cpp
+)
+
+# 链接 ACADO 库
+target_link_libraries(mpc_controller
+  ${ACADO_SHARED_LIBRARIES}
+)
+
+ament_target_dependencies(mpc_controller 
+  rclcpp 
+  nav_msgs 
+  sensor_msgs 
+  tf2 
+  angles 
+  simple_controller
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -38,38 +63,13 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-ament_package()
-
-add_executable(controller_node src/controller.cpp
-                                src/controller_node.cpp)
-include_directories(
-  include/simple_controller
-  ${rclcpp_INCLUDE_DIRS}
-)
-ament_target_dependencies(controller_node 
-rclcpp
-nav_msgs
-tf2 geometry_msgs
-std_msgs
-angles)
-
 install(TARGETS
-  controller_node
-  DESTINATION lib/${PROJECT_NAME})
-
-# 安装 launch 文件
-install(DIRECTORY launch/
-  DESTINATION share/${PROJECT_NAME}/launch
-)
-
-# install(TARGETS start_rqt
-#   RUNTIME DESTINATION lib/${PROJECT_NAME}
-# )
-# 安装 start_rqt 脚本
-install(PROGRAMS scripts/start_rqt
+  mpc_controller
   DESTINATION lib/${PROJECT_NAME}
 )
-# 安装 rqt 配置文件
-install(DIRECTORY rqt_cfg/
-  DESTINATION share/${PROJECT_NAME}/rqt_cfg
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
 )
+
+ament_package()

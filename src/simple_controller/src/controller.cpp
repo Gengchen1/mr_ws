@@ -103,7 +103,7 @@ std::size_t Controller::cal_target_index() {
 
   double m_error = abs(error); // 取误差绝对�����
   // 打印当前速度
-  RCLCPP_INFO(this->get_logger(), "current_linear_velovity %lf", current_linear_velocity);
+  RCLCPP_DEBUG(this->get_logger(), "current_linear_velovity %lf", current_linear_velocity);
   // 预测前方一小段距离
   double l_d = lam * current_linear_velocity + c;
   // 
@@ -283,7 +283,7 @@ geometry_msgs::msg::Quaternion Controller::createQuaternionMsgFromYaw(const doub
  * 比例、微分、积分 -pid 因子
  * max_antiwindup_error - 最大抗积分饱和，pid中的i
  * 轨迹由两条线连接的两个圆段组成
- * 第一个圆心��� (0, radius)，第二个��心为 (0, cy)
+ * 第一个圆心(0, radius)，第二个圆心为 (0, cy)
  * radius -圆形零件的半径
  * cy -第二个圆中心
  * traj_dl -已发布轨迹的离散长度
