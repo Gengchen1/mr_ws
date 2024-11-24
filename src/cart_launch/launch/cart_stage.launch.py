@@ -21,7 +21,9 @@ def generate_launch_description():
             executable='stage_ros2',
             name='model',
             output='screen',
-            parameters=[{'world_file': LaunchConfiguration('world')}],
+            parameters=[{'world_file': LaunchConfiguration('world')},
+                        {'frame_id_world': 'odom'}
+                        ],
             remappings=[
                 ('/odom', '/robot/odom'),
                 ('/ground_truth', '/robot/base_pose_ground_truth')

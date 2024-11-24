@@ -1,7 +1,10 @@
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from ament_index_python.packages import get_package_share_directory
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, PythonExpression
 from ament_index_python.packages import get_package_share_directory
 import os
 
@@ -16,6 +19,11 @@ def generate_launch_description():
     #     name='ROSCONSOLE_CONFIG_FILE',
     #     value=rosconsole_config_file
     # )
+    mpc_controller_dir = get_package_share_directory('mpc_controller')
+    rqt_persp = DeclareLaunchArgument(
+        'rqt_persp',
+        default_value=mpc_controller_dir + '/rqt/steer_error.perspective'
+    )
 
     # 包含 cart_stage.launch.py
     cart_stage_launch = IncludeLaunchDescription(
@@ -26,6 +34,14 @@ def generate_launch_description():
                 'cart_stage.launch.py'
             )
         )
+    )
+    # 启动 rqt节点
+    action_node_start_rqt = Node(
+        package='mpc_controller',
+        executable='start_rqt',
+        name='rqt',
+        arguments=["--perspective-file", LaunchConfiguration("rqt_persp")],
+        output='screen',  # 改为 screen 以便查看输出
     )
 
     # 启动 mpc_controller 节点
@@ -40,14 +56,14 @@ def generate_launch_description():
             'controller.yaml'
         )],
         remappings=[
-            ('/controller/mpc_controller/ground_truth', '/robot/base_pose_ground_truth'),
-            ('/controller/mpc_controller/odom', '/robot/odom'),
+            ('/controller/ground_truth', '/robot/base_pose_ground_truth'),
+            ('/controller/odom', '/robot/odom'),
             ('steering', '/robot/steering'),
             ('velocity', '/robot/velocity')
         ]
     )
 
-    # 启动 rviz 节点
+    # 启动 rviz2 节点
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -55,12 +71,14 @@ def generate_launch_description():
         arguments=['--display-config', os.path.join(
             get_package_share_directory('mpc_controller'),
             'rviz',
-            'traj.rviz'
+            'zg.rviz2.rviz'
         )],
         output='screen'
     )
 
     return LaunchDescription([
+        rqt_persp,
+        action_node_start_rqt,
         # set_env_var,
         cart_stage_launch,
         controller_node,

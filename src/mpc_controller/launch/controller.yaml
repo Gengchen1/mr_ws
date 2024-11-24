@@ -1,15 +1,18 @@
-/mpc_controller:
+/controller:
  ros__parameters:
-    radius: 25.0
-    cy: 70.0
-    traj_length: 50
-    timer_period: 0.1
-    max_velocity: 10.0
-    max_steer_rate: 0.3
-    max_delta: 0.3           # 新增参数
-    mpc_steps: 4             # 修改为 4 以匹配 MPC 类初始化
-    mpc_dt: 0.25
-    kcte: 1.1
-    kepsi: 2.0
-    kev: 0.01
-    ksteer_cost: 5.0
+    radius: 25.0 # 这是汽车转弯区域半径的允许误差。
+    # 也就是说，如果汽车在转弯时处于这个半径范围内，
+    # 则认为它在正确的轨迹上。
+    cy: 70.0 # 这是确定轨迹中心的参数
+    traj_length: 50.0 # 汽车应行驶的轨迹长度
+    timer_period: 0.05 # 控制器循环的工作周期
+    max_velocity: 10.0 # 汽车的最大行驶速度
+    max_steer_rate: 0.3 # 方向盘的最大转速
+    mpc_steps: 6.0  # 从当前时刻起，MPC方法预测的未来周期（步数）
+    mpc_dt: 0.15 # 该参数确定MPC方法中工作步骤之间的时间间隔
+    kcte: 1.1 # 这是CTE（横向偏差）的系数，即偏离中心轨迹的误差。
+    # 这对于优化方法的工作是必要的
+    kepsi: 2.0  # 该系数是偏离中心轨迹的角度误差值
+    kev: 0.01 # 速度的允许误差，即期望速度与实际速度之间的差异
+    ksteer_cost: 5.0 # 这是方向盘转角的成本系数。它的作用是防止方向盘急剧转动，
+    # 使汽车的行驶保持相对平稳。

@@ -67,6 +67,9 @@
     "bit": "cpp",
     "codecvt": "cpp",
     "filesystem": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "core": "cpp",
+    "*.txx": "cpp",
+    "qr": "cpp"
   },
 }

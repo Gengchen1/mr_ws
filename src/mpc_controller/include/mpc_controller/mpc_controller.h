@@ -9,7 +9,7 @@
 #include <tf2/LinearMath/Vector3.h>
 #include <tf2/LinearMath/Transform.h>
 #include <sensor_msgs/msg/point_cloud.hpp>
-#include "/home/zgc/mr_ws/src/simple_controller/include/simple_controller/trajectory_segment.h"
+#include "trajectory_segment.h"
 #include "mpc.h"
 #include <rclcpp/rclcpp.hpp>
 #include "std_msgs/msg/float32.hpp"
@@ -46,7 +46,7 @@ protected:
   double control_dt;
   double traj_dl;
   double traj_length;
-  int mpc_steps;
+  double mpc_steps;
   double mpc_dt;
 
   // 接着声明复杂类型成员变量，这些成员变量的初始化可能依赖于上述基本类型成员变量
@@ -119,7 +119,11 @@ protected:
   void apply_control();
   void publish_poly();
   void publish_mpc_traj(std::vector<double>& x, std::vector<double>& y);
-public:
+  tf2::Quaternion createQuaternionMsgFromYaw(
+      const double yaw) const;
+  void solveMPC();
+
+ public:
   void reset();
   MPCController(const std::string& ns = "mpc_controller");
   virtual ~MPCController();
