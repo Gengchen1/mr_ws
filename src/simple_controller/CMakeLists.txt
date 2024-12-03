@@ -42,6 +42,7 @@ ament_package()
 
 add_executable(controller_node src/controller.cpp
                                 src/controller_node.cpp)
+
 include_directories(
   include/simple_controller
   ${rclcpp_INCLUDE_DIRS}
@@ -52,6 +53,10 @@ nav_msgs
 tf2 geometry_msgs
 std_msgs
 angles)
+
+add_executable(velocity_publisher src/velocity_publisher.cpp)
+ament_target_dependencies(velocity_publisher rclcpp std_msgs)
+install(TARGETS velocity_publisher DESTINATION lib/${PROJECT_NAME})
 
 install(TARGETS
   controller_node

@@ -1,23 +1,6 @@
-#include "mpc_controller.h"
-
-#include <angles/angles.h>
-#include <tf2/LinearMath/Transform.h>
-#include <tf2/convert.h>
-#include <tf2/utils.h>
-
-#include <eigen3/Eigen/Core>
-#include <eigen3/Eigen/QR>
-#include <rclcpp/time.hpp>  // 确保包含时间相关头文件
-#include <sensor_msgs/msg/point_cloud.hpp>
-#include <std_msgs/msg/float32.hpp>
-
-#include "acado/acado_optimal_control.hpp"
-#include "rclcpp/rclcpp.hpp"
-
-USING_NAMESPACE_ACADO
+#include <mpc_controller.h>
 
 namespace mpc_controller {
-
 template <class T>
 T clip(T val, T max) {
   if (val > max) return max;
@@ -26,10 +9,9 @@ T clip(T val, T max) {
 }
 
 void MPCController::update_trajectory_segment() {
-  // 小车到轨迹段起始点的距离
   current_segment_length =
       (*current_segment)->get_point_length(robot_x, robot_y);
-  // <0, 说明小车在轨迹段之前，向前回溯，直到找到小车所在的轨迹上
+
   while (current_segment_length < 0.0) {
     if (current_segment == trajectory.begin())
       current_segment = trajectory.end();
@@ -38,7 +20,6 @@ void MPCController::update_trajectory_segment() {
     current_segment_length =
         (*current_segment)->get_point_length(robot_x, robot_y);
   }
-  // >0, 说明小车在轨迹段之后，向后回溯，直到找到小车所在的轨迹上
   while (current_segment_length > (*current_segment)->get_length()) {
     ++current_segment;
     if (current_segment == trajectory.end())
@@ -46,57 +27,49 @@ void MPCController::update_trajectory_segment() {
     current_segment_length =
         (*current_segment)->get_point_length(robot_x, robot_y);
   }
-  //  ROS_DEBUG_STREAM("current segment length "<<current_segment_length);
 }
 
 void MPCController::update_control_points() {
-    control_points.resize(control_points_num);
-    Trajectory::iterator segment = current_segment;
-    tf2::Vector3 pose(robot_x, robot_y, 0);
-    RCLCPP_DEBUG(this->get_logger(), "control points");
-    double control_point_distance =
-        (*segment)->get_point_length(pose.x(), pose.y());
-
-    for (std::size_t i = 0; i < control_points_num; ++i) {
-        // 修正：控制点距离应按固定步长累加
-        control_point_distance += i * control_points_dl;
-
-        // 如果控制点距离超过当前段长度，移动到下一段
-        while (control_point_distance > (*segment)->get_length()) {
-            control_point_distance -= (*segment)->get_length();
-            ++segment;
-            if (segment == trajectory.end()) segment = trajectory.begin();
-        }
-
-        control_points[i] = (*segment)->get_point(control_point_distance);
-        RCLCPP_DEBUG(this->get_logger(), "%zu: %f %f", i, control_points[i].x(),
-                     control_points[i].y());
+  control_points.resize(control_points_num);
+  Trajectory::iterator segment = current_segment;
+  tf2::Vector3 pose(robot_x, robot_y, 0);
+  RCLCPP_INFO(this->get_logger(), "control points");
+  double control_point_distance =
+      (*segment)->get_point_length(pose.x(), pose.y());
+  for (std::size_t i = 0; i < control_points_num; ++i) {
+    control_point_distance += i * control_points_dl;
+    while (control_point_distance > (*segment)->get_length()) {
+      control_point_distance -= (*segment)->get_length();
+      ++segment;
+      if (segment == trajectory.end()) segment = trajectory.begin();
     }
+    control_points[i] = (*segment)->get_point(control_point_distance);
+    RCLCPP_DEBUG(this->get_logger(), "%lu: %f %f", i, control_points[i].x(),
+                 control_points[i].y());
+  }
 }
 
+// converts control points into robot coordinate frame
 void MPCController::convert_control_points() {
   tf2::Transform world2robot = robot2world.inverse();
   RCLCPP_DEBUG(this->get_logger(), "control points in robot coordinates ");
-  for (auto& point : control_points) {
-    // 将每个控制点转换成机器人坐标系
+  for (auto &point : control_points) {
     point = world2robot(point);
     RCLCPP_DEBUG(this->get_logger(), "%f %f", point.x(), point.y());
   }
 }
 
-// 计算多项式系数
+// calculates polynom coefficients
 void MPCController::calculate_control_coefs() {
-  const int order = 3;  // 多项式阶数为3
+  const int order = 3;  // we have 4 coefficients
   assert(order <= control_points.size() - 1);
   Eigen::MatrixXd A(control_points.size(), order + 1);
 
-  // 初始化系数矩阵A,用来存储控制点的x坐标的次幂
-  for (size_t i = 0; i < control_points.size(); ++i) {
+  for (std::size_t i = 0; i < control_points.size(); ++i) {
     A(i, 0) = 1.0;
   }
-  // 向量yvals用来存储控制点的y坐标
   Eigen::VectorXd yvals(control_points.size());
-  for (size_t j = 0; j < control_points.size(); j++) {
+  for (std::size_t j = 0; j < control_points.size(); j++) {
     yvals(j) = control_points[j].y();
     for (int i = 0; i < order; i++) {
       A(j, i + 1) = A(j, i) * control_points[j].x();
@@ -105,11 +78,10 @@ void MPCController::calculate_control_coefs() {
   auto Q = A.householderQr();
   Eigen::VectorXd result = Q.solve(yvals);
   control_coefs.assign(result.data(), result.data() + result.size());
-  RCLCPP_DEBUG(this->get_logger(), "coefs: %f %f %f %f", control_coefs[0],
+  RCLCPP_INFO(this->get_logger(), "coefs: %f %f %f %f", control_coefs[0],
                control_coefs[1], control_coefs[2], control_coefs[3]);
 }
 
-// 计算多项式在给定x处的值
 double MPCController::polyeval(double x) {
   double result = control_coefs[0];
   double ax = 1.0;
@@ -120,118 +92,77 @@ double MPCController::polyeval(double x) {
   return result;
 }
 
+/// \ update robot pose to current time based on last pose and velocities
 void MPCController::update_robot_pose(double dt) {
-  // 更新机器人当前位置
+  //  ROS_DEBUG_STREAM("update_robot_pose "<<dt<<" v =
+  //  "<<current_linear_velocity );
   robot_x += current_linear_velocity * dt * cos(robot_theta);
   robot_y += current_linear_velocity * dt * sin(robot_theta);
-
-  // 更新机器人当前朝向角
   robot_theta =
       angles::normalize_angle(robot_theta + current_angular_velocity * dt);
-
-  // 更新当前时间，使用节点的时钟
   robot_time += rclcpp::Duration::from_seconds(dt);
-
-  // 将机器人位姿转化成世界坐标系下的向量
   robot2world.setOrigin(tf2::Vector3(robot_x, robot_y, 0));
-
-  // 根据朝向角设置机器人在世界坐标系下的四元数
-  robot2world.setRotation(createQuaternionMsgFromYaw(robot_theta));
-}
-// ros2中没有yaw角和四元数的转换函数，自己写了一个。
-tf2::Quaternion MPCController::createQuaternionMsgFromYaw(
-    const double yaw) const {
   tf2::Quaternion q;
-  q.setRPY(0, 0, yaw);
-  return q;
+  q.setRPY(0, 0, robot_theta);  // Roll = 0, Pitch = 0, Yaw = robot_theta
+  robot2world.setRotation(q);
+  // robot2world.setRotation(tf2::createQuaternionFromYaw(robot_theta));
 }
 
-// 发布控制指令
 void MPCController::apply_control() {
-  // 当前速度
   cmd_vel += cmd_acc * control_dt;
   cmd_steer_angle += cmd_steer_rate * control_dt;
   cmd_steer_angle = clip<double>(cmd_steer_angle, max_steer_angle);
-  // 将曲率作为命令发送到驱动器
-  auto cmd = std_msgs::msg::Float32();
+  // send curvature as command to drives
+  std_msgs::msg::Float32 cmd;
   cmd.data = cmd_steer_angle;
   steer_pub->publish(cmd);
-  // 将速度作为命令发送给驱动器
+  // send velocity as command to drives
   cmd.data = cmd_vel;
   vel_pub->publish(cmd);
   RCLCPP_INFO(this->get_logger(), "cmd v = %f angle = %f", cmd_vel,
-              cmd_steer_angle);
+               cmd_steer_angle);
 }
 
 void MPCController::on_timer() {
+  rclcpp::Time current_time = clock->now();
+
   apply_control();
-
-  // 计算机器人下一个周期的位姿
-  double dt = (this->now() - robot_time).seconds();
-  update_robot_pose(dt + control_dt);
-
-  // 更新行驶的轨迹段
+  if (current_time.get_clock_type() == robot_time.get_clock_type())
+    update_robot_pose((current_time - robot_time).seconds() + control_dt);
+  else
+    RCLCPP_ERROR(this->get_logger(), "Different time sources");
   update_trajectory_segment();
 
-  // 更新时间控制点
   update_control_points();
-
-  // 转换控制点到世界坐标系
   convert_control_points();
-
-  // 计算轨迹线系数
   calculate_control_coefs();
 
-  // 第一个多项式系数是系统偏移量或初始化误差，常数项
   double error = control_coefs[0];
-  RCLCPP_INFO(this->get_logger(), "error from coef[0] = %f", error);
+  RCLCPP_INFO(this->get_logger(), "error = %f", error);
 
-  // 开始求解
-  // const auto start_solve = this->now();
-
-  const auto start_solve = std::chrono::steady_clock::now();
-
-  // 调用 solve 时，确保参数与 MPC::solve 声明一致
+  rclcpp::Time start_solve = clock->now();
+  // const auto start_solve = std::chrono::steady_clock::now();
   mpc.solve(current_linear_velocity, cmd_steer_angle, control_coefs,
             cmd_steer_rate, cmd_acc, mpc_x, mpc_y);
-  // solveMPC();
-
-  // 求解时间
-  // double solve_time = (this->now() - start_solve).seconds();
-  auto solve_time = std::chrono::duration_cast<std::chrono::duration<double>>(
-                        std::chrono::steady_clock::now() - start_solve)
-                        .count();
+  double solve_time = (clock->now() - start_solve).seconds();
   RCLCPP_INFO(this->get_logger(), "solve time = %f", solve_time);
-  if (solve_time > 0.08) {
-    RCLCPP_ERROR(this->get_logger(), "Solve time too big %f", solve_time);
-  }
+  if (solve_time > 0.08)
+    RCLCPP_INFO(this->get_logger(), "Solve time too big %f", solve_time);
   publish_trajectory();
   publish_poly();
-  // 发送误差用于调试
+  // send error for debug proposes
   publish_error(cross_track_error());
   publish_mpc_traj(mpc_x, mpc_y);
 }
 
-// 更新机器人位���，x,y坐标和朝向
 void MPCController::on_pose(const nav_msgs::msg::Odometry::SharedPtr odom) {
   robot_x = odom->pose.pose.position.x;
   robot_y = odom->pose.pose.position.y;
-  robot_theta = tf2::getYaw(odom->pose.pose.orientation);
-  // robot_theta =
-  //     2 * atan2(odom->pose.pose.orientation.z, odom->pose.pose.orientation.w);
-
-  world_frame_id = odom->header.frame_id;
-  robot_time = odom->header.stamp;
-
-  //  current_velocity = odom->twist.twist.linear.x;
-  //  RCLCPP_DEBUG(this->get_logger(), "x = %f y = %f %f", robot_x, robot_y,
-  //  robot_theta);
-
-  //  RCLCPP_DEBUG(this->get_logger(), "truth vel = %f",
-  //  odom->twist.twist.linear.x);
+  robot_theta =
+      2 * atan2(odom->pose.pose.orientation.z, odom->pose.pose.orientation.w);
+  robot_time = clock->now();
 }
 
-// 根据里程计信息获取当前速度，和当前转向角
 void MPCController::on_odo(const nav_msgs::msg::Odometry::SharedPtr odom) {
   current_linear_velocity = odom->twist.twist.linear.x;
   current_angular_velocity = odom->twist.twist.angular.z;
@@ -239,17 +170,22 @@ void MPCController::on_odo(const nav_msgs::msg::Odometry::SharedPtr odom) {
     current_curvature = current_angular_velocity / current_linear_velocity;
     current_angle = atan(current_curvature * wheel_base);
   }
-  RCLCPP_DEBUG(this->get_logger(), "odom vel = %f w = %f angle = %f",
+  // else left the same as before
+  RCLCPP_INFO(this->get_logger(), "odom vel = %f w = %f angle = %f",
                current_linear_velocity, current_angular_velocity,
                current_angle);
 }
 
 void MPCController::publish_error(double error) {
-  auto err_msg = std_msgs::msg::Float32();
+  std_msgs::msg::Float32 err_msg;
   err_msg.data = error;
   err_pub->publish(err_msg);
 }
 
+/*
+ *@brief calculates feedback error for trajectory
+ *@return feedback error
+ */
 double MPCController::cross_track_error() {
   double error = 0.0;
   if (robot_y < radius) {
@@ -268,12 +204,12 @@ double MPCController::cross_track_error() {
   return error;
 }
 
-void MPCController::get_segment(std::list<TrajPtr>::iterator& traj_it,
-                                double& len) {
-  (void)len;  // 标记未使用的参数
-  // 初始化为轨迹最后段
+/// \ returns iterator to segment and current length  of trajectory belonging to
+/// current position
+void MPCController::get_segment(std::list<TrajPtr>::iterator &traj_it,
+                                double & /*len*/) {
   traj_it = trajectory.end();
-  // 机器人所在位置符合条件时，赋值为初始轨迹段
+
   if (robot_y < radius) {
     if (robot_x >= 0) {
       traj_it = trajectory.begin();
@@ -281,193 +217,165 @@ void MPCController::get_segment(std::list<TrajPtr>::iterator& traj_it,
   }
 }
 
-void add_point(sensor_msgs::msg::PointCloud::SharedPtr msg,
-               const tf2::Vector3& point) {
+void MPCController::add_point(sensor_msgs::msg::PointCloud &msg,
+                              const tf2::Vector3 &point) {
   geometry_msgs::msg::Point32 p;
-  // 将三维向量转化成位置信息的点
   p.x = point.x();
   p.y = point.y();
   p.z = point.z();
-  msg->points.push_back(p);
+  msg.points.push_back(p);
 }
 
-// 发布轨迹点云信息
+/*
+ * \brief publishes trajectory as pointcloud message
+ */
 void MPCController::publish_trajectory() {
   // prepare pointcloud message
-  sensor_msgs::msg::PointCloud::SharedPtr msg =
-      std::make_shared<sensor_msgs::msg::PointCloud>();
-  // 帧ID
-  msg->header.frame_id = world_frame_id;
-  // 时间戳
-  msg->header.stamp = robot_time;
-  // 点的数量
-  int trajectory_points_quantity = traj_length / traj_dl + 1;
-  // 剩余存储消息的空间
+  auto msg = std::make_shared<sensor_msgs::msg::PointCloud>();
+  msg->header.frame_id = "odom";
+  msg->header.stamp = clock->now();
+
+  double trajectory_points_quantity = traj_length / traj_dl + 1;
   int points_left = trajectory_points_quantity;
   msg->points.reserve(trajectory_points_quantity);
-  // 移除未使用的变量
-  // double publish_len = 0;
-  Trajectory::iterator it = current_segment;
   double start_segment_length = current_segment_length;
+
+  Trajectory::iterator it = current_segment;
 
   while (points_left) {
     double segment_length = (*it)->get_length();
-    // 计算当前可以添加的点数
+    // add points from the segment
     int segment_points_quantity = std::min<int>(
-        points_left, floor((segment_length - start_segment_length) / traj_dl));
-    // 将当前所有的点添加到消息中
+        points_left,
+        std::floor((segment_length - start_segment_length) / traj_dl));
+
     for (int i = 0; i <= segment_points_quantity; ++i) {
-      add_point(msg, (*it)->get_point(start_segment_length + i * traj_dl));
+      add_point(*msg, (*it)->get_point(start_segment_length + i * traj_dl));
     }
     points_left -= segment_points_quantity;
-    // 如果还有剩余点，就切换到下一段
+    // switch to next segment
     if (points_left) {
-      // 下一段的起点
+      // start point for next segment
       start_segment_length +=
           (segment_points_quantity + 1) * traj_dl - segment_length;
-      // 移动到下一个迭代器，如果到达轨迹末尾，则重置为轨迹起点
+
       ++it;
       if (it == trajectory.end()) it = trajectory.begin();
     }
   }
-  // 发布消息
   traj_pub->publish(*msg);
 }
 
-// 预测控制点云间距
 void MPCController::publish_poly() {
   // prepare pointcloud message
-  sensor_msgs::msg::PointCloud::SharedPtr msg =
-      std::make_shared<sensor_msgs::msg::PointCloud>();  // 初始化 msg
-  msg->header.frame_id = world_frame_id;
-  msg->header.stamp = robot_time;
-  // x轴的范围
+  auto msg = std::make_shared<sensor_msgs::msg::PointCloud>();
+  msg->header.frame_id = "odom";
+  msg->header.stamp = clock->now();
+
   double xrange = control_points_dl * control_points_num * 1.5;
-  // 轨迹点数量
-  // int trajectory_points_quantity = static_cast<int>(xrange / traj_dl);
   int trajectory_points_quantity = xrange / traj_dl;
   msg->points.reserve(trajectory_points_quantity);
 
   for (int i = 0; i < trajectory_points_quantity; ++i) {
-    // 当前要计算的点坐标x
     double x = i * traj_dl;
-    // 根据轨迹多项式计算当前点的坐标信息
     tf2::Vector3 point = robot2world(tf2::Vector3(x, polyeval(x), 0));
-    add_point(msg, point);
+    add_point(*msg, point);
   }
   poly_pub->publish(*msg);
 }
 
-void MPCController::publish_mpc_traj(std::vector<double>& x,
-                                     std::vector<double>& y) {
-  // 根据计算的一系列参考坐标来发布轨迹
+void MPCController::publish_mpc_traj(std::vector<double> &x,
+                                     std::vector<double> &y) {
   if (x.empty()) return;
-  sensor_msgs::msg::PointCloud::SharedPtr msg =
-      std::make_shared<sensor_msgs::msg::PointCloud>();  // 初始化 msg
-  msg->header.frame_id = world_frame_id;
-  msg->header.stamp = robot_time;
+
+  auto msg = std::make_shared<sensor_msgs::msg::PointCloud>();
+  msg->header.frame_id = "odom";
+  msg->header.stamp = clock->now();
+
   msg->points.reserve(x.size());
   for (std::size_t i = 0; i < x.size(); ++i) {
-    add_point(msg, robot2world(tf2::Vector3(x[i], y[i], 0)));
+    add_point(*msg, robot2world(tf2::Vector3(x[i], y[i], 0)));
   }
   mpc_traj_pub->publish(*msg);
 }
 
-// 加入源文件中的sloveMPC方法
-void MPCController::solveMPC() {
-  DifferentialState x, y, fi, delta, vel;
-  Control delta_rate, acc;
-
-  const double t_start = 0;
-  const double t_end = mpc_steps * mpc_dt;
-  double& a0 = control_coefs[0];
-  double& a1 = control_coefs[1];
-  double& a2 = control_coefs[2];
-  double& a3 = control_coefs[3];
-
-  DiscretizedDifferentialEquation f(mpc_dt);
-
-  // discrete time system
-  f << next(x) == x + vel * cos(fi) * mpc_dt;
-  f << next(y) == y + vel * sin(fi) * mpc_dt;
-  f << next(fi) == fi + vel * tan(delta) / wheel_base;
-  f << next(delta) == delta + delta_rate * mpc_dt;
-  f << next(vel) == vel + acc * mpc_dt;
-
-  // optimal control problem
-  OCP ocp(t_start, t_end, mpc_steps);
-  ocp.subjectTo(f);
-  ocp.subjectTo(AT_START, x == 0);
-  ocp.subjectTo(AT_START, y == 0);
-  ocp.subjectTo(AT_START, fi == 0);
-  ocp.subjectTo(-max_acc <= acc <= max_acc);
-  ocp.subjectTo(vel <= max_velocity);
-  ocp.subjectTo(delta_rate <= max_steer_rate);
-  ocp.subjectTo(delta <= max_steer_angle);
-
-  Expression cte = pow(y - a0 - a1 * x - a2 * x * x - a3 * x * x * x, 2);
-  Expression epsi = pow(fi - atan(a1 + a2 * x + a3 * x * x), 2);
-  ocp.minimizeMayerTerm(cte + epsi);
-
-  OptimizationAlgorithm alg(ocp);
-  RCLCPP_INFO(rclcpp::get_logger("MPC"), "start solving mpc");
-  alg.solve();
-  RCLCPP_INFO(rclcpp::get_logger("MPC"), "finished solving mpc");
-  VariablesGrid controls;
-  alg.getControls(controls);
-  controls.print();
-}
-
 /*!
- *\简短的构造函数
- *从ns加载参数
- *比例、微分、积分 -pid 因子
- *max_antiwindup_error -使用积分组件的最大误差
- *轨迹由两条线连接的两个圆段组成
- *第一个圆心为 (0, radius)，第二个圆心为 (0, cy)
- *radius -圆形零件的半径
- *cy -第二个圆的中心
- *traj_dl -已发布轨迹的离散
- *traj_length -已发布轨迹的长度
- *timer_period -离散定时器
+ * \brief constructor
+ * loads parameters from ns
+ * proportional, differential , integral - pid factors
+ * max_antiwindup_error - max error for using integral component
+ * trajectory consists of two circle segments connected with two lines
+ * first circle center is (0, radius), second circle center is (0, cy)
+ * radius - radius of circular parts
+ * cy - center of second circle
+ * traj_dl - discrete of published trajectory
+ * traj_length - length of published trajectory
+ * timer_period - timer discrete
  */
-MPCController::MPCController(const std::string& ns)
+MPCController::MPCController(const std::string &ns)
     : Node(ns),
-      radius(this->declare_parameter("radius", 10.0)),
-      cy(this->declare_parameter("cy", 2 * radius)),
-      wheel_base(this->declare_parameter("wheel_base", 1.88)),
-      max_steer_angle(this->declare_parameter("max_steer_angle", 0.3)),
-      max_steer_rate(this->declare_parameter("max_steer_rate", 0.3)),
-      max_velocity(this->declare_parameter("max_velocity", 5.0)),
-      max_acc(this->declare_parameter("max_acc", 0.8)),
-      control_dt(this->declare_parameter("timer_period", 0.1)),
-      traj_dl(this->declare_parameter("traj_dl", 0.2)),
-      traj_length(this->declare_parameter("traj_length", 5.0)),
-      mpc_steps(this->declare_parameter("mpc_steps", 4.0)),
-      mpc_dt(this->declare_parameter("mpc_dt", 0.5)),
-      mpc(
-          mpc_steps, mpc_dt, max_velocity, max_acc, max_steer_angle,
-          max_steer_rate, wheel_base, this->declare_parameter("kcte", 1.0),
-          this->declare_parameter("kepsi", 1.0), this->declare_parameter("kev", 1.0),
-          this->declare_parameter("ksteer_cost", 1.0)),
-      robot_time(this->now()),
-      timer(this->create_wall_timer(
-          std::chrono::duration<double>(control_dt),
-          std::bind(&MPCController::on_timer, this))),
-      mpc_traj_pub(this->create_publisher<sensor_msgs::msg::PointCloud>(
-          "~/mpc_traj", 1)),
-      pose_sub(this->create_subscription<nav_msgs::msg::Odometry>(
-          "~/ground_truth", 1,
-          std::bind(&MPCController::on_pose, this, std::placeholders::_1))),
-      odo_sub(this->create_subscription<nav_msgs::msg::Odometry>(
-          "~/odom", 1,
-          std::bind(&MPCController::on_odo, this, std::placeholders::_1))),
-      err_pub(this->create_publisher<std_msgs::msg::Float32>("~/error", 10)),
-      steer_pub(this->create_publisher<std_msgs::msg::Float32>("steering", 1)),
-      vel_pub(this->create_publisher<std_msgs::msg::Float32>("velocity", 1)),
-      traj_pub(this->create_publisher<sensor_msgs::msg::PointCloud>(
-          "~/trajectory", 1)),
-      poly_pub(this->create_publisher<sensor_msgs::msg::PointCloud>("~/poly", 1)) {
+      mpc(),
+      radius(this->declare_parameter<double>("radius", 25.0)),
+      cy(this->declare_parameter<double>("cy", 70.0)),
+      wheel_base(this->declare_parameter<double>("wheel_base", 1.88)),
+      max_steer_angle(this->declare_parameter<double>("max_steer_angle", 0.3)),
+      max_steer_rate(this->declare_parameter<double>("max_steer_rate", 0.3)),
+      max_velocity(this->declare_parameter<double>("max_velocity", 10.0)),
+      max_acc(this->declare_parameter<double>("max_acc", 0.8)),
+      traj_dl(this->declare_parameter<double>("traj_dl", 0.2)),
+      traj_length(this->declare_parameter<double>("traj_length", 50)),
+      control_dt(this->declare_parameter<double>("timer_period", 0.05)),
+      mpc_steps(this->declare_parameter<int>("mpc_steps", 6)),
+      mpc_dt(this->declare_parameter<double>("mpc_dt", 0.15)),
+      kcte(this->declare_parameter<double>("kcte", 1.1)),
+      kepsi(this->declare_parameter<double>("kepsi", 2.0)),
+      kev(this->declare_parameter<double>("kev", 0.1)),
+      ksteer_cost(this->declare_parameter<double>("ksteer_cost", 5.0)) {
+  mpc.init(mpc_steps, mpc_dt, max_velocity, max_acc, max_steer_angle,
+           max_steer_rate, wheel_base, kcte, kepsi, kev, ksteer_cost);
+
+  // Set the clock type to system time
+  clock = std::make_shared<rclcpp::Clock>(RCL_ROS_TIME);
+
+  // Subscriptions
+  pose_sub = this->create_subscription<nav_msgs::msg::Odometry>(
+      "~/ground_truth", 1, std::bind(&MPCController::on_pose, this, std::placeholders::_1));
+  
+  odo_sub = this->create_subscription<nav_msgs::msg::Odometry>(
+      "~/odom", 1, std::bind(&MPCController::on_odo, this, std::placeholders::_1));
+
+  // Publishers
+  err_pub = this->create_publisher<std_msgs::msg::Float32>("~/error", 10);
+  steer_pub = this->create_publisher<std_msgs::msg::Float32>("steering", 1);
+  vel_pub = this->create_publisher<std_msgs::msg::Float32>("velocity", 1);
+  traj_pub =
+      this->create_publisher<sensor_msgs::msg::PointCloud>("~/trajectory", 1);
+  poly_pub = this->create_publisher<sensor_msgs::msg::PointCloud>("~/poly", 1);
+  mpc_traj_pub =
+      this->create_publisher<sensor_msgs::msg::PointCloud>("~/mpc_traj", 1);
+
+  // Timer
+  timer = this->create_wall_timer(std::chrono::duration<double>(control_dt),
+                                  std::bind(&MPCController::on_timer, this));
+
+  RCLCPP_INFO(this->get_logger(), "MPC controller started");
+  RCLCPP_INFO(this->get_logger(), "radius = %f", radius);
+  RCLCPP_INFO(this->get_logger(), "cy = %f", cy);
+  RCLCPP_INFO(this->get_logger(), "wheel_base = %f", wheel_base);
+  RCLCPP_INFO(this->get_logger(), "max_steer_angle = %f", max_steer_angle);
+  RCLCPP_INFO(this->get_logger(), "max_steer_rate = %f", max_steer_rate);
+  RCLCPP_INFO(this->get_logger(), "max_velocity = %f", max_velocity);
+  RCLCPP_INFO(this->get_logger(), "max_acc = %f", max_acc);
+  RCLCPP_INFO(this->get_logger(), "traj_dl = %f", traj_dl);
+  RCLCPP_INFO(this->get_logger(), "traj_length = %f", traj_length);
+  RCLCPP_INFO(this->get_logger(), "control_dt = %f", control_dt);
+  RCLCPP_INFO(this->get_logger(), "mpc_steps = %f", mpc_steps);
+  RCLCPP_INFO(this->get_logger(), "mpc_dt = %f", mpc_dt);
+  RCLCPP_INFO(this->get_logger(), "kcte = %f", kcte);
+  RCLCPP_INFO(this->get_logger(), "kepsi = %f", kepsi);
+  RCLCPP_INFO(this->get_logger(), "kev = %f", kev);
+  RCLCPP_INFO(this->get_logger(), "ksteer_cost = %f", ksteer_cost);
+
   // counter clock
   trajectory.emplace_back(std::make_shared<trajectory::CircularSegment>(
       1.0 / radius, 0, 0, 1.0, 0, M_PI / 2 * radius));

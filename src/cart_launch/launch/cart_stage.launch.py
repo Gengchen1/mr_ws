@@ -22,7 +22,6 @@ def generate_launch_description():
             name='model',
             output='screen',
             parameters=[{'world_file': LaunchConfiguration('world')},
-                        {'frame_id_world': 'odom'}
                         ],
             remappings=[
                 ('/odom', '/robot/odom'),

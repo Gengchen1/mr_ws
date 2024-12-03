@@ -22,6 +22,7 @@ find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(simple_controller REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 find_package(angles REQUIRED)
 find_package(ACADO REQUIRED)
 find_package(Eigen3 REQUIRED)
@@ -59,6 +60,7 @@ ament_target_dependencies(mpc_controller
   tf2 
   angles 
   simple_controller
+  tf2_geometry_msgs
 )
 
 if(BUILD_TESTING)
@@ -81,13 +83,13 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}
 )
 
-install(PROGRAMS launch/start_rqt
-  DESTINATION lib/${PROJECT_NAME}
-)
+# install(PROGRAMS launch/start_rqt
+#   DESTINATION lib/${PROJECT_NAME}
+# )
 
 # 安装 rqt 配置文件
-install(DIRECTORY rqt/
-  DESTINATION share/${PROJECT_NAME}/rqt
+install(DIRECTORY rqt rviz
+    DESTINATION share/${PROJECT_NAME}
 )
 
 ament_package()
